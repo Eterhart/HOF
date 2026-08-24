@@ -239,7 +239,7 @@ export default function TeacherPage() {
 
   const [confirmModal, setConfirmModal] = useState<{
     title: string;
-    message: string;
+    message: React.ReactNode;
     confirmText?: string;
     cancelText?: string;
     isDestructive?: boolean;
@@ -309,12 +309,13 @@ export default function TeacherPage() {
 
   useEffect(() => {
     if (!selectedSessionId) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     fetchDetail(selectedSessionId);
     const interval = setInterval(() => fetchDetail(selectedSessionId), 1500);
     return () => clearInterval(interval);
   }, [selectedSessionId, fetchDetail]);
 
-  async function handleCreateSession(e: React.FormEvent) {
+  function handleCreateSession(e: React.FormEvent) {
     e.preventDefault();
     const gNum = gradeInput.replace(/\D/g, '') || '3'; // e.g. "3"
     const rNum = roomInput.replace(/\D/g, '') || '1';  // e.g. "12"
@@ -324,18 +325,31 @@ export default function TeacherPage() {
       ? `ม.${gNum}/${rNum} - ${remarkInput.trim()}`
       : `ม.${gNum}/${rNum}`;
 
-    setCreating(true);
-    const res = await fetch('/api/game', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'create_session', sessionName, sessionCode }),
+    setConfirmModal({
+      title: `ม.${gNum}/${rNum}`,
+      message: (
+        <p className="text-sm sm:text-base text-[#7a7a7a]">
+          แน่ใจนะ ว่าจะสร้างห้องเกมสำหรับห้องนี้?
+        </p>
+      ),
+      confirmText: 'สร้างห้องเกม',
+      cancelText: 'ยกเลิก',
+      isDestructive: false,
+      onConfirm: async () => {
+        setCreating(true);
+        const res = await fetch('/api/game', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'create_session', sessionName, sessionCode }),
+        });
+        const data = await res.json();
+        setCreating(false);
+        setShowCreateModal(false);
+        setRemarkInput('');
+        await fetchSessions();
+        setSelectedSessionId(data.sessionId);
+      },
     });
-    const data = await res.json();
-    setCreating(false);
-    setShowCreateModal(false);
-    setRemarkInput('');
-    await fetchSessions();
-    setSelectedSessionId(data.sessionId);
   }
 
   async function handleDelete(sessionId: string) {
@@ -600,28 +614,32 @@ export default function TeacherPage() {
         </div>
 
         {/* Center: Massive QR & PIN */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center max-w-4xl mx-auto my-auto space-y-6 cursor-default" onClick={(e) => e.stopPropagation()}>
-          <div className="p-5 sm:p-8 bg-white border border-[#e0e0e0] rounded-[32px] shadow-xl flex flex-col items-center">
+        <div className="flex-1 flex flex-col items-center justify-center text-center w-full mx-auto my-auto py-1 space-y-2 sm:space-y-3 cursor-default" onClick={(e) => e.stopPropagation()}>
+          <div className="p-2.5 sm:p-4 bg-white border border-[#e0e0e0] rounded-[32px] sm:rounded-[40px] shadow-2xl flex flex-col items-center">
             <img
-              src={`https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=${encodeURIComponent(joinUrl)}`}
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=1200x1200&data=${encodeURIComponent(joinUrl)}`}
               alt="QR Code สำหรับเข้าร่วมเกม"
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain rounded-2xl"
+              className={
+                isArchive
+                  ? "w-[82vh] h-[82vh] max-w-[90vw] max-h-[82vh] min-w-[340px] min-h-[340px] object-contain rounded-2xl"
+                  : "w-[72vh] h-[72vh] max-w-[88vw] max-h-[72vh] min-w-[320px] min-h-[320px] object-contain rounded-2xl"
+              }
             />
           </div>
 
           {!isArchive && (
-            <div className="space-y-2">
-              <span className="text-xs sm:text-sm uppercase tracking-widest text-[#7a7a7a] font-semibold">
-                รหัสห้อง (Session PIN)
+            <div className="flex items-center gap-3 bg-white/95 backdrop-blur-md px-5 py-1.5 rounded-full border border-[#e0e0e0] shadow-sm">
+              <span className="text-xs sm:text-sm uppercase tracking-widest text-[#7a7a7a] font-bold">
+                รหัสห้อง:
               </span>
-              <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5">
                 {showQrModal.sessionCode.split('').map((char, i) => (
-                  <div
+                  <span
                     key={i}
-                    className="w-12 h-14 sm:w-16 sm:h-20 bg-white border border-[#e0e0e0] rounded-2xl flex items-center justify-center text-2xl sm:text-4xl font-mono font-black text-[#1d1d1f] shadow-sm"
+                    className="w-8 h-10 sm:w-10 sm:h-12 bg-[#f5f5f7] border border-[#e0e0e0] rounded-lg flex items-center justify-center text-xl sm:text-2xl font-mono font-black text-[#1d1d1f]"
                   >
                     {char}
-                  </div>
+                  </span>
                 ))}
               </div>
             </div>
@@ -665,20 +683,22 @@ export default function TeacherPage() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white border border-[#e0e0e0] rounded-[24px] max-w-sm w-full p-6 space-y-4 shadow-2xl animate-in zoom-in-95 duration-200 text-center cursor-default"
+            className="bg-white border border-[#e0e0e0] rounded-[28px] max-w-md w-full p-6 sm:p-7 space-y-4 shadow-2xl animate-in zoom-in-95 duration-200 text-center cursor-default"
           >
-            <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto ${confirmModal.isDestructive ? 'bg-rose-50 text-rose-600' : 'bg-blue-50 text-[#0066cc]'}`}>
-              {confirmModal.isDestructive ? <AlertTriangle className="w-6 h-6" /> : <Clock className="w-6 h-6" />}
-            </div>
             <div>
-              <h3 className="text-lg font-bold text-[#1d1d1f] tracking-tight">
+              {!confirmModal.isDestructive && (
+                <span className="text-[11px] font-bold text-[#0066cc] uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full inline-block mb-2.5">
+                  สร้างห้องเกม
+                </span>
+              )}
+              <h3 className={`${confirmModal.isDestructive ? 'text-xl font-bold' : 'text-4xl sm:text-5xl font-black'} text-[#1d1d1f] tracking-tight`}>
                 {confirmModal.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#7a7a7a] mt-1.5 leading-relaxed">
+              <div className="mt-2 text-sm text-[#7a7a7a] leading-relaxed">
                 {confirmModal.message}
-              </p>
+              </div>
             </div>
-            <div className="flex items-center gap-2 pt-2">
+            <div className="flex items-center gap-3 pt-2">
               <button
                 type="button"
                 onClick={() => setConfirmModal(null)}
@@ -960,7 +980,10 @@ export default function TeacherPage() {
         <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-[#e0e0e0] px-4 sm:px-8 py-3 flex items-center justify-between shadow-2xs">
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setSelectedSessionId(null)}
+              onClick={() => {
+                setSelectedSessionId(null);
+                window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+              }}
               className="flex items-center gap-1.5 text-[#0066cc] text-xs sm:text-sm font-semibold hover:underline cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -1118,75 +1141,6 @@ export default function TeacherPage() {
                 </div>
               </div>
 
-              {/* ─── ⏱️ 2nd Component: Dedicated Game State & Active Timer Square Card ─── */}
-              <div className="max-w-md mx-auto w-full bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-7 shadow-sm text-center flex flex-col items-center justify-center space-y-3.5">
-                {/* บรรทัด 1: สถานะปัจจุบัน (CURRENT STATE) */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-[#0066cc] text-xs font-bold">
-                  <span className="w-2 h-2 rounded-full bg-[#0066cc] animate-pulse" />
-                  <span>สถานะปัจจุบัน (CURRENT STATE)</span>
-                </div>
-
-                {/* บรรทัด 2: ชื่อขั้นตอน + ป้ายสถานะ */}
-                <div className="flex items-center justify-center gap-2 flex-wrap">
-                  <h3 className="text-2xl font-black text-[#1d1d1f] tracking-tight">
-                    {PHASE_LABEL[detail.phase]}
-                  </h3>
-                  {detail.isPaused ? (
-                    <span className="text-xs px-2.5 py-0.5 rounded-full border font-bold bg-amber-50 text-amber-800 border-amber-300 animate-pulse inline-flex items-center gap-1 shadow-xs">
-                      <Pause className="w-3 h-3 fill-current" />
-                      พักเกมชั่วคราว
-                    </span>
-                  ) : (
-                    <span className={`text-xs px-2.5 py-0.5 rounded-full border font-bold ${PHASE_COLOR[detail.phase]}`}>
-                      {detail.phase === 'LEADERBOARD' ? 'เสร็จสิ้น' : 'กำลังดำเนินการ'}
-                    </span>
-                  )}
-                </div>
-
-                {/* บรรทัด 3: รายละเอียดขั้นตอน */}
-                <p className="text-xs text-[#7a7a7a] max-w-xs leading-relaxed">
-                  {PHASE_STEPS.find((s) => s.id === detail.phase)?.description || 'ขั้นตอนการจัดกิจกรรม'}
-                </p>
-
-                {/* บรรทัดต่อมา: กล่องเวลาใน State นี้ + Total Time */}
-                <div className="w-full bg-[#f5f5f7] border border-[#e0e0e0] rounded-2xl p-4 flex flex-col items-center justify-center space-y-1.5 shadow-2xs">
-                  <span className="text-[11px] font-bold text-[#7a7a7a] uppercase tracking-wider">
-                    เวลาใน State นี้
-                  </span>
-                  <div className="text-4xl font-mono font-black text-[#0066cc] tracking-tight">
-                    {detail.phase === 'LOBBY'
-                      ? '--:--'
-                      : detail.phase === 'LEADERBOARD'
-                      ? 'จบเกม'
-                      : formatElapsed(phaseElapsedSeconds)}
-                  </div>
-                  <div className="text-xs font-mono text-[#7a7a7a] pt-2 border-t border-[#e0e0e0] w-full text-center">
-                    Total Time: <strong className="font-bold text-[#1d1d1f]">{formatElapsed(displayElapsed)}</strong>
-                    {detail.isPaused ? (
-                      <span className="text-amber-600 ml-1 font-bold">(หยุดเวลาชั่วคราว)</span>
-                    ) : detail.phase === 'LOBBY' ? (
-                      <span className="text-zinc-500 ml-1 font-normal">(รอเริ่ม)</span>
-                    ) : detail.phase === 'LEADERBOARD' ? (
-                      <span className="text-amber-600 ml-1 font-normal">(เสร็จสิ้น)</span>
-                    ) : null}
-                  </div>
-                </div>
-
-                {/* Pause Button in State Square Card */}
-                <button
-                  type="button"
-                  onClick={handleTogglePause}
-                  className={`w-auto px-5 py-2 rounded-full text-xs font-bold active:scale-95 transition flex items-center justify-center gap-1.5 cursor-pointer shadow-xs ${
-                    detail.isPaused
-                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white animate-pulse'
-                      : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300'
-                  }`}
-                >
-                  {detail.isPaused ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
-                  <span>{detail.isPaused ? 'เริ่มเกมต่อ' : 'พักเกมชั่วคราว'}</span>
-                </button>
-              </div>
-
               {/* ─── ตารางแสดง 8 กลุ่ม (แบ่งด้วยเส้น ไร้กรอบการ์ด, สมาชิก List 1. 2. 3., ไร้พื้นหลังขาว) ─── */}
               <div className="w-full border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-2xs bg-transparent">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-y-0 divide-[#e0e0e0]">
@@ -1295,13 +1249,9 @@ export default function TeacherPage() {
                 {/* 👈 LEFT COLUMN: Stepper & Live Phase Controller */}
                 <div className="lg:col-span-7 xl:col-span-7 2xl:col-span-8 bg-white border border-[#e0e0e0] rounded-[24px] p-5 sm:p-6 space-y-5 shadow-sm">
                   <div className="border-b border-[#e0e0e0] pb-4">
-                    <h2 className="text-base font-bold text-[#1d1d1f] flex items-center gap-2">
-                      <Sliders className="w-4 h-4 text-[#0066cc]" />
-                      <span>แผงควบคุมขั้นตอนการสอน (Game Master Control)</span>
+                    <h2 className="text-base font-bold text-[#1d1d1f]">
+                      แผงควบคุม
                     </h2>
-                    <p className="text-xs text-[#7a7a7a] mt-0.5">
-                      ครูสามารถคลิกเลือกและสลับขั้นตอนการสอน พร้อมปรับระยะเวลานับถอยหลังของแต่ละขั้นตอนได้โดยตรง
-                    </p>
                   </div>
 
                   {/* 4 Phase Cards (2-column layout on left side) */}
@@ -1403,53 +1353,48 @@ export default function TeacherPage() {
                             {/* Matching Middle Container for all 4 Cards */}
                             {hasTimer ? (
                               /* Duration Adjuster & Presets (Card 2 & Card 3) */
-                              <div className={`p-3 sm:p-3.5 rounded-2xl border space-y-2.5 ${
-                                isActive ? 'bg-emerald-900/80 border-emerald-700/80' : 'bg-[#fbfbfd] border-[#e0e0e0]'
-                              }`}>
-                                <div className="flex items-center justify-between">
-                                  <span className={`text-xs font-bold ${isActive ? 'text-emerald-100' : 'text-[#1d1d1f]'}`}>ตั้งเวลา:</span>
-                                  <div className="flex items-center gap-2">
-                                    <button
-                                      type="button"
-                                      onClick={() => handleAdjustDuration(step.id, Math.max(0, currentDuration - 1))}
-                                      className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm border cursor-pointer active:scale-95 transition-all shadow-xs ${
-                                        isActive ? 'bg-emerald-800 border-emerald-600 text-white hover:bg-emerald-700' : 'bg-white border-[#d2d2d7] text-[#1d1d1f] hover:bg-zinc-100'
-                                      }`}
-                                      title="ลดเวลา 1 นาที"
-                                    >
-                                      -
-                                    </button>
-                                    {isNoTimer ? (
-                                      <span className={`font-bold text-xs px-2.5 py-1 rounded-lg border ${
-                                        isActive ? 'text-emerald-100 bg-emerald-800/90 border-emerald-600' : 'text-[#0066cc] bg-blue-50 border-blue-200'
+                              <div className="space-y-2.5">
+                                <div className="flex items-center justify-center gap-2.5 py-0.5">
+                                  <button
+                                    type="button"
+                                    onClick={() => handleAdjustDuration(step.id, Math.max(0, currentDuration - 1))}
+                                    className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm border cursor-pointer active:scale-95 transition-all shadow-xs ${
+                                      isActive ? 'bg-emerald-800 border-emerald-600 text-white hover:bg-emerald-700' : 'bg-white border-[#d2d2d7] text-[#1d1d1f] hover:bg-zinc-100'
+                                    }`}
+                                    title="ลดเวลา 1 นาที"
+                                  >
+                                    -
+                                  </button>
+                                  {isNoTimer ? (
+                                    <span className={`font-bold text-xs px-2.5 py-1 rounded-lg border ${
+                                      isActive ? 'text-emerald-100 bg-emerald-800/90 border-emerald-600' : 'text-[#0066cc] bg-blue-50 border-blue-200'
+                                    }`}>
+                                      ไม่จับเวลา
+                                    </span>
+                                  ) : (
+                                    <div className="flex items-baseline gap-1 px-1">
+                                      <span className={`font-mono font-black text-lg px-1 min-w-[28px] text-center ${
+                                        isActive ? 'text-white' : 'text-[#1d1d1f]'
                                       }`}>
-                                        ไม่จับเวลา
+                                        {currentDuration}
                                       </span>
-                                    ) : (
-                                      <div className="flex items-baseline gap-1">
-                                        <span className={`font-mono font-black text-base px-1 min-w-[28px] text-center ${
-                                          isActive ? 'text-white' : 'text-[#1d1d1f]'
-                                        }`}>
-                                          {currentDuration}
-                                        </span>
-                                        <span className={`text-xs ${isActive ? 'text-emerald-200' : 'text-[#7a7a7a]'}`}>นาที</span>
-                                      </div>
-                                    )}
-                                    <button
-                                      type="button"
-                                      onClick={() => handleAdjustDuration(step.id, currentDuration + (isNoTimer ? 3 : 1))}
-                                      className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm border cursor-pointer active:scale-95 transition-all shadow-xs ${
-                                        isActive ? 'bg-emerald-800 border-emerald-600 text-white hover:bg-emerald-700' : 'bg-white border-[#d2d2d7] text-[#1d1d1f] hover:bg-zinc-100'
-                                      }`}
-                                      title="เพิ่มเวลา 1 นาที"
-                                    >
-                                      +
-                                    </button>
-                                  </div>
+                                      <span className={`text-xs font-medium ${isActive ? 'text-emerald-200' : 'text-[#7a7a7a]'}`}>นาที</span>
+                                    </div>
+                                  )}
+                                  <button
+                                    type="button"
+                                    onClick={() => handleAdjustDuration(step.id, currentDuration + (isNoTimer ? 3 : 1))}
+                                    className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm border cursor-pointer active:scale-95 transition-all shadow-xs ${
+                                      isActive ? 'bg-emerald-800 border-emerald-600 text-white hover:bg-emerald-700' : 'bg-white border-[#d2d2d7] text-[#1d1d1f] hover:bg-zinc-100'
+                                    }`}
+                                    title="เพิ่มเวลา 1 นาที"
+                                  >
+                                    +
+                                  </button>
                                 </div>
 
                                 {/* Quick Presets (4x2 Symmetrical Grid) */}
-                                <div className="grid grid-cols-4 gap-1.5 pt-1.5 border-t border-emerald-700/40">
+                                <div className="grid grid-cols-4 gap-1.5 pt-1">
                                   {[
                                     { label: 'ไม่จับเวลา', val: 0 },
                                     { label: '3 นาที', val: 3 },
@@ -1479,63 +1424,7 @@ export default function TeacherPage() {
                                   ))}
                                 </div>
                               </div>
-                            ) : step.id === 'LOBBY' ? (
-                              /* Status Info Box for Card 1 (Lobby) */
-                              <div className={`p-3 sm:p-3.5 rounded-2xl border space-y-2.5 ${
-                                isActive ? 'bg-emerald-900/80 border-emerald-700/80' : 'bg-[#fbfbfd] border-[#e0e0e0]'
-                              }`}>
-                                <div className="flex items-center justify-between">
-                                  <span className={`text-xs font-bold ${isActive ? 'text-emerald-100' : 'text-[#1d1d1f]'}`}>สถานะห้องเรียน:</span>
-                                  <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg border ${
-                                    isActive ? 'bg-emerald-800 text-emerald-100 border-emerald-600' : 'bg-blue-50 text-[#0066cc] border-blue-200'
-                                  }`}>
-                                    PIN: {detail.sessionCode}
-                                  </span>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2 pt-1.5 border-t border-emerald-700/40">
-                                  <div className={`p-2 rounded-xl text-center border ${
-                                    isActive ? 'bg-emerald-950/60 border-emerald-800 text-emerald-200' : 'bg-white border-[#e0e0e0] text-[#1d1d1f]'
-                                  }`}>
-                                    <div className="text-[10px] text-[#7a7a7a]">กลุ่มทั้งหมด</div>
-                                    <div className="text-base font-bold font-mono">{teams.length}</div>
-                                  </div>
-                                  <div className={`p-2 rounded-xl text-center border ${
-                                    isActive ? 'bg-emerald-950/60 border-emerald-800 text-emerald-200' : 'bg-white border-[#e0e0e0] text-[#1d1d1f]'
-                                  }`}>
-                                    <div className="text-[10px] text-[#7a7a7a]">ผู้เล่นรวม</div>
-                                    <div className="text-base font-bold font-mono">{teams.reduce((acc, t) => acc + (t.members?.length || 0), 0)}</div>
-                                  </div>
-                                </div>
-                              </div>
-                            ) : (
-                              /* Status Info Box for Card 4 (Ending) */
-                              <div className={`p-3 sm:p-3.5 rounded-2xl border space-y-2.5 ${
-                                isActive ? 'bg-emerald-900/80 border-emerald-700/80' : 'bg-[#fbfbfd] border-[#e0e0e0]'
-                              }`}>
-                                <div className="flex items-center justify-between">
-                                  <span className={`text-xs font-bold ${isActive ? 'text-emerald-100' : 'text-[#1d1d1f]'}`}>สถานะการส่งงาน:</span>
-                                  <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded-lg border ${
-                                    isActive ? 'bg-emerald-800 text-emerald-100 border-emerald-600' : 'bg-blue-50 text-[#0066cc] border-blue-200'
-                                  }`}>
-                                    {teams.filter((t) => t.isSubmitted).length}/{teams.length} กลุ่ม
-                                  </span>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2 pt-1.5 border-t border-emerald-700/40">
-                                  <div className={`p-2 rounded-xl text-center border ${
-                                    isActive ? 'bg-emerald-950/60 border-emerald-800 text-emerald-200' : 'bg-white border-[#e0e0e0] text-[#1d1d1f]'
-                                  }`}>
-                                    <div className="text-[10px] text-[#7a7a7a]">ส่งตรวจแล้ว</div>
-                                    <div className="text-base font-bold font-mono text-emerald-600">{teams.filter((t) => t.isSubmitted).length}</div>
-                                  </div>
-                                  <div className={`p-2 rounded-xl text-center border ${
-                                    isActive ? 'bg-emerald-950/60 border-emerald-800 text-emerald-200' : 'bg-white border-[#e0e0e0] text-[#1d1d1f]'
-                                  }`}>
-                                    <div className="text-[10px] text-[#7a7a7a]">ยังไม่ส่ง</div>
-                                    <div className="text-base font-bold font-mono text-amber-600">{teams.filter((t) => !t.isSubmitted).length}</div>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
+                            ) : null}
                           </div>
 
                           {/* Action Button */}
@@ -1686,29 +1575,6 @@ export default function TeacherPage() {
                     { key: 'presentationSkill', label: '4. ทักษะการนำเสนอในบทบาทภัณฑารักษ์ (5)' },
                   ];
 
-                  const correctStatues = (assignedTeam.statueInventory || []).filter((id) =>
-                    room.targetStatueIds.includes(id)
-                  ).length;
-
-                  const correctEvidences = (assignedTeam.evidenceInventory || []).filter((id) =>
-                    room.targetEvidenceIds.includes(id) && EVIDENCE_ITEMS.find((e) => e.id === id)?.isAuthentic
-                  ).length;
-
-                  const fakeEvidences = (assignedTeam.evidenceInventory || []).filter(
-                    (id) => !EVIDENCE_ITEMS.find((e) => e.id === id)?.isAuthentic
-                  ).length;
-
-                  const correctStories = (assignedTeam.storyInventory || []).filter(
-                    (id) => STORY_PLACARDS_DATA.find((s) => s.id === id)?.categoryId === room.id
-                  ).length;
-
-                  const totalSubmitted =
-                    (assignedTeam.statueInventory?.length || 0) +
-                    (assignedTeam.evidenceInventory?.length || 0) +
-                    (assignedTeam.storyInventory?.length || 0);
-
-                  const totalCorrect = correctStatues + correctEvidences + correctStories;
-
                   return (
                     <div
                       key={room.id}
@@ -1760,60 +1626,6 @@ export default function TeacherPage() {
                                 ))
                               )}
                             </div>
-                          )}
-                        </div>
-
-                        {/* 🌟 Helper Box: สรุปความถูกต้องของชิ้นงานที่กลุ่มจัดแสดง (ตัวช่วยตรวจให้คะแนนคุณครู) */}
-                        <div className="p-3 bg-[#f5f5f7] border border-[#e0e0e0] rounded-xl space-y-2 text-xs">
-                          <div className="flex items-center justify-between font-mono">
-                            <span className="text-[11px] font-bold text-[#1d1d1f] flex items-center gap-1.5">
-                              <Sparkles className="w-3.5 h-3.5 text-[#0066cc]" />
-                              สรุปความถูกต้องของชิ้นงานที่นำมาแสดง:
-                            </span>
-                            <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold font-mono ${
-                              totalCorrect >= 10
-                                ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                                : totalCorrect >= 7
-                                ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                                : 'bg-zinc-200 text-zinc-700'
-                            }`}>
-                              รวมถูกต้อง {totalCorrect}/10 ชิ้น
-                            </span>
-                          </div>
-
-                          {/* Breakdown Grid / Badges */}
-                          <div className="grid grid-cols-3 gap-1.5 text-center text-[10.5px]">
-                            <div className="p-1.5 bg-white rounded-lg border border-[#e0e0e0] flex flex-col items-center justify-center">
-                              <span className="text-[#7a7a7a]">ประติมากรรม</span>
-                              <span className={`font-mono font-bold ${correctStatues === 4 ? 'text-emerald-600' : 'text-[#1d1d1f]'}`}>
-                                {correctStatues}/4 ชิ้น
-                              </span>
-                            </div>
-
-                            <div className="p-1.5 bg-white rounded-lg border border-[#e0e0e0] flex flex-col items-center justify-center">
-                              <span className="text-[#7a7a7a]">หลักฐานจริง</span>
-                              <span className={`font-mono font-bold ${correctEvidences === 4 ? 'text-emerald-600' : 'text-[#1d1d1f]'}`}>
-                                {correctEvidences}/4 ชิ้น
-                              </span>
-                              {fakeEvidences > 0 && (
-                                <span className="text-[9.5px] font-bold text-rose-600">
-                                  (เท็จ {fakeEvidences})
-                                </span>
-                              )}
-                            </div>
-
-                            <div className="p-1.5 bg-white rounded-lg border border-[#e0e0e0] flex flex-col items-center justify-center">
-                              <span className="text-[#7a7a7a]">เรื่องราว</span>
-                              <span className={`font-mono font-bold ${correctStories === 2 ? 'text-emerald-600' : 'text-[#1d1d1f]'}`}>
-                                {correctStories}/2 ป้าย
-                              </span>
-                            </div>
-                          </div>
-
-                          {totalSubmitted === 0 && (
-                            <p className="text-[10.5px] text-[#7a7a7a] italic text-center">
-                              กลุ่มนี้ยังไม่ได้ส่งสิ่งของจัดแสดง
-                            </p>
                           )}
                         </div>
 
@@ -1882,14 +1694,9 @@ export default function TeacherPage() {
       {/* Top Header Bar with Logout */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-[#e0e0e0] px-4 sm:px-8 py-3 flex items-center justify-between shadow-2xs">
         <div className="flex items-center gap-3">
-          <div>
-            <h1 className="font-bold text-sm sm:text-base text-[#1d1d1f] leading-tight">
-              Teacher Dashboard
-            </h1>
-            <span className="text-[10px] text-[#7a7a7a]">
-              Game Master Control Panel
-            </span>
-          </div>
+          <h1 className="font-bold text-sm sm:text-base text-[#1d1d1f]">
+            Teacher Dashboard
+          </h1>
         </div>
 
         <div className="flex items-center gap-2">
@@ -1907,16 +1714,16 @@ export default function TeacherPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        {/* 🌟 1. Prominent Center Create Session Card (มองกลางจอก็เห็นทันที) */}
-        <div className="max-w-2xl mx-auto bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-7 shadow-xs text-center space-y-4">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+        {/* 🌟 1. Prominent Center Create Session Card */}
+        <div className="bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-7 shadow-xs text-center space-y-4">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] text-xs font-bold">
               <PlusCircle className="w-3.5 h-3.5" />
               <span>เปิดห้องเรียนใหม่</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-black text-[#1d1d1f] tracking-tight">
-              สร้าง Session การสอน
+              สร้างห้องเกม
             </h2>
             <p className="text-xs text-[#7a7a7a]">
               เลือกระดับชั้นและห้องเรียน เพื่อเริ่มเกมกิจกรรมสำหรับคาบเรียนนี้
@@ -1951,103 +1758,89 @@ export default function TeacherPage() {
               className="w-full sm:w-auto px-6 py-2.5 bg-[#0066cc] hover:bg-[#0071e3] text-white rounded-full text-xs sm:text-sm font-bold active:scale-95 transition shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               <PlusCircle className="w-4 h-4" />
-              <span>{creating ? 'กำลังสร้าง...' : 'สร้าง Session ทันที'}</span>
+              <span>{creating ? 'กำลังสร้าง...' : 'สร้างห้องเกมทันที'}</span>
             </button>
           </form>
         </div>
 
-        {/* 🌟 2. Header */}
-        <div className="pt-2">
-          <h3 className="text-base font-bold text-[#1d1d1f] flex items-center gap-2">
-            <Clock className="w-4 h-4 text-[#0066cc]" />
-            <span>จำนวน Session ({sessions.length})</span>
-          </h3>
-          <p className="text-xs text-[#7a7a7a]">
-            เลือก Session เพื่อเปิดหน้าควบคุมเกมและจัดการกิจกรรมในชั้นเรียน
-          </p>
-        </div>
+        {/* 🌟 2. Sessions List (แสดงเฉพาะเมื่อมี session แล้วเท่านั้น) */}
+        {sessions.length > 0 && (
+          <div className="space-y-4 pt-2">
+            <div>
+              <h3 className="text-base font-bold text-[#1d1d1f] flex items-center gap-2">
+                <Clock className="w-4 h-4 text-[#0066cc]" />
+                <span>จำนวน Session ({sessions.length})</span>
+              </h3>
+              <p className="text-xs text-[#7a7a7a]">
+                เลือก Session เพื่อเปิดหน้าควบคุมเกมและจัดการกิจกรรมในชั้นเรียน
+              </p>
+            </div>
 
-        {/* 🌟 3. Single-Column Session Row List (เรียงกันทีละบรรทัด) */}
-        {sessions.length === 0 ? (
-          <div className="bg-white border border-[#e0e0e0] rounded-[24px] py-16 flex flex-col items-center justify-center gap-3 text-[#7a7a7a] text-center shadow-xs">
-            <Clock className="w-10 h-10 opacity-20 text-[#7a7a7a]" />
-            <p className="text-sm font-medium">ยังไม่มี Session การสอน — ใช้แผงด้านบนเพื่อสร้างห้องเรียนใหม่</p>
-          </div>
-        ) : (
-          <div className="space-y-3">
-            {sessions.map((s) => (
-              <div
-                key={s.sessionId}
-                className="bg-white border border-[#e0e0e0] hover:border-[#0066cc] rounded-[20px] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all shadow-xs hover:shadow-md group"
-              >
-                {/* Left Info */}
+            <div className="space-y-3">
+              {sessions.map((s) => (
                 <div
-                  className="flex-1 min-w-0 cursor-pointer space-y-1.5"
-                  onClick={() => setSelectedSessionId(s.sessionId)}
+                  key={s.sessionId}
+                  className="bg-white border border-[#e0e0e0] hover:border-[#0066cc] rounded-[20px] p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all shadow-xs hover:shadow-md group"
                 >
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    <h4 className="text-lg font-black text-[#1d1d1f] tracking-tight">{s.sessionName}</h4>
-                    <span className={`text-xs px-3 py-0.5 rounded-full border font-bold ${PHASE_COLOR[s.phase]}`}>
-                      {PHASE_LABEL[s.phase]}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 sm:gap-3 text-xs text-[#7a7a7a] flex-wrap">
-                    <span className="font-mono font-bold bg-[#f5f5f7] px-2 py-0.5 rounded-md border border-[#e0e0e0] text-[#1d1d1f]">
-                      PIN: {s.sessionCode}
-                    </span>
-                    <span>•</span>
-                    <span className="font-medium text-zinc-700 inline-flex items-center gap-1">
-                      <Users className="w-3.5 h-3.5 text-zinc-400" />
-                      <span><strong>{s.teamCount}</strong> กลุ่ม</span>
-                    </span>
-                    <span>•</span>
-                    <span className="font-medium text-zinc-700 inline-flex items-center gap-1">
-                      <User className="w-3.5 h-3.5 text-zinc-400" />
-                      <span><strong>{s.playerCount}</strong> คน</span>
-                    </span>
-                    <span>•</span>
-                    <span className="inline-flex items-center gap-1 text-zinc-600">
-                      <Calendar className="w-3.5 h-3.5 text-zinc-400" />
-                      <span>{formatDate(s.createdAt)}</span>
-                    </span>
-                  </div>
-                </div>
-
-                {/* Right Actions */}
-                <div className="flex items-center gap-1.5 flex-shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e0e0e0]/70 justify-end">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleDelete(s.sessionId);
-                    }}
-                    className="p-2 text-zinc-400 hover:text-rose-600 hover:bg-rose-50 rounded-full transition cursor-pointer"
-                    title="ลบห้องเรียนนี้"
+                  {/* Left Info */}
+                  <div
+                    className="flex-1 min-w-0 cursor-pointer space-y-1.5"
+                    onClick={() => setSelectedSessionId(s.sessionId)}
                   >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <h4 className="text-lg font-black text-[#1d1d1f] tracking-tight">{s.sessionName}</h4>
+                      <span className={`text-xs px-3 py-0.5 rounded-full border font-bold ${PHASE_COLOR[s.phase]}`}>
+                        {PHASE_LABEL[s.phase]}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 sm:gap-3 text-xs text-[#7a7a7a] flex-wrap">
+                      <span className="font-mono font-bold bg-[#f5f5f7] px-2 py-0.5 rounded-md border border-[#e0e0e0] text-[#1d1d1f]">
+                        PIN: {s.sessionCode}
+                      </span>
+                      <span>•</span>
+                      <span className="font-medium text-zinc-700 inline-flex items-center gap-1">
+                        <Users className="w-3.5 h-3.5 text-zinc-400" />
+                        <span><strong>{s.teamCount}</strong> กลุ่ม</span>
+                      </span>
+                      <span>•</span>
+                      <span className="font-medium text-zinc-700 inline-flex items-center gap-1">
+                        <User className="w-3.5 h-3.5 text-zinc-400" />
+                        <span><strong>{s.playerCount}</strong> คน</span>
+                      </span>
+                      <span>•</span>
+                      <span className="inline-flex items-center gap-1 text-zinc-600">
+                        <Calendar className="w-3.5 h-3.5 text-zinc-400" />
+                        <span>{formatDate(s.createdAt)}</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right Actions */}
+                  <div className="flex items-center gap-1.5 flex-shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e0e0e0]/70 justify-end">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(s.sessionId);
+                      }}
+                      className="p-2 text-zinc-400 hover:text-rose-600 hover:bg-rose-50 rounded-full transition cursor-pointer"
+                      title="ลบห้องเรียนนี้"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
         {/* 🌟 4. Museum & Archive Exhibition Section (หมวดพิพิธภัณฑ์ ทั้งปุ่ม และ QR Code) */}
         <div className="bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-8 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-start gap-3.5 max-w-xl">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center shrink-0 shadow-2xs">
-              <Landmark className="w-6 h-6 text-amber-600" />
-            </div>
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold">
-                <span>🏛️ คลังนิทรรศการประวัติศาสตร์</span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1d1d1f] tracking-tight">
-                พิพิธภัณฑ์ประวัติศาสตร์ (Museum Archive)
-              </h3>
-              <p className="text-xs text-[#7a7a7a] leading-relaxed">
-                เข้าชมนิทรรศการเสมือนจริงทั้ง 8 ห้องจัดแสดง หรือให้นักเรียนสแกน QR Code เพื่อเปิดศึกษาข้อมูลรูปปั้นและหลักฐานย้อนหลัง
-              </p>
-              <div className="pt-2 flex items-center gap-2.5 flex-wrap">
+          <div className="max-w-xl space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-[#1d1d1f] tracking-tight">
+              พิพิธภัณฑ์ประวัติศาสตร์ (Museum Archive)
+            </h3>
+            <div className="flex items-center gap-2.5 flex-wrap">
                 <button
                   type="button"
                   onClick={() => setArchiveTarget({ sessionCode: '' })}
@@ -2068,7 +1861,6 @@ export default function TeacherPage() {
                 </button>
               </div>
             </div>
-          </div>
 
           {/* Right Mini QR Box */}
           <div className="bg-[#f5f5f7] border border-[#e0e0e0] rounded-2xl p-4 flex flex-row sm:flex-col items-center gap-4 text-left sm:text-center shrink-0 w-full md:w-auto">
