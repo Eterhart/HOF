@@ -143,50 +143,52 @@ export function getAllSessions(): SessionSummary[] {
   const store = getStore();
   return Array.from(store.values())
     .sort((a, b) => b.createdAt - a.createdAt)
-    .map(s => ({
-      sessionId: s.sessionId,
-      sessionCode: s.sessionCode,
-      sessionName: s.sessionName,
-      createdAt: s.createdAt,
-      phase: s.phase,
-      teamCount: Object.keys(s.teams).length,
-      playerCount: Object.values(s.teams).reduce((acc, t) => acc + t.members.length, 0)
-    }));
+    .map(s => {
+      checkAutoPhaseTransitions(s);
+      return {
+        sessionId: s.sessionId,
+        sessionCode: s.sessionCode,
+        sessionName: s.sessionName,
+        createdAt: s.createdAt,
+        phase: s.phase,
+        teamCount: Object.keys(s.teams).length,
+        playerCount: Object.values(s.teams).reduce((acc, t) => acc + t.members.length, 0)
+      };
+    });
 }
 
 export function getAllFullSessions(): GameSessionState[] {
   const store = getStore();
-  return Array.from(store.values()).sort((a, b) => b.createdAt - a.createdAt);
+  const list = Array.from(store.values()).sort((a, b) => b.createdAt - a.createdAt);
+  list.forEach(s => checkAutoPhaseTransitions(s));
+  return list;
 }
 
-function checkAutoSubmit(session: GameSessionState) {
-  if (session.phase === 'SHOPPING' && !session.isPaused && session.durationSeconds > 0) {
+function checkAutoPhaseTransitions(session: GameSessionState) {
+  if (!session.isPaused && session.durationSeconds > 0) {
     const elapsed = Math.floor((Date.now() - session.startTime) / 1000);
     if (elapsed >= session.durationSeconds) {
-      let changed = false;
-      Object.values(session.teams).forEach(team => {
-        if (!team.isSubmitted) {
-          team.isSubmitted = true;
-          if (!team.submittedAt) team.submittedAt = session.startTime + (session.durationSeconds * 1000);
-          calculateTeamScore(team, session);
-          changed = true;
-        }
-      });
-      if (changed) saveSessionsToFile();
+      if (session.phase === 'BRIEFING') {
+        // Phase 2 (Briefing) -> Auto transition to Phase 3 (Shopping) with 20 minutes default
+        applyGamePhase(session, 'SHOPPING', SHOPPING_DURATION_SECONDS);
+      } else if (session.phase === 'SHOPPING') {
+        // Phase 3 (Shopping) -> Auto transition to Phase 4 (Leaderboard)
+        applyGamePhase(session, 'LEADERBOARD');
+      }
     }
   }
 }
 
 export function getSessionById(sessionId: string): GameSessionState | null {
   const session = getStore().get(sessionId) ?? null;
-  if (session) checkAutoSubmit(session);
+  if (session) checkAutoPhaseTransitions(session);
   return session;
 }
 
 export function getSessionByCode(sessionCode: string): GameSessionState | null {
   const all = Array.from(getStore().values());
   const session = all.find(s => s.sessionCode === sessionCode) ?? null;
-  if (session) checkAutoSubmit(session);
+  if (session) checkAutoPhaseTransitions(session);
   return session;
 }
 
@@ -250,10 +252,7 @@ export function shuffleTeamsRooms(sessionId: string): GameSessionState | null {
   return session;
 }
 
-export function setGamePhase(sessionId: string, phase: GamePhase, customDurationSeconds?: number): GameSessionState | null {
-  const session = getSessionById(sessionId);
-  if (!session) return null;
-
+export function applyGamePhase(session: GameSessionState, phase: GamePhase, customDurationSeconds?: number): GameSessionState {
   // If moving out of LOBBY to BRIEFING or SHOPPING, guarantee every team gets a UNIQUE room (no duplicates)
   if (phase !== 'LOBBY') {
     const teams = Object.values(session.teams);
@@ -291,6 +290,12 @@ export function setGamePhase(sessionId: string, phase: GamePhase, customDuration
   }
   saveSessionsToFile();
   return session;
+}
+
+export function setGamePhase(sessionId: string, phase: GamePhase, customDurationSeconds?: number): GameSessionState | null {
+  const session = getStore().get(sessionId) ?? null;
+  if (!session) return null;
+  return applyGamePhase(session, phase, customDurationSeconds);
 }
 
 export function updateSessionDuration(sessionId: string, durationSeconds: number): GameSessionState | null {
