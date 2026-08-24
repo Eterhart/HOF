@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import { SessionSummary, GameSessionState, GamePhase, TeamState, TeacherRubric } from '@/data/types';
 import { EXHIBITION_ROOMS, STATUE_ITEMS, EVIDENCE_ITEMS } from '@/data/gameData';
 import { STORY_PLACARDS_DATA } from '@/data/storyPlacardsData';
@@ -22,6 +23,7 @@ import {
   ShoppingBag,
   Award,
   Eye,
+  EyeOff,
   AlertTriangle,
   AlertCircle,
   CheckCircle2,
@@ -46,6 +48,8 @@ import {
   Flag,
   Gamepad2,
   Unlock,
+  Lock,
+  LogOut,
 } from 'lucide-react';
 
 const PHASE_LABEL: Record<GamePhase, string> = {
@@ -135,6 +139,41 @@ function formatTimeOnly(ts: number) {
 }
 
 export default function TeacherPage() {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [loginUsername, setLoginUsername] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [loginError, setLoginError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const auth = localStorage.getItem('curator_teacher_auth');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (loginUsername.trim() === 'SSPHT' && loginPassword === 'SSPHT') {
+      setIsAuthenticated(true);
+      localStorage.setItem('curator_teacher_auth', 'true');
+      setLoginError(null);
+    } else {
+      setLoginError('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง (Username / Password incorrect)');
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('curator_teacher_auth');
+    setIsAuthenticated(false);
+    setLoginUsername('');
+    setLoginPassword('');
+    setLoginError(null);
+  };
+
   const [sessions, setSessions] = useState<SessionSummary[]>([]);
   const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null);
   const [detail, setDetail] = useState<GameSessionState | null>(null);
@@ -662,6 +701,118 @@ export default function TeacherPage() {
     </>
   );
 
+  // ─── Authentication Loading Gate ────────────────────────────────────────────
+  if (isAuthenticated === null) {
+    return (
+      <div className="min-h-screen bg-[#f5f5f7] flex items-center justify-center font-sans">
+        <div className="w-8 h-8 rounded-full border-2 border-[#0066cc] border-t-transparent animate-spin" />
+      </div>
+    );
+  }
+
+  // ─── Login Screen (SSPHT / SSPHT) ────────────────────────────────────────────
+  if (isAuthenticated === false) {
+    return (
+      <div className="min-h-screen bg-[#f5f5f7] flex flex-col justify-center items-center p-4 selection:bg-[#0066cc]/20 font-sans">
+        <div className="w-full max-w-sm sm:max-w-md bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-8 shadow-sm space-y-6 animate-fadeIn">
+          {/* Header & Logo */}
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-[#1d1d1f] text-white flex items-center justify-center shadow-md mb-3">
+              <ShieldCheck className="w-7 h-7 text-[#f5c768]" />
+            </div>
+            <h1 className="text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
+              เข้าสู่ระบบผู้คุมเกม
+            </h1>
+            <p className="text-xs sm:text-sm text-[#7a7a7a]">
+              Game Master Control Panel (สำหรับคุณครู)
+            </p>
+          </div>
+
+          {/* Login Form */}
+          <form onSubmit={handleLogin} className="space-y-4">
+            {loginError && (
+              <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2 animate-in fade-in">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{loginError}</span>
+              </div>
+            )}
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-semibold text-[#1d1d1f] block">
+                ชื่อผู้ใช้ (Username)
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#7a7a7a]">
+                  <User className="w-4 h-4" />
+                </div>
+                <input
+                  type="text"
+                  value={loginUsername}
+                  onChange={(e) => {
+                    setLoginUsername(e.target.value);
+                    if (loginError) setLoginError(null);
+                  }}
+                  placeholder="กรอก Username"
+                  required
+                  autoFocus
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e0e0e0] focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none text-sm text-[#1d1d1f] bg-white transition"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-semibold text-[#1d1d1f] block">
+                รหัสผ่าน (Password)
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#7a7a7a]">
+                  <Lock className="w-4 h-4" />
+                </div>
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={loginPassword}
+                  onChange={(e) => {
+                    setLoginPassword(e.target.value);
+                    if (loginError) setLoginError(null);
+                  }}
+                  placeholder="กรอก Password"
+                  required
+                  className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#e0e0e0] focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none text-sm text-[#1d1d1f] bg-white transition"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#7a7a7a] hover:text-[#1d1d1f] cursor-pointer"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3 px-4 rounded-full bg-[#0066cc] hover:bg-[#0071e3] text-white font-bold text-sm tracking-wide transition active:scale-95 shadow-sm cursor-pointer mt-2"
+            >
+              เข้าสู่ระบบ
+            </button>
+          </form>
+
+          {/* Back to Home */}
+          <div className="pt-2 border-t border-[#e0e0e0] text-center">
+            <button
+              type="button"
+              onClick={() => router.push('/')}
+              className="text-xs font-medium text-[#7a7a7a] hover:text-[#1d1d1f] transition inline-flex items-center gap-1.5 cursor-pointer"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>กลับสู่หน้านักเรียน (Student App)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // ─── Single Session Detail View ─────────────────────────────────────────────
   if (selectedSessionId && detail) {
     const teams = Object.values(detail.teams || {});
@@ -773,6 +924,13 @@ export default function TeacherPage() {
             >
               <Landmark className="w-3.5 h-3.5 text-amber-300" />
               <span>พิพิธภัณฑ์</span>
+            </button>
+            <button
+              onClick={handleLogout}
+              className="p-2 text-[#7a7a7a] hover:text-rose-600 hover:bg-rose-50 border border-transparent hover:border-rose-200 rounded-full transition cursor-pointer"
+              title="ออกจากระบบ (Logout SSPHT)"
+            >
+              <LogOut className="w-4 h-4" />
             </button>
           </div>
         </header>
@@ -1642,7 +1800,37 @@ export default function TeacherPage() {
 
   // ─── Session List View ──────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#f5f5f7] font-sans py-4">
+    <div className="min-h-screen bg-[#f5f5f7] font-sans pb-16">
+      {/* Top Header Bar with Logout */}
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-[#e0e0e0] px-4 sm:px-8 py-3 flex items-center justify-between shadow-2xs">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-xl bg-[#1d1d1f] text-white flex items-center justify-center shadow-xs">
+            <ShieldCheck className="w-4 h-4 text-[#f5c768]" />
+          </div>
+          <div>
+            <h1 className="font-bold text-sm sm:text-base text-[#1d1d1f] leading-tight">
+              Curator Teacher Dashboard
+            </h1>
+            <span className="text-[10px] text-[#7a7a7a]">
+              Game Master Control Panel
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#f5f5f7] text-[#1d1d1f] border border-[#e0e0e0] hidden xs:inline-block">
+            SSPHT
+          </span>
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-full text-xs font-semibold active:scale-95 transition flex items-center gap-1.5 cursor-pointer"
+            title="ออกจากระบบ"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            <span>ออกจากระบบ</span>
+          </button>
+        </div>
+      </header>
 
       <main className="max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* 🌟 1. Prominent Center Create Session Card (มองกลางจอก็เห็นทันที) */}
