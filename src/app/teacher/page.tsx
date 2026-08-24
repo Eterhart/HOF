@@ -191,7 +191,7 @@ export default function TeacherPage() {
         setIsShaking(false);
       }, 1600);
     } else {
-      setLoginError('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง (SSPHT)');
+      setLoginError('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง');
       setIsShaking(true);
       setTimeout(() => setIsShaking(false), 500);
     }
@@ -801,7 +801,7 @@ export default function TeacherPage() {
                   Login with Game Master ID
                 </h4>
                 <p className="text-xs text-[#86868B] max-w-[300px] mx-auto leading-relaxed">
-                  กรอกชื่อผู้ใช้และรหัสผ่าน SSPHT เพื่อเข้าสู่แผงควบคุมการสอน
+                  กรอกชื่อผู้ใช้และรหัสผ่านเพื่อเข้าสู่แผงควบคุมการสอน
                 </p>
               </div>
 
@@ -1005,7 +1005,7 @@ export default function TeacherPage() {
             <button
               onClick={handleLogout}
               className="p-2 text-[#7a7a7a] hover:text-rose-600 hover:bg-rose-50 border border-transparent hover:border-rose-200 rounded-full transition cursor-pointer"
-              title="ออกจากระบบ (Logout SSPHT)"
+              title="ออกจากระบบ"
             >
               <LogOut className="w-4 h-4" />
             </button>
@@ -1892,8 +1892,8 @@ export default function TeacherPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#f5f5f7] text-[#1d1d1f] border border-[#e0e0e0] hidden xs:inline-block">
-            SSPHT
+          <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-[#f5f5f7] text-[#7a7a7a] border border-[#e0e0e0] hidden xs:inline-block">
+            Game Master
           </span>
           <button
             onClick={handleLogout}
