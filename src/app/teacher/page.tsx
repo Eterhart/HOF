@@ -771,17 +771,10 @@ export default function TeacherPage() {
             }`}
           >
             {/* macOS Header Bar */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-black/[0.08] bg-white/70 backdrop-blur-md">
+            <div className="flex items-center justify-center px-5 py-3 border-b border-black/[0.08] bg-white/70 backdrop-blur-md">
               <h3 className="font-bold text-[15.5px] text-[#1D1D1F] tracking-tight">
                 Sign In
               </h3>
-              <button
-                type="button"
-                onClick={() => router.push('/')}
-                className="px-3 py-1 bg-white hover:bg-[#F2F2F7] active:bg-[#E5E5EA] border border-black/15 rounded-[7px] text-xs font-normal text-[#1D1D1F] shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all cursor-pointer"
-              >
-                Cancel
-              </button>
             </div>
 
             {/* Form Body */}
@@ -798,7 +791,7 @@ export default function TeacherPage() {
               {/* Title & Subtitle */}
               <div className="space-y-1">
                 <h4 className="text-[17px] font-bold text-[#1D1D1F] tracking-tight">
-                  Login with Game Master ID
+                  Login as a Teacher
                 </h4>
                 <p className="text-xs text-[#86868B] max-w-[300px] mx-auto leading-relaxed">
                   กรอกชื่อผู้ใช้และรหัสผ่านเพื่อเข้าสู่แผงควบคุมการสอน
