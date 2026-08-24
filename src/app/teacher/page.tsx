@@ -978,54 +978,28 @@ export default function TeacherPage() {
       <div className="min-h-screen bg-[#f5f5f7] font-sans pb-16">
         {/* Top Sticky Bar */}
         <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-[#e0e0e0] px-4 sm:px-8 py-3 flex items-center justify-between shadow-2xs">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={() => {
                 setSelectedSessionId(null);
                 window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
               }}
-              className="flex items-center gap-1.5 text-[#0066cc] text-xs sm:text-sm font-semibold hover:underline cursor-pointer"
+              className="flex items-center gap-2 text-[#1d1d1f] hover:text-black text-base sm:text-lg font-bold transition-all active:scale-95 cursor-pointer py-1"
+              title="ย้อนกลับไปหน้ารายการห้องทั้งหมด"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>รอบทั้งหมด</span>
+              <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
+              <span>ย้อนกลับ</span>
             </button>
-            <span className="text-[#e0e0e0]">|</span>
+            <span className="text-[#e0e0e0] text-lg font-light">|</span>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-sm sm:text-base text-[#1d1d1f]">{detail.sessionName}</span>
-              <span className="px-2 py-0.5 rounded-full font-mono font-bold text-xs bg-blue-50 text-[#0066cc] border border-blue-200">
+              <span className="font-bold text-base sm:text-lg text-[#1d1d1f]">{detail.sessionName}</span>
+              <span className="px-2.5 py-1 rounded-full font-mono font-black text-xs sm:text-sm bg-blue-50 text-[#0066cc] border border-blue-200">
                 {detail.sessionCode}
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Pause / Resume Button */}
-            <button
-              onClick={handleTogglePause}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold active:scale-95 transition flex items-center gap-1.5 cursor-pointer shadow-xs ${
-                detail.isPaused
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white animate-pulse'
-                  : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300'
-              }`}
-              title={detail.isPaused ? 'กดเพื่อเล่นเกมต่อ' : 'กดเพื่อหยุดเวลาเกมชั่วคราว'}
-            >
-              {detail.isPaused ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
-              <span>{detail.isPaused ? 'เล่นเกมต่อ' : 'พักเกมชั่วคราว'}</span>
-            </button>
-            <button
-              onClick={() => setShowQrModal({ sessionCode: detail.sessionCode, sessionName: detail.sessionName })}
-              className="px-3 py-1.5 bg-[#f5f5f7] hover:bg-[#e0e0e0] text-[#1d1d1f] border border-[#e0e0e0] rounded-full text-xs font-semibold active:scale-95 transition flex items-center gap-1.5 cursor-pointer"
-            >
-              <QrCode className="w-3.5 h-3.5 text-[#0066cc]" />
-              <span>ฉาย QR Code</span>
-            </button>
-            <button
-              onClick={() => setArchiveTarget({ sessionCode: detail.sessionCode })}
-              className="px-3 py-1.5 bg-[#1d1d1f] hover:bg-black text-white rounded-full text-xs font-semibold active:scale-95 transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-            >
-              <Landmark className="w-3.5 h-3.5 text-amber-300" />
-              <span>พิพิธภัณฑ์</span>
-            </button>
             <button
               onClick={handleLogout}
               className="p-2 text-[#7a7a7a] hover:text-rose-600 hover:bg-rose-50 border border-transparent hover:border-rose-200 rounded-full transition cursor-pointer"
@@ -1506,6 +1480,17 @@ export default function TeacherPage() {
                       title="Student Screen Live View"
                       className="w-full h-full border-0 bg-slate-950"
                     />
+                  </div>
+
+                  {/* พิพิธภัณฑ์ Button (No emoji, large text, compact width) */}
+                  <div className="flex justify-center pt-1">
+                    <button
+                      type="button"
+                      onClick={() => setArchiveTarget({ sessionCode: detail.sessionCode })}
+                      className="w-full max-w-[260px] py-3.5 sm:py-4 px-8 bg-[#1d1d1f] hover:bg-black text-white rounded-full text-base sm:text-lg font-black active:scale-95 transition flex items-center justify-center cursor-pointer shadow-md tracking-wide"
+                    >
+                      พิพิธภัณฑ์
+                    </button>
                   </div>
                 </div>
               </div>
