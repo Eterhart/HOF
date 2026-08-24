@@ -1,0 +1,75 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        canvas: "#ffffff",
+        parchment: "#f5f5f7",
+        ink: "#1d1d1f",
+        "ink-muted": "#7a7a7a",
+        hairline: "#e0e0e0",
+        "action-blue": "#0066cc",
+        "action-blue-dark": "#004499",
+        gold: "#b5882e",
+        "gold-light": "#d4a84b",
+      },
+      fontFamily: {
+        sans: [
+          '"SF Pro TH"',
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Sukhumvit Set"',
+          '"Noto Sans Thai"',
+          '"Thonburi"',
+          'system-ui',
+          'sans-serif',
+        ],
+        serif: [
+          '"SF Pro TH"',
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Sukhumvit Set"',
+          '"Noto Sans Thai"',
+          '"Thonburi"',
+          'system-ui',
+          'sans-serif',
+        ],
+        mono: [
+          '"SF Pro TH"',
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Sukhumvit Set"',
+          '"Noto Sans Thai"',
+          '"Thonburi"',
+          'system-ui',
+          'sans-serif',
+        ],
+      },
+      letterSpacing: {
+        tight: "-0.374px",
+        tighter: "-0.28px",
+      },
+      animation: {
+        "fadeIn": "fadeIn 0.25s ease-out",
+        "pulse-subtle": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      borderRadius: {
+        apple: "18px",
+        "apple-sm": "8px",
+        "apple-md": "11px",
+      },
+    },
+  },
+  plugins: [],
+};

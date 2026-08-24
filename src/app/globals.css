@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #eae8e3;
+  --foreground: #1d1d1f;
+  --canvas: #ffffff;
+  --parchment: #eae8e3;
+  --ink: #1d1d1f;
+  --ink-muted: #7a7a7a;
+  --hairline: #d8d6d0;
+  --blue: #0066cc;
+  --gold: #b5882e;
+}
+
+*, *::before, *::after, html, body, button, input, select, textarea {
+  font-family: "SF Pro TH", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Sukhumvit Set", "Noto Sans Thai", "Thonburi", system-ui, sans-serif !important;
+}
+
+body {
+  color: var(--foreground);
+  background: #eae8e3;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.012em;
+}
+
+/* Apple-style clean scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d2d2d7; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #7a7a7a; }
+
+/* Custom Cyber Dark Scrollbar for Evidence Dossier */
+.custom-dark-scrollbar::-webkit-scrollbar {
+  width: 3.5px;
+  height: 3.5px;
+}
+.custom-dark-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-dark-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(225, 29, 72, 0.35);
+  border-radius: 9999px;
+}
+.custom-dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 29, 72, 0.7);
+}
+
+/* Apple utility card */
+.apple-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+}
+
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+}
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+}
+
+/* Apple-style pill button */
+.apple-btn-primary {
+  background: #0066cc;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.374px;
+  transition: opacity 0.15s;
+}
+.apple-btn-primary:active { transform: scale(0.95); }
+
+/* Gold accent text */
+.gold-text { color: #b5882e; }
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn { animation: fadeIn 0.25s ease-out; }
+
+/* Pure Opacity Fade 0 -> 100 (No Direction / No Movement) */
+@keyframes pureFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-pureFadeIn { animation: pureFadeIn 0.25s ease-out forwards; }
+
+/* 🌟 Continuous Cyan Beam Sweep (วิ่งไปเรื่อย ๆ ทางเดียวจากซ้ายไปขวา) */
+@keyframes smoothBeamSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+.animate-smooth-beam {
+  animation: smoothBeamSweep 2.4s linear infinite;
+}
+
+/* 🌟 Gentle Breathing Inner Glow Pulse (กระพริบช้า ๆ อ่อนโยน) */
+@keyframes gentleInnerGlowPulse {
+  0%, 100% {
+    box-shadow: inset 0 0 24px rgba(56, 189, 248, 0.14), inset 0 0 8px rgba(6, 182, 212, 0.20), 0 0 25px rgba(6, 182, 212, 0.08);
+    border-color: rgba(56, 189, 248, 0.25);
+  }
+  50% {
+    box-shadow: inset 0 0 50px rgba(56, 189, 248, 0.35), inset 0 0 16px rgba(6, 182, 212, 0.40), 0 0 35px rgba(6, 182, 212, 0.18);
+    border-color: rgba(56, 189, 248, 0.55);
+  }
+}
+.animate-gentle-inner-glow {
+  animation: gentleInnerGlowPulse 4s ease-in-out infinite;
+}
+
+/* ── Cyber Red Scan / Reverse Wipe & Text Reveal Animation ── */
+@keyframes cyberRedWipe {
+  0% {
+    opacity: 0;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  15% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  25% {
+    opacity: 0;
+  }
+  38% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  48% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  88% {
+    opacity: 1;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+.animate-cyberRedWipe {
+  animation: cyberRedWipe 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ── Text Fade In 0 -> 100% (No direction, with cyber blinking/flickering as red wipe clears) ── */
+@keyframes cyberTextFlickerFade {
+  0%, 45% {
+    opacity: 0;
+  }
+  58% {
+    opacity: 0.65;
+  }
+  68% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-cyberFlickerFade {
+  animation: cyberTextFlickerFade 0.75s ease-out forwards;
+}
+
+/* ── Gentle Shimmer Wave Left-to-Right (ซ้ายไปขวา อ่อน ๆ เป็นคลื่น) ── */
+@keyframes waveLeftToRight {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+.animate-wave-ltr {
+  animation: waveLeftToRight 2.8s ease-in-out infinite;
+}
+
+/* ── Gentle Inner Hologram Breathing Glow (ขอบเรืองแสงเข้าข้างในกระพริบอ่อนโยน) ── */
+@keyframes hologramInnerGlow {
+  0%, 100% {
+    box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.12), 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-color: rgba(6, 182, 212, 0.28);
+  }
+  50% {
+    box-shadow: inset 0 0 28px rgba(6, 182, 212, 0.3), 0 8px 32px rgba(0, 0, 0, 0.6);
+    border-color: rgba(6, 182, 212, 0.55);
+  }
+}
+.animate-hologram-glow {
+  animation: hologramInnerGlow 3.5s ease-in-out infinite;
+}
+
+/* ── Gentle Infinity Breathing Pulse (กระพริบอย่างอ่อนโยน นุ่มนวล) ── */
+@keyframes infinityGentlePulse {
+  0%, 100% {
+    opacity: 0.05;
+    filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.35));
+    transform: scale(0.985);
+  }
+  50% {
+    opacity: 0.14;
+    filter: drop-shadow(0 0 50px rgba(6, 182, 212, 0.95));
+    transform: scale(1.015);
+  }
+}
+.animate-infinity-pulse {
+  animation: infinityGentlePulse 4.2s ease-in-out infinite;
+}
+
+/* ── Gentle Frame Inner Glow (ขอบและเงาด้านในกรอบกระพริบอย่างอ่อนโยน สีฟ้าพาสเทล นุ่มนวล) ── */
+@keyframes frameGentleInnerGlow {
+  0%, 100% {
+    box-shadow: inset 0 0 14px rgba(125, 211, 252, 0.04), inset 0 0 30px rgba(147, 197, 253, 0.02);
+    border-color: rgba(125, 211, 252, 0.2);
+  }
+  50% {
+    box-shadow: inset 0 0 22px rgba(125, 211, 252, 0.12), inset 0 0 45px rgba(147, 197, 253, 0.07);
+    border-color: rgba(125, 211, 252, 0.4);
+  }
+}
+.animate-frame-inner-glow {
+  animation: frameGentleInnerGlow 4s ease-in-out infinite;
+}
+
+/* ── Sci-Fi Hologram Glass Button: Radial Fade (ตรงกลางโปร่งใส 0% ค่อยๆ Fade ออกไปทึบรอบๆ) ── */
+.cyber-glass-btn {
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(7, 21, 39, 0.2) 30%, rgba(7, 21, 39, 0.8) 65%, #061426 100%);
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 2px solid #7dd3fc;
+  box-shadow: 
+    inset 0 0 14px rgba(125, 211, 252, 0.08),
+    inset 0 -6px 14px rgba(125, 211, 252, 0.16),
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(125, 211, 252, 0.22);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.cyber-glass-btn:hover {
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(125, 211, 252, 0.05) 0%, rgba(10, 30, 56, 0.3) 30%, rgba(10, 30, 56, 0.9) 65%, #081d36 100%);
+  border-color: rgba(125, 211, 252, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2.5px solid #bae6fd;
+  box-shadow: 
+    inset 0 0 18px rgba(125, 211, 252, 0.16),
+    inset 0 -8px 18px rgba(125, 211, 252, 0.28),
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(125, 211, 252, 0.38);
+}
+
+.cyber-glass-btn:active {
+  transform: scale(0.98);
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(125, 211, 252, 0.1) 0%, rgba(10, 30, 56, 0.4) 30%, rgba(10, 30, 56, 0.95) 70%, #081d36 100%);
+}
+
+/* Gold Variant for Join Team Button (ตรงกลางโปร่งใส 0% ค่อยๆ Fade ออกไปทึบสีทองรอบๆ) */
+.cyber-glass-btn-gold {
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(32, 23, 10, 0.2) 30%, rgba(32, 23, 10, 0.8) 65%, #1f1608 100%);
+  border: 1px solid rgba(245, 199, 104, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 2px solid #f5c768;
+  box-shadow: 
+    inset 0 0 14px rgba(245, 199, 104, 0.08),
+    inset 0 -6px 14px rgba(245, 199, 104, 0.16),
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(245, 199, 104, 0.22);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.cyber-glass-btn-gold:hover {
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(245, 199, 104, 0.05) 0%, rgba(42, 30, 14, 0.3) 30%, rgba(42, 30, 14, 0.9) 65%, #2a1e0d 100%);
+  border-color: rgba(245, 199, 104, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2.5px solid #fde68a;
+  box-shadow: 
+    inset 0 0 18px rgba(245, 199, 104, 0.16),
+    inset 0 -8px 18px rgba(245, 199, 104, 0.28),
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(245, 199, 104, 0.38);
+}
+
+.cyber-glass-btn-gold:active {
+  transform: scale(0.98);
+  background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(245, 199, 104, 0.1) 0%, rgba(42, 30, 14, 0.4) 30%, rgba(42, 30, 14, 0.95) 70%, #2a1e0d 100%);
+}
+
+/* ── Ambient Soft Red Fireflies Animation (เอฟเฟกต์หิ่งห้อยสีแดงอ่อนๆ ลอยละมุน) ── */
+@keyframes softFireflyFloat {
+  0% {
+    transform: translate(0, 0) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+    transform: translate(12px, -25px) scale(1.1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-14px, -60px) scale(1.25);
+  }
+  80% {
+    opacity: 0.6;
+    transform: translate(18px, -95px) scale(0.9);
+  }
+  100% {
+    transform: translate(-6px, -130px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.firefly-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 190, 205, 0.95) 0%, rgba(244, 63, 94, 0.75) 45%, rgba(225, 29, 72, 0) 80%);
+  box-shadow: 0 0 8px rgba(244, 63, 94, 0.85), 0 0 18px rgba(225, 29, 72, 0.5);
+  animation: softFireflyFloat ease-in-out infinite;
+}
+
+/* 🌟 Cyber Beam Expanding Rectangle Open & Blink Animation (บีมเปิดกว้างบนล่างพร้อมกัน + กระพริบ) */
+@keyframes cyberBeamExpandBlink {
+  0% {
+    transform: scaleY(0.02) scaleX(0.7);
+    opacity: 0;
+    filter: drop-shadow(0 0 40px #38bdf8);
+  }
+  15% {
+    transform: scaleY(0.06) scaleX(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 60px #38bdf8);
+  }
+  35% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(0.45) scaleX(1);
+  }
+  68% {
+    opacity: 0.65;
+  }
+  85% {
+    transform: scaleY(1.03) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.animate-beam-expand-blink {
+  animation: cyberBeamExpandBlink 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes beamScanlineVertical {
+  0% {
+    top: 0%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 100%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.9;
+  }
+}
+
+.animate-beam-scanline-v {
+  animation: beamScanlineVertical 2.4s linear infinite;
+}
+
+/* 🍎 iOS Spring Dropdown Notification Animation (เด้งดึ๋งลงมาจากข้างบนเหมือนแจ้งเตือนไอโฟน) */
+@keyframes iosSpringDropIn {
+  0% {
+    transform: translate3d(0, -120%, 0) scale(0.88);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(0, 10px, 0) scale(1.02);
+    opacity: 1;
+  }
+  75% {
+    transform: translate3d(0, -4px, 0) scale(0.99);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes iosSlideUpOut {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -130%, 0) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animate-ios-spring-in {
+  animation: iosSpringDropIn 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-ios-slide-out {
+  animation: iosSlideUpOut 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+
+
