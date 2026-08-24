@@ -716,10 +716,7 @@ export default function TeacherPage() {
       <div className="min-h-screen bg-[#f5f5f7] flex flex-col justify-center items-center p-4 selection:bg-[#0066cc]/20 font-sans">
         <div className="w-full max-w-sm sm:max-w-md bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-8 shadow-sm space-y-6 animate-fadeIn">
           {/* Header & Logo */}
-          <div className="text-center space-y-2">
-            <div className="w-14 h-14 mx-auto rounded-2xl bg-[#1d1d1f] text-white flex items-center justify-center shadow-md mb-3">
-              <ShieldCheck className="w-7 h-7 text-[#f5c768]" />
-            </div>
+          <div className="text-center space-y-2 pt-2">
             <h1 className="text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
               เข้าสู่ระบบผู้คุมเกม
             </h1>
@@ -1804,9 +1801,6 @@ export default function TeacherPage() {
       {/* Top Header Bar with Logout */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-[#e0e0e0] px-4 sm:px-8 py-3 flex items-center justify-between shadow-2xs">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-xl bg-[#1d1d1f] text-white flex items-center justify-center shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-[#f5c768]" />
-          </div>
           <div>
             <h1 className="font-bold text-sm sm:text-base text-[#1d1d1f] leading-tight">
               Curator Teacher Dashboard
