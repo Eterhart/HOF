@@ -50,6 +50,7 @@ import {
   Unlock,
   Lock,
   LogOut,
+  Loader2,
 } from 'lucide-react';
 
 const PHASE_LABEL: Record<GamePhase, string> = {
@@ -145,6 +146,10 @@ export default function TeacherPage() {
   const [loginPassword, setLoginPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
     const auth = localStorage.getItem('curator_teacher_auth');
@@ -155,14 +160,40 @@ export default function TeacherPage() {
     }
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!loginUsername.trim() || !loginPassword) return;
+    setLoginError(null);
+    setIsLoggingIn(true);
+
+    // Small natural delay for smooth auth feel
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    setIsLoggingIn(false);
+
     if (loginUsername.trim() === 'SSPHT' && loginPassword === 'SSPHT') {
-      setIsAuthenticated(true);
+      setIsSuccess(true);
+      setIsFadingOut(false);
       localStorage.setItem('curator_teacher_auth', 'true');
-      setLoginError(null);
+
+      // รอให้ตัวอักษร Welcome ลอยขึ้น (~1.2s) แล้วค่อยคลายความเบลอ
+      setTimeout(() => {
+        setIsFadingOut(true);
+      }, 1200);
+
+      // ปิด Login modal และเข้าสู่ Dashboard เมื่อฉากหลังคมชัด (~1.6s)
+      setTimeout(() => {
+        setIsAuthenticated(true);
+        setIsSuccess(false);
+        setIsFadingOut(false);
+        setLoginUsername('');
+        setLoginPassword('');
+        setLoginError(null);
+        setIsShaking(false);
+      }, 1600);
     } else {
-      setLoginError('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง (Username / Password incorrect)');
+      setLoginError('ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง (SSPHT)');
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 500);
     }
   };
 
@@ -172,6 +203,8 @@ export default function TeacherPage() {
     setLoginUsername('');
     setLoginPassword('');
     setLoginError(null);
+    setIsSuccess(false);
+    setIsFadingOut(false);
   };
 
   const [sessions, setSessions] = useState<SessionSummary[]>([]);
@@ -710,100 +743,147 @@ export default function TeacherPage() {
     );
   }
 
-  // ─── Login Screen (SSPHT / SSPHT) ────────────────────────────────────────────
+  // ─── Login Screen (macOS / Apple Style UI) ──────────────────────────────────
   if (isAuthenticated === false) {
     return (
-      <div className="min-h-screen bg-[#f5f5f7] flex flex-col justify-center items-center p-4 selection:bg-[#0066cc]/20 font-sans">
-        <div className="w-full max-w-sm sm:max-w-md bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-8 shadow-sm space-y-6 animate-fadeIn">
-          {/* Header & Logo */}
-          <div className="text-center space-y-2 pt-2">
-            <h1 className="text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight">
-              เข้าสู่ระบบผู้คุมเกม
-            </h1>
-            <p className="text-xs sm:text-sm text-[#7a7a7a]">
-              Game Master Control Panel (สำหรับคุณครู)
-            </p>
-          </div>
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center p-4 select-none transition-all duration-500 ease-out bg-[#f5f5f7] ${
+          isFadingOut
+            ? 'bg-opacity-0 backdrop-blur-none opacity-0 pointer-events-none'
+            : 'opacity-100'
+        }`}
+      >
+        {/* Modal Container */}
+        <div className="relative max-w-[440px] w-full cursor-default">
+          {/* Floating Welcome Message Layer */}
+          {isSuccess && (
+            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+              <h2 className="text-3xl sm:text-4xl text-[#1D1D1F] font-light tracking-wide animate-welcome-sequence select-none">
+                Welcome
+              </h2>
+            </div>
+          )}
 
-          {/* Login Form */}
-          <form onSubmit={handleLogin} className="space-y-4">
-            {loginError && (
-              <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2 animate-in fade-in">
-                <AlertCircle className="w-4 h-4 shrink-0" />
-                <span>{loginError}</span>
-              </div>
-            )}
-
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#1d1d1f] block">
-                ชื่อผู้ใช้ (Username)
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#7a7a7a]">
-                  <User className="w-4 h-4" />
-                </div>
-                <input
-                  type="text"
-                  value={loginUsername}
-                  onChange={(e) => {
-                    setLoginUsername(e.target.value);
-                    if (loginError) setLoginError(null);
-                  }}
-                  placeholder="กรอก Username"
-                  required
-                  autoFocus
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#e0e0e0] focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none text-sm text-[#1d1d1f] bg-white transition"
-                />
-              </div>
+          {/* Modal Card Content (ค่อยๆ จางลงโดยไม่เปลี่ยนรูปทรง) */}
+          <div
+            className={`bg-[#F8F8FA] text-[#1D1D1F] border border-black/[0.12] shadow-[0_24px_64px_rgba(0,0,0,0.18),0_4px_12px_rgba(0,0,0,0.04)] rounded-[22px] w-full overflow-hidden transition-all duration-400 ease-out text-center ${
+              isSuccess ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'
+            }`}
+          >
+            {/* macOS Header Bar */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-black/[0.08] bg-white/70 backdrop-blur-md">
+              <h3 className="font-bold text-[15.5px] text-[#1D1D1F] tracking-tight">
+                Sign In
+              </h3>
+              <button
+                type="button"
+                onClick={() => router.push('/')}
+                className="px-3 py-1 bg-white hover:bg-[#F2F2F7] active:bg-[#E5E5EA] border border-black/15 rounded-[7px] text-xs font-normal text-[#1D1D1F] shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all cursor-pointer"
+              >
+                Cancel
+              </button>
             </div>
 
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#1d1d1f] block">
-                รหัสผ่าน (Password)
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#7a7a7a]">
-                  <Lock className="w-4 h-4" />
+            {/* Form Body */}
+            <form onSubmit={handleLogin} autoComplete="on" className="p-6 sm:p-7 space-y-5">
+              {/* Apple Blue Profile Silhouette Icon */}
+              <div className="flex justify-center pt-1 pb-0.5">
+                <div className="w-12 h-12 rounded-full bg-[#0071E3]/12 flex items-center justify-center text-[#0071E3]">
+                  <svg className="w-6.5 h-6.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                  </svg>
                 </div>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={loginPassword}
-                  onChange={(e) => {
-                    setLoginPassword(e.target.value);
-                    if (loginError) setLoginError(null);
-                  }}
-                  placeholder="กรอก Password"
-                  required
-                  className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#e0e0e0] focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none text-sm text-[#1d1d1f] bg-white transition"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#7a7a7a] hover:text-[#1d1d1f] cursor-pointer"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
               </div>
-            </div>
 
-            <button
-              type="submit"
-              className="w-full py-3 px-4 rounded-full bg-[#0066cc] hover:bg-[#0071e3] text-white font-bold text-sm tracking-wide transition active:scale-95 shadow-sm cursor-pointer mt-2"
-            >
-              เข้าสู่ระบบ
-            </button>
-          </form>
+              {/* Title & Subtitle */}
+              <div className="space-y-1">
+                <h4 className="text-[17px] font-bold text-[#1D1D1F] tracking-tight">
+                  Login with Game Master ID
+                </h4>
+                <p className="text-xs text-[#86868B] max-w-[300px] mx-auto leading-relaxed">
+                  กรอกชื่อผู้ใช้และรหัสผ่าน SSPHT เพื่อเข้าสู่แผงควบคุมการสอน
+                </p>
+              </div>
 
-          {/* Back to Home */}
-          <div className="pt-2 border-t border-[#e0e0e0] text-center">
-            <button
-              type="button"
-              onClick={() => router.push('/')}
-              className="text-xs font-medium text-[#7a7a7a] hover:text-[#1d1d1f] transition inline-flex items-center gap-1.5 cursor-pointer"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>กลับสู่หน้านักเรียน (Student App)</span>
-            </button>
+              {/* Error Alert */}
+              {loginError && (
+                <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2 text-left animate-in fade-in">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>{loginError}</span>
+                </div>
+              )}
+
+              {/* Input Fields */}
+              <div className={`space-y-3 text-left max-w-[340px] mx-auto w-full transition-all ${isShaking ? 'animate-shake' : ''}`}>
+                <div className="space-y-1">
+                  <label className="text-xs font-semibold text-[#1D1D1F] block">
+                    Username
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#86868B]">
+                      <User className="w-4 h-4" />
+                    </div>
+                    <input
+                      type="text"
+                      value={loginUsername}
+                      onChange={(e) => {
+                        setLoginUsername(e.target.value);
+                        if (loginError) setLoginError(null);
+                      }}
+                      placeholder="Username"
+                      required
+                      autoFocus
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-black/15 bg-white text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3] focus:ring-2 focus:ring-[#0071E3]/20 transition"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs font-semibold text-[#1D1D1F] block">
+                    Password
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#86868B]">
+                      <Lock className="w-4 h-4" />
+                    </div>
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      value={loginPassword}
+                      onChange={(e) => {
+                        setLoginPassword(e.target.value);
+                        if (loginError) setLoginError(null);
+                      }}
+                      placeholder="Password"
+                      required
+                      className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-black/15 bg-white text-sm text-[#1D1D1F] outline-none focus:border-[#0071E3] focus:ring-2 focus:ring-[#0071E3]/20 transition"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#86868B] hover:text-[#1D1D1F] cursor-pointer"
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isLoggingIn || !loginUsername.trim() || !loginPassword}
+                className="w-full max-w-[340px] mx-auto py-2.5 px-4 rounded-full bg-[#0071E3] hover:bg-[#0077ED] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none text-white font-medium text-sm tracking-tight transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer mt-3"
+              >
+                {isLoggingIn ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>กำลังเข้าสู่ระบบ...</span>
+                  </>
+                ) : (
+                  <span>Sign In</span>
+                )}
+              </button>
+            </form>
           </div>
         </div>
       </div>
