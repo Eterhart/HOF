@@ -556,10 +556,10 @@ export default function TeacherPage() {
 
   const renderQrModal = () => {
     if (!showQrModal) return null;
-    const joinUrl =
-      typeof window !== 'undefined'
-        ? `${window.location.origin}/?session=${showQrModal.sessionCode}`
-        : `/?session=${showQrModal.sessionCode}`;
+    const isArchive = showQrModal.sessionCode === 'ARCHIVE';
+    const joinUrl = isArchive
+      ? (typeof window !== 'undefined' ? `${window.location.origin}/archive` : '/archive')
+      : (typeof window !== 'undefined' ? `${window.location.origin}/?session=${showQrModal.sessionCode}` : `/?session=${showQrModal.sessionCode}`);
 
     return (
       <div
@@ -609,27 +609,35 @@ export default function TeacherPage() {
             />
           </div>
 
-          <div className="space-y-2">
-            <span className="text-xs sm:text-sm uppercase tracking-widest text-[#7a7a7a] font-semibold">
-              รหัสห้อง (Session PIN)
-            </span>
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              {showQrModal.sessionCode.split('').map((char, i) => (
-                <div
-                  key={i}
-                  className="w-12 h-14 sm:w-16 sm:h-20 bg-white border border-[#e0e0e0] rounded-2xl flex items-center justify-center text-2xl sm:text-4xl font-mono font-black text-[#1d1d1f] shadow-sm"
-                >
-                  {char}
-                </div>
-              ))}
+          {!isArchive && (
+            <div className="space-y-2">
+              <span className="text-xs sm:text-sm uppercase tracking-widest text-[#7a7a7a] font-semibold">
+                รหัสห้อง (Session PIN)
+              </span>
+              <div className="flex items-center justify-center gap-2 sm:gap-3">
+                {showQrModal.sessionCode.split('').map((char, i) => (
+                  <div
+                    key={i}
+                    className="w-12 h-14 sm:w-16 sm:h-20 bg-white border border-[#e0e0e0] rounded-2xl flex items-center justify-center text-2xl sm:text-4xl font-mono font-black text-[#1d1d1f] shadow-sm"
+                  >
+                    {char}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Bottom Banner */}
         <div className="w-full max-w-3xl mx-auto text-center shrink-0 cursor-default" onClick={(e) => e.stopPropagation()}>
           <p className="text-xs sm:text-sm text-[#7a7a7a]">
-            เปิดกล้องโทรศัพท์มือถือ หรือเข้าเว็บ <strong className="text-[#0066cc] font-mono">{typeof window !== 'undefined' ? window.location.host : '...'}</strong> แล้วใส่รหัสห้อง
+            {isArchive
+              ? 'เปิดกล้องโทรศัพท์มือถือเพื่อสแกนเข้าสู่หน้าพิพิธภัณฑ์และคลังนิทรรศการประวัติศาสตร์'
+              : (
+                <>
+                  เปิดกล้องโทรศัพท์มือถือ หรือเข้าเว็บ <strong className="text-[#0066cc] font-mono">{typeof window !== 'undefined' ? window.location.host : '...'}</strong> แล้วใส่รหัสห้อง
+                </>
+              )}
           </p>
         </div>
       </div>
@@ -1876,7 +1884,7 @@ export default function TeacherPage() {
         <div className="flex items-center gap-3">
           <div>
             <h1 className="font-bold text-sm sm:text-base text-[#1d1d1f] leading-tight">
-              Curator Teacher Dashboard
+              Teacher Dashboard
             </h1>
             <span className="text-[10px] text-[#7a7a7a]">
               Game Master Control Panel
@@ -1890,7 +1898,7 @@ export default function TeacherPage() {
           </span>
           <button
             onClick={handleLogout}
-            className="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded-full text-xs font-semibold active:scale-95 transition flex items-center gap-1.5 cursor-pointer"
+            className="px-2.5 py-1 text-[#7a7a7a] hover:text-[#1d1d1f] hover:bg-[#f5f5f7] rounded-lg text-xs font-medium active:scale-95 transition flex items-center gap-1.5 cursor-pointer"
             title="ออกจากระบบ"
           >
             <LogOut className="w-3.5 h-3.5" />
@@ -1948,24 +1956,15 @@ export default function TeacherPage() {
           </form>
         </div>
 
-        {/* 🌟 2. Header & Link to All Museum Archive */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-          <div>
-            <h3 className="text-base font-bold text-[#1d1d1f] flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#0066cc]" />
-              <span>จำนวน Session ({sessions.length})</span>
-            </h3>
-            <p className="text-xs text-[#7a7a7a]">
-              เลือก Session เพื่อเปิดหน้าควบคุมเกมและจัดการกิจกรรมในชั้นเรียน
-            </p>
-          </div>
-          <button
-            onClick={() => setArchiveTarget({ sessionCode: '' })}
-            className="inline-flex items-center gap-1.5 text-xs text-[#0066cc] hover:underline font-semibold cursor-pointer"
-          >
-            <Landmark className="w-3.5 h-3.5" />
-            <span>ดูพิพิธภัณฑ์ที่เคยจัดแสดงทั้งหมด</span>
-          </button>
+        {/* 🌟 2. Header */}
+        <div className="pt-2">
+          <h3 className="text-base font-bold text-[#1d1d1f] flex items-center gap-2">
+            <Clock className="w-4 h-4 text-[#0066cc]" />
+            <span>จำนวน Session ({sessions.length})</span>
+          </h3>
+          <p className="text-xs text-[#7a7a7a]">
+            เลือก Session เพื่อเปิดหน้าควบคุมเกมและจัดการกิจกรรมในชั้นเรียน
+          </p>
         </div>
 
         {/* 🌟 3. Single-Column Session Row List (เรียงกันทีละบรรทัด) */}
@@ -2031,6 +2030,88 @@ export default function TeacherPage() {
             ))}
           </div>
         )}
+
+        {/* 🌟 4. Museum & Archive Exhibition Section (หมวดพิพิธภัณฑ์ ทั้งปุ่ม และ QR Code) */}
+        <div className="bg-white border border-[#e0e0e0] rounded-[24px] p-6 sm:p-8 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-3.5 max-w-xl">
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center shrink-0 shadow-2xs">
+              <Landmark className="w-6 h-6 text-amber-600" />
+            </div>
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold">
+                <span>🏛️ คลังนิทรรศการประวัติศาสตร์</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-[#1d1d1f] tracking-tight">
+                พิพิธภัณฑ์ประวัติศาสตร์ (Museum Archive)
+              </h3>
+              <p className="text-xs text-[#7a7a7a] leading-relaxed">
+                เข้าชมนิทรรศการเสมือนจริงทั้ง 8 ห้องจัดแสดง หรือให้นักเรียนสแกน QR Code เพื่อเปิดศึกษาข้อมูลรูปปั้นและหลักฐานย้อนหลัง
+              </p>
+              <div className="pt-2 flex items-center gap-2.5 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => setArchiveTarget({ sessionCode: '' })}
+                  className="px-5 py-2.5 bg-[#1d1d1f] hover:bg-black text-white rounded-full text-xs sm:text-sm font-semibold active:scale-95 transition shadow-xs flex items-center gap-2 cursor-pointer"
+                >
+                  <Landmark className="w-4 h-4 text-amber-300" />
+                  <span>เปิดพิพิธภัณฑ์แบบเต็มจอ</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowQrModal({ sessionCode: 'ARCHIVE', sessionName: '🏛️ พิพิธภัณฑ์และคลังนิทรรศการประวัติศาสตร์' });
+                  }}
+                  className="px-4 py-2.5 bg-blue-50 hover:bg-blue-100 text-[#0066cc] border border-blue-200 rounded-full text-xs sm:text-sm font-semibold active:scale-95 transition flex items-center gap-2 cursor-pointer"
+                >
+                  <Maximize2 className="w-4 h-4" />
+                  <span>ฉาย QR Code ขึ้นจอ</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Mini QR Box */}
+          <div className="bg-[#f5f5f7] border border-[#e0e0e0] rounded-2xl p-4 flex flex-row sm:flex-col items-center gap-4 text-left sm:text-center shrink-0 w-full md:w-auto">
+            <div className="p-2 bg-white rounded-xl border border-[#e0e0e0] shadow-2xs shrink-0">
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(typeof window !== 'undefined' ? `${window.location.origin}/archive` : 'https://localhost:3000/archive')}`}
+                alt="QR Code พิพิธภัณฑ์"
+                className="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-lg"
+              />
+            </div>
+            <div className="space-y-2 flex-1 sm:flex-initial">
+              <div>
+                <h6 className="text-xs font-bold text-[#1d1d1f]">QR Code พิพิธภัณฑ์</h6>
+                <p className="text-[11px] text-[#7a7a7a]">สแกนเพื่อเปิดคลังบนมือถือ</p>
+              </div>
+              <div className="flex items-center justify-start sm:justify-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const url = typeof window !== 'undefined' ? `${window.location.origin}/archive` : '/archive';
+                    navigator.clipboard.writeText(url);
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2500);
+                  }}
+                  className="px-3 py-1.5 bg-white hover:bg-zinc-100 border border-[#e0e0e0] text-[#1d1d1f] rounded-lg text-xs font-medium active:scale-95 transition flex items-center gap-1.5 cursor-pointer shadow-2xs"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-[#7a7a7a]" />}
+                  <span>{copied ? 'คัดลอกแล้ว!' : 'คัดลอกลิงก์'}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowQrModal({ sessionCode: 'ARCHIVE', sessionName: '🏛️ พิพิธภัณฑ์และคลังนิทรรศการประวัติศาสตร์' });
+                  }}
+                  className="p-1.5 bg-white hover:bg-zinc-100 border border-[#e0e0e0] text-[#0066cc] rounded-lg text-xs font-medium active:scale-95 transition cursor-pointer shadow-2xs"
+                  title="ขยาย QR Code ฉายขึ้นจอ"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       {/* Create Session Modal */}
