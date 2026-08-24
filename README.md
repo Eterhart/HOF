@@ -1,5 +1,5 @@
-# HOF (The Hall of Fame)
-### เกมจำลองบทบาทภัณฑารักษ์พิพิธภัณฑ์ประวัติศาสตร์ (Classroom History Simulator)
+# The Hall of Fame
+### เกมจำลองบทบาทภัณฑารักษ์พิพิธภัณฑ์ประวัติศาสตร์
 
 <p align="left">
   <img src="https://img.shields.io/badge/Next.js-14.2-black?style=flat-square&logo=next.js" alt="Next.js" />
