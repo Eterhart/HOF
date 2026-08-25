@@ -10,9 +10,9 @@ export interface StoryPlacardItem {
   recordDate: string;
   location: string;
   image: string;
+  placardImage: string;
   iconFile?: string;
   summary: string;
-  qrCodeUrl?: string;
   price: number;
 }
 
@@ -28,9 +28,9 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ย่านแฮงจู (Haengju) ประเทศเกาหลีใต้",
     "iconFile": "ภาพถ่ายเด็กน้อยชาวเกาหลีขี่หลังกันโดยมีรถถังอยู่เบื้องหลัง.PNG",
     "summary": "ภาพถ่ายประวัติศาสตร์บันทึกเมื่อ 9 มิ.ย. 1951 ณ ย่านแฮงจู ประเทศเกาหลีใต้ แสดงภาพเด็กหญิงชาวเกาหลีวัย 9 ขวบแบกน้องชายวัย 3 ขวบไว้บนหลังอย่างอดทน โดยมีรถถังเอ็ม 46 แพตตัน (M46 Patton) ของสหรัฐฯ จอดอยู่เบื้องหลัง สะท้อนความสูญเสียและความไร้เดียงสาของเด็กท่ามกลางภัยสงคราม",
-    "qrCodeUrl": "https://www.youtube.com/user/unitednations",
     "price": 500,
-    "image": "/stories/story_1.png"
+    "image": "/stories/story_1.png",
+    "placardImage": "/stories/placards/placard_1.png"
   },
   {
     "id": 2,
@@ -43,27 +43,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "อ่างเก็บน้ำโชซิน ทางตะวันออกเฉียงเหนือของเกาหลีเหนือ",
     "iconFile": "Chosin Reservoir.PNG",
     "summary": "สมรภูมิการรบครั้งสำคัญและหนาวเหน็บที่สุดในสงครามเกาหลี ณ อ่างเก็บน้ำโชซิน เมื่อกองทัพสหประชาชาติต้องเผชิญหน้ากับการโอบล้อมของกองทัพอาสาสมัครประชาชนจีนท่ามกลางสภาพอากาศติดลบเกือบ 40 องศาเซลเซียส จนเกิดการตีฝ่าวงล้อมครั้งประวัติศาสตร์",
-    "qrCodeUrl": "https://www.britannica.com/event/Korean-War",
     "price": 500,
-    "image": "/stories/story_2.png"
+    "image": "/stories/story_2.png",
+    "placardImage": "/stories/placards/placard_2.png"
   },
   {
     "id": 3,
-    "pageNumber": 25,
-    "titleTh": "แผนที่สงครามเกาหลี 4 ระยะ",
-    "titleEn": "The Korean War in Four Maps (1950–1953)",
-    "categoryId": "CAT-1",
-    "categoryNameTh": "สงครามเกาหลี",
-    "recordDate": "25 มิ.ย. 1950 – 27 ก.ค. 1953",
-    "location": "คาบสมุทรเกาหลีและเส้นขนานที่ 38",
-    "iconFile": "สงครามเกาหลี.PNG",
-    "summary": "แผนที่ยุทธศาสตร์แสดงการเคลื่อนกำลัง 4 ขั้นตอนสำคัญในสงครามเกาหลี: 1. การบุกข้ามเส้นขนานที่ 38 ของเกาหลีเหนือ (25 มิ.ย. 1950), 2. การถอยร่นสู่แนวป้องกันปูซาน (14 ก.ย. 1950), 3. การยกพลขึ้นบกที่อินชอนและการรุกสู่แม่น้ำยาลู (25 พ.ย. 1950), และ 4. การตรึงแนวยุติสงครามและการลงนามสงบศึก (27 ก.ค. 1953)",
-    "qrCodeUrl": "https://youtu.be/KCe-ODOEoYM?si=mAD8UseKD6Gbc1AZ",
-    "price": 500,
-    "image": "/stories/story_3.png"
-  },
-  {
-    "id": 4,
     "pageNumber": 3,
     "titleTh": "เฮลิคอปเตอร์กองทัพสหรัฐฯ ยิงคุ้มกันทหารเวียดนามใต้",
     "titleEn": "Hovering U.S. Army helicopters covering South Vietnamese ground troops",
@@ -73,12 +58,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ห่างจากเมืองเตย์นินห์ไปทางเหนือ 18 ไมล์ ใกล้ชายแดนกัมพูชา",
     "iconFile": "Hovering U.S. Army helicopters pour machine gun fire into tree line to cover the advance of South Vietnamese ground troops.PNG",
     "summary": "ภาพถ่ายยุทธวิธีเฮลิคอปเตอร์โจมตีของสหรัฐฯ ระดมยิงปืนกลใส่แนวป่าเพื่อคุ้มกันการเคลื่อนพลของทหารราบเวียดนามใต้ สะท้อนการประยุกต์ใช้ยุทธวิธีเคลื่อนที่ทางอากาศ (Airmobile) และการขยายขอบเขตสงครามสู่เขตป่าดงดิบในเวียดนามใต้",
-    "qrCodeUrl": "https://www.youtube.com/user/TheAtlantic",
     "price": 500,
-    "image": "/stories/story_4.png"
+    "image": "/stories/story_3.png",
+    "placardImage": "/stories/placards/placard_3.png"
   },
   {
-    "id": 5,
+    "id": 4,
     "pageNumber": 4,
     "titleTh": "หลักการทรูแมน",
     "titleEn": "The Truman Doctrine, 1947",
@@ -88,27 +73,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "สภาคองเกรส กรุงวอชิงตัน ดี.ซี. สหรัฐอเมริกา",
     "iconFile": "หลักการทรูแมน.PNG",
     "summary": "แถลงการณ์ประวัติศาสตร์ของประธานาธิบดี แฮร์รี เอส. ทรูแมน ที่ประกาศว่าสหรัฐฯ จะให้การสนับสนุนช่วยเหลือประเทศที่เผชิญกับการคุกคามของลัทธิเผด็จการคอมมิวนิสต์ ถือเป็นจุดเริ่มต้นของนโยบายสกัดกั้น (Containment) และรากฐานของสงครามเย็นในเอเชีย",
-    "qrCodeUrl": "https://history.state.gov/milestones/1945-1952/truman-doctrine",
     "price": 500,
-    "image": "/stories/story_5.png"
+    "image": "/stories/story_4.png",
+    "placardImage": "/stories/placards/placard_4.png"
   },
   {
-    "id": 6,
-    "pageNumber": 24,
-    "titleTh": "แผนที่ยุทธศาสตร์สงครามเวียดนาม",
-    "titleEn": "The Vietnam War Strategic Map 1974",
-    "categoryId": "CAT-2",
-    "categoryNameTh": "สงครามเวียดนาม",
-    "recordDate": "1 มกราคม ค.ศ. 1974 (พ.ศ. 2517)",
-    "location": "ภูมิภาคอินโดจีน (เวียดนามเหนือ-ใต้ ลาว และกัมพูชา)",
-    "iconFile": "แผนที่ช่วงสงครามเวียดนาม.PNG",
-    "summary": "แผนที่แสดงโครงสร้างการแบ่งแยกเวียดนามเหนือ (เมืองหลวงฮานอย) และเวียดนามใต้ (เมืองหลวงไซง่อน) พันธมิตรฝ่ายเสรีนิยมและค่ายคอมมิวนิสต์ เส้นทางลำเลียงโฮจิมินห์ และฐานปฏิบัติการทางทหารในภูมิภาคอินโดจีน",
-    "qrCodeUrl": "https://youtu.be/A0LRLAe_HRc?si=XaYUeR-LVX8hF0U3",
-    "price": 500,
-    "image": "/stories/story_6.png"
-  },
-  {
-    "id": 7,
+    "id": 5,
     "pageNumber": 5,
     "titleTh": "ประธานาธิบดี จอห์น เอฟ. เคนเนดี กับ ซูลฟิการ์ อาลี บุตโต",
     "titleEn": "President John F. Kennedy with Foreign Minister Zulfikar Ali Bhutto",
@@ -118,12 +88,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ห้องทำงานรูปไข่ ทำเนียบขาว กรุงวอชิงตัน ดี.ซี.",
     "iconFile": "President John F. Kennedy with Foreign Minister of Pakistan, Zulfikar Ali Bhutto..PNG",
     "summary": "การเจรจาทางการทูตระหว่างผู้นำสหรัฐฯ และรัฐมนตรีต่างประเทศปากีสถาน ณ ห้องทำงานรูปไข่ เพื่อหารือเกี่ยวกับเสถียรภาพและความมั่นคงในเอเชียใต้และดุลอำนาจระหว่างประเทศหลังวิกฤตการณ์ขีปนาวุธคิวบา",
-    "qrCodeUrl": "https://www.silpa-mag.com/history/article_87671",
     "price": 500,
-    "image": "/stories/story_7.png"
+    "image": "/stories/story_5.png",
+    "placardImage": "/stories/placards/placard_5.png"
   },
   {
-    "id": 8,
+    "id": 6,
     "pageNumber": 6,
     "titleTh": "ภาพของขีปนาวุธโซเวียต R-12 Dvina",
     "titleEn": "Soviet R-12 Dvina Medium-Range Ballistic Missile",
@@ -133,27 +103,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "จัตุรัสแดง กรุงมอสโก สหภาพโซเวียต",
     "iconFile": "ภาพของ ขีปนาวุธโซเวียต R-12 Dvina.PNG",
     "summary": "ขีปนาวุธทิ้งตัวพิสัยปานกลาง R-12 Dvina (รหัส NATO: SS-4 Sandal) ติดหัวรบนิวเคลียร์ ซึ่งถูกนำไปติดตั้งอย่างลับๆ บนเกาะคิวบาในปฏิบัติการอนาดีร์ (Operation Anadyr) จนนำไปสู่วิกฤตการณ์นิวเคลียร์ 13 วันที่ตึงเครียดที่สุดในประวัติศาสตร์มนุษยชาติ",
-    "qrCodeUrl": "https://www.blockdit.com/posts/608e43fdd75cb30c4218907e",
     "price": 500,
-    "image": "/stories/story_8.png"
+    "image": "/stories/story_6.png",
+    "placardImage": "/stories/placards/placard_6.png"
   },
   {
-    "id": 9,
-    "pageNumber": 26,
-    "titleTh": "แผนที่วิกฤตการณ์ขีปนาวุธคิวบา",
-    "titleEn": "Cuban Missile Crisis Strategic Range Map (1962)",
-    "categoryId": "CAT-3",
-    "categoryNameTh": "วิกฤตการณ์ขีปนาวุธคิวบา",
-    "recordDate": "ตุลาคม ค.ศ. 1962 (พ.ศ. 2505)",
-    "location": "อ่าวเม็กซิโก ทะเลแคริบเบียน และทวีปอเมริกาเหนือ",
-    "iconFile": "แผนที่วิกฤตการณ์ขีปนาวุธคิวบา.PNG",
-    "summary": "แผนที่เอกสารลับสุดยอดแสดงรัศมีการยิงของฐานปล่อยขีปนาวุธโซเวียตจากเมืองซานคริสโตบัลในคิวบา ครอบคลุมรัศมี 1,020 ไมล์ทะเล ซึ่งสามารถโจมตีกรุงวอชิงตัน ดี.ซี. และเมืองสำคัญส่วนใหญ่ของสหรัฐฯ ได้ภายในเวลาไม่กี่นาที",
-    "qrCodeUrl": "https://www.youtube.com/watch?v=GlwRceLadzk",
-    "price": 500,
-    "image": "/stories/story_9.png"
-  },
-  {
-    "id": 10,
+    "id": 7,
     "pageNumber": 7,
     "titleTh": "ทหารพรานและกองกำลังพิทักษ์ชายแดนเยอรมนีตะวันออก",
     "titleEn": "East German Border Troops & Border Guards at Brandenburg Gate",
@@ -163,12 +118,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ประตูบรันเดินบวร์ค กรุงเบอร์ลิน ประเทศเยอรมนี",
     "iconFile": "ทหารพรานและกองกำลังพิทักษ์ชายแดนของเยอรมนีตะวันออก.PNG",
     "summary": "ภาพประวัติศาสตร์วันรวมชาติเยอรมนี (German Reunification Day) เมื่อกองกำลังพิทักษ์พรมแดนเยอรมนีตะวันออกและทหารเยอรมนีตะวันตกยืนร่วมกัน ณ ประตูบรันเดินบวร์ค สิ้นสุดยุคการแบ่งแยกประเทศกว่า 4 ทศวรรษ",
-    "qrCodeUrl": "https://www.iwm.org.uk/history/cold-war/germany/berlin-wall/fall-in-photos",
     "price": 500,
-    "image": "/stories/story_10.png"
+    "image": "/stories/story_7.png",
+    "placardImage": "/stories/placards/placard_7.png"
   },
   {
-    "id": 11,
+    "id": 8,
     "pageNumber": 8,
     "titleTh": "กำแพงเบอร์ลิน",
     "titleEn": "The Berlin Wall (1961–1989)",
@@ -178,12 +133,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ย่านครอยซ์แบร์ค (Kreuzberg) กรุงเบอร์ลิน ประเทศเยอรมนี",
     "iconFile": "กำแพงเบอร์ลิน.PNG",
     "summary": "ภาพแนวกำแพงคอนกรีตสูง 3.6 เมตรพร้อมกราฟฟิตี้สะท้อนสัญลักษณ์การต่อสู้เพื่อเสรีภาพ กำแพงเบอร์ลินถูกสร้างขึ้นในปี 1961 เพื่อสกัดกั้นการอพยพของผู้คนจากเยอรมนีตะวันออกสู่ตะวันตก และกลายเป็นสัญลักษณ์ที่ชัดเจนที่สุดของม่านเหล็กในยุโรป",
-    "qrCodeUrl": "https://www.pbs.org/wgbh/pages/frontline/tehranbureau/2010/02/from-berlin-wall-to-firewall.html",
     "price": 500,
-    "image": "/stories/story_11.png"
+    "image": "/stories/story_8.png",
+    "placardImage": "/stories/placards/placard_8.png"
   },
   {
-    "id": 12,
+    "id": 9,
     "pageNumber": 9,
     "titleTh": "แผนที่แสดงการแบ่งเขตยึดครองกรุงเบอร์ลิน",
     "titleEn": "Berlin Sectors Occupation Map (1961)",
@@ -193,12 +148,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ศูนย์นิทรรศการ Black Box Cold War กรุงเบอร์ลิน ประเทศเยอรมนี",
     "iconFile": "แผนที่แสดงการแบ่งเขตยึดครองกรุงเบอร์ลิน Berlin Sectors Map.PNG",
     "summary": "แผนที่แสดงการแบ่งการปกครองกรุงเบอร์ลินออกเป็น 4 เขตยึดครองโดยมหาอำนาจผู้ชนะสงครามโลกครั้งที่ 2 ได้แก่ เขตสหรัฐฯ, สหราชอาณาจักร, ฝรั่งเศส (เบอร์ลินตะวันตก) และเขตสหภาพโซเวียต (เบอร์ลินตะวันออก)",
-    "qrCodeUrl": "https://www.britannica.com/place/Germany/Formation-of-the-German-Democratic-Republic",
     "price": 500,
-    "image": "/stories/story_12.png"
+    "image": "/stories/story_9.png",
+    "placardImage": "/stories/placards/placard_9.png"
   },
   {
-    "id": 13,
+    "id": 10,
     "pageNumber": 10,
     "titleTh": "การพังทลายของกำแพงเบอร์ลิน",
     "titleEn": "Fall of the Berlin Wall (November 1989)",
@@ -208,12 +163,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ประตูบรันเดินบวร์ค กรุงเบอร์ลิน ประเทศเยอรมนี",
     "iconFile": "การทลายกำแพงเบอร์ลิน.PNG",
     "summary": "ภาพเหตุการณ์ประวัติศาสตร์เมื่อประชาชนชาวเบอร์ลินตะวันออกและตะวันตกหลายหมื่นคนร่วมกันปีนขึ้นไปเฉลิมฉลองและทุบทำลายแนวกำแพงเบอร์ลินในค่ำคืนวันที่ 9 พ.ย. 1989 ถือเป็นจุดเปลี่ยนสำคัญสู่การล่มสลายของค่ายคอมมิวนิสต์และการสิ้นสุดสงครามเย็น",
-    "qrCodeUrl": "https://www.britannica.com/place/Germany/The-era-of-partition",
     "price": 500,
-    "image": "/stories/story_13.png"
+    "image": "/stories/story_10.png",
+    "placardImage": "/stories/placards/placard_10.png"
   },
   {
-    "id": 14,
+    "id": 11,
     "pageNumber": 11,
     "titleTh": "กฎบัตรสหประชาชาติ",
     "titleEn": "Charter of the United Nations",
@@ -223,12 +178,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ซานฟรานซิสโก รัฐแคลิฟอร์เนีย ประเทศสหรัฐอเมริกา",
     "iconFile": "กฎบัตรสหประชาชาติ.PNG",
     "summary": "สนธิสัญญาก่อตั้งองค์การสหประชาชาติที่กำหนดโครงสร้าง อำนาจหน้าที่ และหลักการพื้นฐานของความสัมพันธ์ระหว่างประเทศ เพื่อธำรงไว้ซึ่งสันติภาพ ความมั่นคงสากล และส่งเสริมสิทธิมนุษยชนทั่วโลก",
-    "qrCodeUrl": "https://image.mfa.go.th/mfa/0/6p4M7ae5k9/UN_Charter_Thai.pdf",
     "price": 500,
-    "image": "/stories/story_14.png"
+    "image": "/stories/story_11.png",
+    "placardImage": "/stories/placards/placard_11.png"
   },
   {
-    "id": 15,
+    "id": 12,
     "pageNumber": 12,
     "titleTh": "สำนักงานสหประชาชาติ ณ นครเจนีวา",
     "titleEn": "United Nations Office at Geneva (Palais des Nations)",
@@ -238,12 +193,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "นครเจนีวา ประเทศสวิตเซอร์แลนด์",
     "iconFile": "สำนักงานสหประชาชาติ ณ นครเจนิวา.PNG",
     "summary": "ศูนย์กลางการทูตพหุภาคีและสำนักงานใหญ่แห่งที่สองของสหประชาชาติ (Palais des Nations) ซึ่งเป็นที่ตั้งของคณะมนตรีสิทธิมนุษยชนแห่งสหประชาชาติ (UNHRC) และองค์กรชำนัญพิเศษด้านมนุษยธรรม",
-    "qrCodeUrl": "https://www.youtube.com/watch?v=_Aw7bt38pfY&list=PLezFsrqeLPRMdsCu0rJZ6a1KtbfttjfAR",
     "price": 500,
-    "image": "/stories/story_15.png"
+    "image": "/stories/story_12.png",
+    "placardImage": "/stories/placards/placard_12.png"
   },
   {
-    "id": 16,
+    "id": 13,
     "pageNumber": 13,
     "titleTh": "การลงนามในกฎบัตรสหประชาชาติ",
     "titleEn": "Signing of the United Nations Charter",
@@ -253,27 +208,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ซานฟรานซิสโก รัฐแคลิฟอร์เนีย ประเทศสหรัฐอเมริกา",
     "iconFile": "การลงนามในกฎบัตรสหประชาชาติ.PNG",
     "summary": "พิธีลงนามประวัติศาสตร์โดยผู้แทนจาก 50 ประเทศ ณ การประชุมซานฟรานซิสโก เพื่อสถาปนาองค์การสหประชาชาติอย่างเป็นทางการหลังสิ้นสุดสงครามโลกครั้งที่ 2 เพื่อป้องกันไม่ให้เกิดภัยสงครามใหญ่ซ้ำรอยเดิม",
-    "qrCodeUrl": "https://www.youtube.com/channel/UC91eVY6XNpdwrzD4wTQbiBw",
     "price": 500,
-    "image": "/stories/story_16.png"
+    "image": "/stories/story_13.png",
+    "placardImage": "/stories/placards/placard_13.png"
   },
   {
-    "id": 17,
-    "pageNumber": 21,
-    "titleTh": "ตราสัญลักษณ์สหประชาชาติ",
-    "titleEn": "United Nations Official Emblem",
-    "categoryId": "CAT-5",
-    "categoryNameTh": "สหประชาชาติและสิทธิมนุษยชน",
-    "recordDate": "7 ธันวาคม ค.ศ. 1946",
-    "location": "สากล",
-    "iconFile": "ตราสหประชาชาติ.PNG",
-    "summary": "ตราสัญลักษณ์ทางการของสหประชาชาติ ประกอบด้วยแผนที่โลกมุมมองขั้วโลกเหนือล้อมรอบด้วยช่อกิ่งมะกอกสีทอง ซึ่งเป็นสัญลักษณ์สากลแห่งสันติภาพและภราดรภาพของมวลมนุษยชาติ",
-    "qrCodeUrl": "https://www.youtube.com/watch?v=JO75ihuFW0Y",
-    "price": 500,
-    "image": "/stories/story_17.png"
-  },
-  {
-    "id": 18,
+    "id": 14,
     "pageNumber": 14,
     "titleTh": "สนธิสัญญามาสทริชท์",
     "titleEn": "Maastricht Treaty (Treaty on European Union)",
@@ -283,12 +223,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "เมืองมาสทริชต์ ประเทศเนเธอร์แลนด์",
     "iconFile": "สนธิสัญญามาสทริชท์ Maastricht Treaty.PNG",
     "summary": "สนธิสัญญาประวัติศาสตร์ที่นำไปสู่การสถาปนาสหภาพยุโรป (EU) อย่างเป็นทางการ การวางรากฐานนโยบายเงินตราสกุลเดียว (ยูโร) และการรวมกลุ่มทางเศรษฐกิจและการเมืองที่แน่นแฟ้นยิ่งขึ้นในยุโรป",
-    "qrCodeUrl": "https://www.youtube.com/channel/UCk1v3FzlMu3r34LYgoHpH2w/featured",
     "price": 500,
-    "image": "/stories/story_18.png"
+    "image": "/stories/story_14.png",
+    "placardImage": "/stories/placards/placard_14.png"
   },
   {
-    "id": 19,
+    "id": 15,
     "pageNumber": 15,
     "titleTh": "รัฐสภายุโรป",
     "titleEn": "European Parliament",
@@ -298,9 +238,69 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "เมืองสตราสบูร์ก ประเทศฝรั่งเศส และกรุงบรัสเซลส์ ประเทศเบลเยียม",
     "iconFile": "สภายุโรป.PNG",
     "summary": "สถาบันนิติบัญญัติที่มาจากการเลือกตั้งโดยตรงของพลเมืองสหภาพยุโรป ทำหน้าที่ผ่านร่างกฎหมาย กำกับดูแลงบประมาณ และตรวจสอบการทำงานของคณะกรรมาธิการยุโรป",
-    "qrCodeUrl": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/european-parliament_en",
     "price": 500,
-    "image": "/stories/story_19.png"
+    "image": "/stories/story_15.png",
+    "placardImage": "/stories/placards/placard_15.png"
+  },
+  {
+    "id": 16,
+    "pageNumber": 16,
+    "titleTh": "ปฏิญญากรุงเทพ 1967",
+    "titleEn": "Bangkok Declaration 1967 (ASEAN Declaration)",
+    "categoryId": "CAT-7",
+    "categoryNameTh": "อาเซียน",
+    "recordDate": "8 สิงหาคม ค.ศ. 1967 (พ.ศ. 2510)",
+    "location": "วังสราญรมย์ กรุงเทพมหานคร ประเทศไทย",
+    "iconFile": "ปฏิญญากรุงเทพ.PNG",
+    "summary": "เอกสารการลงนามก่อตั้งสมาคมประชาชาติแห่งเอเชียตะวันออกเฉียงใต้ (อาเซียน) โดย 5 รัฐมนตรีต่างประเทศผู้ก่อตั้ง (ไทย, อินโดนีเซีย, มาเลเซีย, ฟิลิปปินส์, สิงคโปร์) เพื่อสร้างสันติภาพ เสถียรภาพ และความร่วมมือทางเศรษฐกิจและสังคมในภูมิภาค",
+    "price": 500,
+    "image": "/stories/story_16.png",
+    "placardImage": "/stories/placards/placard_16.png"
+  },
+  {
+    "id": 17,
+    "pageNumber": 17,
+    "titleTh": "สำนักงานใหญ่ของอาเซียน",
+    "titleEn": "ASEAN Secretariat",
+    "categoryId": "CAT-7",
+    "categoryNameTh": "อาเซียน",
+    "recordDate": "ค.ศ. 1976 – ปัจจุบัน",
+    "location": "กรุงจาการ์ตา ประเทศอินโดนีเซีย",
+    "iconFile": "สำนักงานใหญ่ของอาเซียน.PNG",
+    "summary": "ศูนย์บัญชาการและสำนักเลขาธิการอาเซียน ณ กรุงจาการ์ตา ทำหน้าที่ประสานงานระหว่างประเทศสมาชิก จัดการประชุมระดับรัฐมนตรีและผู้นำ และขับเคลื่อนประชาคมอาเซียนทั้ง 3 เสาหลัก",
+    "price": 500,
+    "image": "/stories/story_17.png",
+    "placardImage": "/stories/placards/placard_17.png"
+  },
+  {
+    "id": 18,
+    "pageNumber": 18,
+    "titleTh": "การประชุมสุดยอดอาเซียน ครั้งที่ 48",
+    "titleEn": "48th ASEAN Summit & Regional Integration",
+    "categoryId": "CAT-7",
+    "categoryNameTh": "อาเซียน",
+    "recordDate": "การประชุมระดับผู้นำอาเซียน",
+    "location": "ภูมิภาคเอเชียตะวันออกเฉียงใต้",
+    "iconFile": "การประชุมสุดยอดอาเซียน ครั้งที่ 48.PNG",
+    "summary": "การประชุมสุดยอดของผู้นำประเทศสมาชิกอาเซียนเพื่อหารือทิศทางยุทธศาสตร์ การเชื่อมโยงความร่วมมือทางเศรษฐกิจ ความมั่นคงในภูมิภาค และการรับมือกับความท้าทายระดับโลก",
+    "price": 500,
+    "image": "/stories/story_18.png",
+    "placardImage": "/stories/placards/placard_18.png"
+  },
+  {
+    "id": 19,
+    "pageNumber": 19,
+    "titleTh": "องค์การการค้าโลก (WTO)",
+    "titleEn": "World Trade Organization (WTO)",
+    "categoryId": "CAT-8",
+    "categoryNameTh": "องค์การการค้าโลก",
+    "recordDate": "1 มกราคม ค.ศ. 1995 (พ.ศ. 2538)",
+    "location": "นครเจนีวา ประเทศสวิตเซอร์แลนด์",
+    "iconFile": "องค์การค้าโลก.PNG",
+    "summary": "องค์กรระหว่างประเทศที่มีหน้าที่กำกับดูแลกฎเกณฑ์การค้าระหว่างประเทศ ส่งเสริมการค้าเสรีอย่างเป็นธรรม การเจรจาลดกำแพงภาษี และการระงับข้อพิพาททางการค้าระหว่างประเทศสมาชิก",
+    "price": 500,
+    "image": "/stories/story_19.png",
+    "placardImage": "/stories/placards/placard_19.png"
   },
   {
     "id": 20,
@@ -313,72 +313,27 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "กรุงปารีส ประเทศฝรั่งเศส",
     "iconFile": "วันก่อตั้งสหภาพยุโรป.PNG",
     "summary": "คำประกาศของ รอแบร์ ชูมาน (Robert Schuman) รัฐมนตรีต่างประเทศฝรั่งเศส เสนอให้รวมการผลิตถ่านหินและเหล็กกล้าของฝรั่งเศสและเยอรมนีตะวันตกเข้าด้วยกัน จนนำไปสู่การก่อตั้งประชาคมถ่านหินและเหล็กกล้าแห่งยุโรป (ECSC) และกลายเป็นวันยุโรป (Europe Day)",
-    "qrCodeUrl": "https://www.youtube.com/watch?v=Sd1-87vbzkM",
     "price": 500,
-    "image": "/stories/story_20.png"
+    "image": "/stories/story_20.png",
+    "placardImage": "/stories/placards/placard_20.png"
   },
   {
     "id": 21,
-    "pageNumber": 20,
-    "titleTh": "ตราสัญลักษณ์สหภาพยุโรป",
-    "titleEn": "Flag & Emblem of the European Union",
-    "categoryId": "CAT-6",
-    "categoryNameTh": "สหภาพยุโรป",
-    "recordDate": "ค.ศ. 1985 – ปัจจุบัน",
-    "location": "สหภาพยุโรป",
-    "iconFile": "ตราสหภาพยุโรป.PNG",
-    "summary": "ธงและตราสัญลักษณ์สหภาพยุโรป ประกอบด้วยวงกลมดาวสีทอง 12 ดวงบนพื้นสีน้ำเงิน สื่อถึงความเป็นเอกภาพ ความกลมเกลียว และความสามัคคีของชาวยุโรป",
-    "qrCodeUrl": "https://www.mfa.go.th/th/content/5d5bcc2715e39c306000a35d?cate=5d5bcb4e15e39c3060006872",
+    "pageNumber": 21,
+    "titleTh": "ตราสัญลักษณ์สหประชาชาติ",
+    "titleEn": "United Nations Official Emblem",
+    "categoryId": "CAT-5",
+    "categoryNameTh": "สหประชาชาติและสิทธิมนุษยชน",
+    "recordDate": "7 ธันวาคม ค.ศ. 1946",
+    "location": "สากล",
+    "iconFile": "ตราสหประชาชาติ.PNG",
+    "summary": "ตราสัญลักษณ์ทางการของสหประชาชาติ ประกอบด้วยแผนที่โลกมุมมองขั้วโลกเหนือล้อมรอบด้วยช่อกิ่งมะกอกสีทอง ซึ่งเป็นสัญลักษณ์สากลแห่งสันติภาพและภราดรภาพของมวลมนุษยชาติ",
     "price": 500,
-    "image": "/stories/story_21.png"
+    "image": "/stories/story_21.png",
+    "placardImage": "/stories/placards/placard_21.png"
   },
   {
     "id": 22,
-    "pageNumber": 16,
-    "titleTh": "ปฏิญญากรุงเทพ 1967",
-    "titleEn": "Bangkok Declaration 1967 (ASEAN Declaration)",
-    "categoryId": "CAT-7",
-    "categoryNameTh": "อาเซียน",
-    "recordDate": "8 สิงหาคม ค.ศ. 1967 (พ.ศ. 2510)",
-    "location": "วังสราญรมย์ กรุงเทพมหานคร ประเทศไทย",
-    "iconFile": "ปฏิญญากรุงเทพ.PNG",
-    "summary": "เอกสารการลงนามก่อตั้งสมาคมประชาชาติแห่งเอเชียตะวันออกเฉียงใต้ (อาเซียน) โดย 5 รัฐมนตรีต่างประเทศผู้ก่อตั้ง (ไทย, อินโดนีเซีย, มาเลเซีย, ฟิลิปปินส์, สิงคโปร์) เพื่อสร้างสันติภาพ เสถียรภาพ และความร่วมมือทางเศรษฐกิจและสังคมในภูมิภาค",
-    "qrCodeUrl": "https://wiki.kpi.ac.th/index.php?title=%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E",
-    "price": 500,
-    "image": "/stories/story_22.png"
-  },
-  {
-    "id": 23,
-    "pageNumber": 17,
-    "titleTh": "สำนักงานใหญ่ของอาเซียน",
-    "titleEn": "ASEAN Secretariat",
-    "categoryId": "CAT-7",
-    "categoryNameTh": "อาเซียน",
-    "recordDate": "ค.ศ. 1976 – ปัจจุบัน",
-    "location": "กรุงจาการ์ตา ประเทศอินโดนีเซีย",
-    "iconFile": "สำนักงานใหญ่ของอาเซียน.PNG",
-    "summary": "ศูนย์บัญชาการและสำนักเลขาธิการอาเซียน ณ กรุงจาการ์ตา ทำหน้าที่ประสานงานระหว่างประเทศสมาชิก จัดการประชุมระดับรัฐมนตรีและผู้นำ และขับเคลื่อนประชาคมอาเซียนทั้ง 3 เสาหลัก",
-    "qrCodeUrl": "https://asean.org/the-asean-secretariat-basic-mandate-functions-and-composition/",
-    "price": 500,
-    "image": "/stories/story_23.png"
-  },
-  {
-    "id": 24,
-    "pageNumber": 18,
-    "titleTh": "การประชุมสุดยอดอาเซียน ครั้งที่ 48",
-    "titleEn": "48th ASEAN Summit & Regional Integration",
-    "categoryId": "CAT-7",
-    "categoryNameTh": "อาเซียน",
-    "recordDate": "การประชุมระดับผู้นำอาเซียน",
-    "location": "ภูมิภาคเอเชียตะวันออกเฉียงใต้",
-    "iconFile": "การประชุมสุดยอดอาเซียน ครั้งที่ 48.PNG",
-    "summary": "การประชุมสุดยอดของผู้นำประเทศสมาชิกอาเซียนเพื่อหารือทิศทางยุทธศาสตร์ การเชื่อมโยงความร่วมมือทางเศรษฐกิจ ความมั่นคงในภูมิภาค และการรับมือกับความท้าทายระดับโลก",
-    "qrCodeUrl": "https://www.youtube.com/user/mfathailand",
-    "price": 500,
-    "image": "/stories/story_24.png"
-  },
-  {
-    "id": 25,
     "pageNumber": 22,
     "titleTh": "ตราสัญลักษณ์อาเซียน",
     "titleEn": "Official ASEAN Emblem",
@@ -388,27 +343,12 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "ภูมิภาคเอเชียตะวันออกเฉียงใต้",
     "iconFile": "ตราอาเซียน.PNG",
     "summary": "ตราสัญลักษณ์รวงข้าวสีเหลืองทอง 10 มัดมัดรวมกันบนพื้นวงกลมสีแดง ขอบขาวและน้ำเงิน สื่อถึงความฝันของบรรดาผู้ก่อตั้งที่ต้องการให้ประเทศในเอเชียตะวันออกเฉียงใต้รวมกันเป็นหนึ่งเดียวด้วยมิตรภาพและความสามัคคี",
-    "qrCodeUrl": "https://www.moe.go.th/asean-history/",
     "price": 500,
-    "image": "/stories/story_25.png"
+    "image": "/stories/story_22.png",
+    "placardImage": "/stories/placards/placard_22.png"
   },
   {
-    "id": 26,
-    "pageNumber": 19,
-    "titleTh": "องค์การการค้าโลก (WTO)",
-    "titleEn": "World Trade Organization (WTO)",
-    "categoryId": "CAT-8",
-    "categoryNameTh": "องค์การการค้าโลก",
-    "recordDate": "1 มกราคม ค.ศ. 1995 (พ.ศ. 2538)",
-    "location": "นครเจนีวา ประเทศสวิตเซอร์แลนด์",
-    "iconFile": "องค์การค้าโลก.PNG",
-    "summary": "องค์กรระหว่างประเทศที่มีหน้าที่กำกับดูแลกฎเกณฑ์การค้าระหว่างประเทศ ส่งเสริมการค้าเสรีอย่างเป็นธรรม การเจรจาลดกำแพงภาษี และการระงับข้อพิพาททางการค้าระหว่างประเทศสมาชิก",
-    "qrCodeUrl": "https://www.youtube.com/user/mfathailand",
-    "price": 500,
-    "image": "/stories/story_26.png"
-  },
-  {
-    "id": 27,
+    "id": 23,
     "pageNumber": 23,
     "titleTh": "ตราสัญลักษณ์องค์การการค้าโลก",
     "titleEn": "WTO Official Logo & Emblem",
@@ -418,8 +358,53 @@ export const STORY_PLACARDS_DATA: StoryPlacardItem[] = [
     "location": "สากล",
     "iconFile": "ตราองค์การค้าโลก.PNG",
     "summary": "ตราสัญลักษณ์ WTO ประกอบด้วยเส้นโค้ง 6 เส้นประสานกันเป็นรูปทรงกลมโลก 3 สี (แดง เขียว น้ำเงิน) สะท้อนการเคลื่อนไหวของการค้าโลก การเชื่อมโยงอย่างเป็นพลวัต และความร่วมมือทางเศรษฐกิจอันเปิดกว้าง",
-    "qrCodeUrl": "https://www.youtube.com/watch?v=Cb3Wxz_suF4",
     "price": 500,
-    "image": "/stories/story_27.png"
+    "image": "/stories/story_23.png",
+    "placardImage": "/stories/placards/placard_23.png"
+  },
+  {
+    "id": 24,
+    "pageNumber": 24,
+    "titleTh": "แผนที่ยุทธศาสตร์สงครามเวียดนาม",
+    "titleEn": "The Vietnam War Strategic Map 1974",
+    "categoryId": "CAT-2",
+    "categoryNameTh": "สงครามเวียดนาม",
+    "recordDate": "1 มกราคม ค.ศ. 1974 (พ.ศ. 2517)",
+    "location": "ภูมิภาคอินโดจีน (เวียดนามเหนือ-ใต้ ลาว และกัมพูชา)",
+    "iconFile": "แผนที่ช่วงสงครามเวียดนาม.PNG",
+    "summary": "แผนที่แสดงโครงสร้างการแบ่งแยกเวียดนามเหนือ (เมืองหลวงฮานอย) และเวียดนามใต้ (เมืองหลวงไซง่อน) พันธมิตรฝ่ายเสรีนิยมและค่ายคอมมิวนิสต์ เส้นทางลำเลียงโฮจิมินห์ และฐานปฏิบัติการทางทหารในภูมิภาคอินโดจีน",
+    "price": 500,
+    "image": "/stories/story_24.png",
+    "placardImage": "/stories/placards/placard_24.png"
+  },
+  {
+    "id": 25,
+    "pageNumber": 25,
+    "titleTh": "แผนที่สงครามเกาหลี 4 ระยะ",
+    "titleEn": "The Korean War in Four Maps (1950–1953)",
+    "categoryId": "CAT-1",
+    "categoryNameTh": "สงครามเกาหลี",
+    "recordDate": "25 มิ.ย. 1950 – 27 ก.ค. 1953",
+    "location": "คาบสมุทรเกาหลีและเส้นขนานที่ 38",
+    "iconFile": "สงครามเกาหลี.PNG",
+    "summary": "แผนที่ยุทธศาสตร์แสดงการเคลื่อนกำลัง 4 ขั้นตอนสำคัญในสงครามเกาหลี: 1. การบุกข้ามเส้นขนานที่ 38 ของเกาหลีเหนือ (25 มิ.ย. 1950), 2. การถอยร่นสู่แนวป้องกันปูซาน (14 ก.ย. 1950), 3. การยกพลขึ้นบกที่อินชอนและการรุกสู่แม่น้ำยาลู (25 พ.ย. 1950), และ 4. การตรึงแนวยุติสงครามและการลงนามสงบศึก (27 ก.ค. 1953)",
+    "price": 500,
+    "image": "/stories/story_25.png",
+    "placardImage": "/stories/placards/placard_25.png"
+  },
+  {
+    "id": 26,
+    "pageNumber": 26,
+    "titleTh": "แผนที่วิกฤตการณ์ขีปนาวุธคิวบา",
+    "titleEn": "Cuban Missile Crisis Strategic Range Map (1962)",
+    "categoryId": "CAT-3",
+    "categoryNameTh": "วิกฤตการณ์ขีปนาวุธคิวบา",
+    "recordDate": "ตุลาคม ค.ศ. 1962 (พ.ศ. 2505)",
+    "location": "อ่าวเม็กซิโก ทะเลแคริบเบียน และทวีปอเมริกาเหนือ",
+    "iconFile": "แผนที่วิกฤตการณ์ขีปนาวุธคิวบา.PNG",
+    "summary": "แผนที่เอกสารลับสุดยอดแสดงรัศมีการยิงของฐานปล่อยขีปนาวุธโซเวียตจากเมืองซานคริสโตบัลในคิวบา ครอบคลุมรัศมี 1,020 ไมล์ทะเล ซึ่งสามารถโจมตีกรุงวอชิงตัน ดี.ซี. และเมืองสำคัญส่วนใหญ่ของสหรัฐฯ ได้ภายในเวลาไม่กี่นาที",
+    "price": 500,
+    "image": "/stories/story_26.png",
+    "placardImage": "/stories/placards/placard_26.png"
   }
 ];

@@ -37,6 +37,8 @@ export const CardDetailModal: React.FC<CardDetailModalProps> = ({
   const itemSubtitle = isStatue ? (statue?.nameEn || (item as any).nameEn || '') : isStory ? ((item as any).recordDate || '') : ((item as any).titleEn || '');
   const itemImage = isStatue
     ? (statue?.sculptureImage || statue?.frontImage || (item as any).frontImage || `/sculptures/${item.id}.webp`)
+    : isStory
+    ? ((item as any).placardImage || (item as any).image || `/stories/story_${item.id}.png`)
     : ((item as any).frontImage || (item as any).image || `/stories/story_${item.id}.webp`);
 
   const isCyan = theme === 'cyan';

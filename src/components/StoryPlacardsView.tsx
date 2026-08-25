@@ -329,13 +329,13 @@ export const StoryPlacardsView: React.FC<StoryPlacardsViewProps> = ({
                   </div>
                 </div>
 
-                {/* ── ARTIFACT ICON / IMAGE DISPLAY (แสดงรูปภาพจาก Iconเรื่องราว แทน QR Code) ── */}
+                {/* ── ARTIFACT PLACARD DISPLAY (แสดงป้ายคำอธิบายจาก ป้ายคำอธิบาย.pdf) ── */}
                 <div className="py-2.5 flex flex-col items-center justify-center">
-                  <div className="relative p-2 bg-black/40 rounded-[12px] shadow-[0_0_24px_rgba(225,29,72,0.3)] border border-rose-500/40 flex items-center justify-center overflow-hidden max-w-[280px]">
+                  <div className="relative p-1.5 bg-black/60 rounded-[12px] shadow-[0_0_28px_rgba(225,29,72,0.35)] border border-rose-500/40 flex items-center justify-center overflow-hidden max-w-full">
                     <img
-                      src={currentPlacard.image}
+                      src={currentPlacard.placardImage || currentPlacard.image}
                       alt={currentPlacard.titleTh}
-                      className="max-h-40 sm:max-h-48 w-auto object-contain rounded-[6px] drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]"
+                      className="max-h-56 sm:max-h-64 w-auto object-contain rounded-[6px] shadow-lg"
                       loading="eager"
                     />
                   </div>
