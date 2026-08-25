@@ -211,7 +211,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%84%E0%B8%B4%E0%B8%A1-%E0%B8%AD%E0%B8%B4%E0%B8%A5-%E0%B8%8B%E0%B9%87%E0%B8%AD%E0%B8%87.webp",
     "backImage": "/sculptures/%E0%B8%84%E0%B8%B4%E0%B8%A1-%E0%B8%AD%E0%B8%B4%E0%B8%A5-%E0%B8%8B%E0%B9%87%E0%B8%AD%E0%B8%87.webp",
     "sculptureImage": "/sculptures/%E0%B8%84%E0%B8%B4%E0%B8%A1-%E0%B8%AD%E0%B8%B4%E0%B8%A5-%E0%B8%8B%E0%B9%87%E0%B8%AD%E0%B8%87.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rx502mk8",
     "badges": [
       "Museum Collection",
       "สงครามเกาหลี"
@@ -229,7 +229,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%AD%E0%B8%B5-%E0%B8%8B%E0%B8%B6%E0%B8%87-%E0%B8%A1%E0%B8%B1%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B8%AD%E0%B8%B5-%E0%B8%8B%E0%B8%B6%E0%B8%87-%E0%B8%A1%E0%B8%B1%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B8%AD%E0%B8%B5-%E0%B8%8B%E0%B8%B6%E0%B8%87-%E0%B8%A1%E0%B8%B1%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rb9wt65i",
     "badges": [
       "Museum Collection",
       "สงครามเกาหลี"
@@ -247,7 +247,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%81%E0%B8%AE%E0%B8%A3%E0%B9%8C%E0%B8%A3%E0%B8%B5%E0%B9%88%20%E0%B9%80%E0%B8%AD%E0%B8%AA%20%E0%B8%97%E0%B8%A3%E0%B8%B9%E0%B9%81%E0%B8%A1%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B9%81%E0%B8%AE%E0%B8%A3%E0%B9%8C%E0%B8%A3%E0%B8%B5%E0%B9%88%20%E0%B9%80%E0%B8%AD%E0%B8%AA%20%E0%B8%97%E0%B8%A3%E0%B8%B9%E0%B9%81%E0%B8%A1%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B9%81%E0%B8%AE%E0%B8%A3%E0%B9%8C%E0%B8%A3%E0%B8%B5%E0%B9%88%20%E0%B9%80%E0%B8%AD%E0%B8%AA%20%E0%B8%97%E0%B8%A3%E0%B8%B9%E0%B9%81%E0%B8%A1%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/x78mp9qp",
     "badges": [
       "Museum Collection",
       "สงครามเกาหลี"
@@ -265,7 +265,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%94%E0%B8%B1%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%AA%20%E0%B9%81%E0%B8%A1%E0%B8%81%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%94%E0%B8%B1%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%AA%20%E0%B9%81%E0%B8%A1%E0%B8%81%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%94%E0%B8%B1%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%AA%20%E0%B9%81%E0%B8%A1%E0%B8%81%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/46rrgho0",
     "badges": [
       "Museum Collection",
       "สงครามเกาหลี"
@@ -283,7 +283,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%82%E0%B8%AE%E0%B8%88%E0%B8%B4%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B9%82%E0%B8%AE%E0%B8%88%E0%B8%B4%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B9%82%E0%B8%AE%E0%B8%88%E0%B8%B4%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/q8sygsyp",
     "badges": [
       "Museum Collection",
       "สงครามเวียดนาม"
@@ -301,7 +301,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%82%E0%B8%87%20%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C%20%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A1.webp",
     "backImage": "/sculptures/%E0%B9%82%E0%B8%87%20%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C%20%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A1.webp",
     "sculptureImage": "/sculptures/%E0%B9%82%E0%B8%87%20%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%AB%E0%B9%8C%20%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A1.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/76j81ec0",
     "badges": [
       "Museum Collection",
       "สงครามเวียดนาม"
@@ -319,7 +319,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%20%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%20%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%20%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/xxhbb2r1",
     "badges": [
       "Museum Collection",
       "สงครามเวียดนาม"
@@ -337,7 +337,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A3%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%20%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B8%A3%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%20%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B8%A3%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%94%20%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B8%AA%E0%B8%B1%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qfisx00o",
     "badges": [
       "Museum Collection",
       "สงครามเวียดนาม"
@@ -355,7 +355,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%20%E0%B9%80%E0%B8%AD%E0%B8%9F.%20%E0%B9%80%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%99%E0%B8%94%E0%B8%B5.webp",
     "backImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%20%E0%B9%80%E0%B8%AD%E0%B8%9F.%20%E0%B9%80%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%99%E0%B8%94%E0%B8%B5.webp",
     "sculptureImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%AB%E0%B9%8C%E0%B8%99%20%E0%B9%80%E0%B8%AD%E0%B8%9F.%20%E0%B9%80%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%99%E0%B8%94%E0%B8%B5.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/ozhx1752",
     "badges": [
       "Museum Collection",
       "วิกฤตการณ์ขีปนาวุธคิวบา"
@@ -373,7 +373,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%99%E0%B8%B5%E0%B8%81%E0%B8%B5%E0%B8%95%E0%B8%B2%20%E0%B8%82%E0%B8%A3%E0%B8%B8%E0%B8%8A%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
     "backImage": "/sculptures/%E0%B8%99%E0%B8%B5%E0%B8%81%E0%B8%B5%E0%B8%95%E0%B8%B2%20%E0%B8%82%E0%B8%A3%E0%B8%B8%E0%B8%8A%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
     "sculptureImage": "/sculptures/%E0%B8%99%E0%B8%B5%E0%B8%81%E0%B8%B5%E0%B8%95%E0%B8%B2%20%E0%B8%82%E0%B8%A3%E0%B8%B8%E0%B8%8A%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/803m1cnv",
     "badges": [
       "Museum Collection",
       "วิกฤตการณ์ขีปนาวุธคิวบา"
@@ -391,7 +391,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%9F%E0%B8%B5%E0%B9%80%E0%B8%94%E0%B8%A5%20%E0%B8%84%E0%B8%B2%E0%B8%AA%E0%B9%82%E0%B8%95%E0%B8%A3.webp",
     "backImage": "/sculptures/%E0%B8%9F%E0%B8%B5%E0%B9%80%E0%B8%94%E0%B8%A5%20%E0%B8%84%E0%B8%B2%E0%B8%AA%E0%B9%82%E0%B8%95%E0%B8%A3.webp",
     "sculptureImage": "/sculptures/%E0%B8%9F%E0%B8%B5%E0%B9%80%E0%B8%94%E0%B8%A5%20%E0%B8%84%E0%B8%B2%E0%B8%AA%E0%B9%82%E0%B8%95%E0%B8%A3.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/8n6bgnyk",
     "badges": [
       "Museum Collection",
       "วิกฤตการณ์ขีปนาวุธคิวบา"
@@ -409,7 +409,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%80%E0%B8%8A%20%E0%B9%80%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%A3%E0%B8%B2.webp",
     "backImage": "/sculptures/%E0%B9%80%E0%B8%8A%20%E0%B9%80%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%A3%E0%B8%B2.webp",
     "sculptureImage": "/sculptures/%E0%B9%80%E0%B8%8A%20%E0%B9%80%E0%B8%81%E0%B8%A7%E0%B8%B2%E0%B8%A3%E0%B8%B2.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qw1ep8f3",
     "badges": [
       "Museum Collection",
       "วิกฤตการณ์ขีปนาวุธคิวบา"
@@ -427,7 +427,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%82%E0%B8%A3%E0%B8%99%E0%B8%B1%E0%B8%A5%E0%B8%94%E0%B9%8C%20%E0%B9%80%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B9%82%E0%B8%A3%E0%B8%99%E0%B8%B1%E0%B8%A5%E0%B8%94%E0%B9%8C%20%E0%B9%80%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B9%82%E0%B8%A3%E0%B8%99%E0%B8%B1%E0%B8%A5%E0%B8%94%E0%B9%8C%20%E0%B9%80%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/150zgard",
     "badges": [
       "Museum Collection",
       "การทลายกำแพงเบอร์ลิน"
@@ -445,7 +445,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A1%E0%B8%B5%E0%B8%AE%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%A5%20%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
     "backImage": "/sculptures/%E0%B8%A1%E0%B8%B5%E0%B8%AE%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%A5%20%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
     "sculptureImage": "/sculptures/%E0%B8%A1%E0%B8%B5%E0%B8%AE%E0%B8%B2%E0%B8%AD%E0%B8%B4%E0%B8%A5%20%E0%B8%81%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%8A%E0%B8%AD%E0%B8%9F.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qfitos5z",
     "badges": [
       "Museum Collection",
       "การทลายกำแพงเบอร์ลิน"
@@ -463,7 +463,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%80%E0%B8%AE%E0%B9%87%E0%B8%A5%E0%B8%A1%E0%B8%B8%E0%B8%97%20%E0%B9%82%E0%B8%84%E0%B8%A5.webp",
     "backImage": "/sculptures/%E0%B9%80%E0%B8%AE%E0%B9%87%E0%B8%A5%E0%B8%A1%E0%B8%B8%E0%B8%97%20%E0%B9%82%E0%B8%84%E0%B8%A5.webp",
     "sculptureImage": "/sculptures/%E0%B9%80%E0%B8%AE%E0%B9%87%E0%B8%A5%E0%B8%A1%E0%B8%B8%E0%B8%97%20%E0%B9%82%E0%B8%84%E0%B8%A5.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/1gmr65ln",
     "badges": [
       "Museum Collection",
       "การทลายกำแพงเบอร์ลิน"
@@ -481,7 +481,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%88%20%E0%B9%80%E0%B8%AD%E0%B8%8A.%20%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%9A%E0%B8%B4%E0%B8%A5%E0%B8%A2%E0%B8%B9.%20%E0%B8%9A%E0%B8%B8%E0%B8%8A.webp",
     "backImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%88%20%E0%B9%80%E0%B8%AD%E0%B8%8A.%20%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%9A%E0%B8%B4%E0%B8%A5%E0%B8%A2%E0%B8%B9.%20%E0%B8%9A%E0%B8%B8%E0%B8%8A.webp",
     "sculptureImage": "/sculptures/%E0%B8%88%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%88%20%E0%B9%80%E0%B8%AD%E0%B8%8A.%20%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%9A%E0%B8%B4%E0%B8%A5%E0%B8%A2%E0%B8%B9.%20%E0%B8%9A%E0%B8%B8%E0%B8%8A.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/b51rpn56",
     "badges": [
       "Museum Collection",
       "การทลายกำแพงเบอร์ลิน"
@@ -499,7 +499,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%81%E0%B8%9F%E0%B8%A3%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%20%E0%B8%94%E0%B8%B5.%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B9%81%E0%B8%9F%E0%B8%A3%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%20%E0%B8%94%E0%B8%B5.%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B9%81%E0%B8%9F%E0%B8%A3%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%20%E0%B8%94%E0%B8%B5.%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/85qsei64",
     "badges": [
       "Museum Collection",
       "สหประชาชาติ"
@@ -517,7 +517,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%AA%E0%B8%95%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%AA%E0%B8%95%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%AA%E0%B8%95%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%8A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
     "badges": [
       "Museum Collection",
       "สหประชาชาติ"
@@ -535,7 +535,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%82%E0%B8%88%E0%B9%80%E0%B8%8B%E0%B8%9F%20%E0%B8%AA%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B9%82%E0%B8%88%E0%B9%80%E0%B8%8B%E0%B8%9F%20%E0%B8%AA%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B9%82%E0%B8%88%E0%B9%80%E0%B8%8B%E0%B8%9F%20%E0%B8%AA%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
     "badges": [
       "Museum Collection",
       "สหประชาชาติ"
@@ -553,7 +553,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%A3%E0%B8%B9%E0%B8%AA%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%95%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/cbkvxtb0",
     "badges": [
       "Museum Collection",
       "สหประชาชาติ"
@@ -571,7 +571,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A3%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%A3%E0%B9%8C%20%E0%B8%8A%E0%B8%B9%E0%B8%A1%E0%B8%B2%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B8%A3%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%A3%E0%B9%8C%20%E0%B8%8A%E0%B8%B9%E0%B8%A1%E0%B8%B2%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B8%A3%E0%B8%AD%E0%B9%81%E0%B8%9A%E0%B8%A3%E0%B9%8C%20%E0%B8%8A%E0%B8%B9%E0%B8%A1%E0%B8%B2%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/l7auhtni",
     "badges": [
       "Museum Collection",
       "สหภาพยุโรป"
@@ -589,7 +589,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%8C%E0%B8%AD%E0%B8%87%20%E0%B8%A1%E0%B8%87%E0%B9%80%E0%B8%99%E0%B8%95%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%8C%E0%B8%AD%E0%B8%87%20%E0%B8%A1%E0%B8%87%E0%B9%80%E0%B8%99%E0%B8%95%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%8C%E0%B8%AD%E0%B8%87%20%E0%B8%A1%E0%B8%87%E0%B9%80%E0%B8%99%E0%B8%95%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/cs3bpikj",
     "badges": [
       "Museum Collection",
       "สหภาพยุโรป"
@@ -607,7 +607,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%94%20%E0%B8%AD%E0%B8%B2%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%94%20%E0%B8%AD%E0%B8%B2%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%94%20%E0%B8%AD%E0%B8%B2%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B9%80%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/zx35ucib",
     "badges": [
       "Museum Collection",
       "สหภาพยุโรป"
@@ -625,7 +625,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%8C%E0%B8%B1%E0%B8%81%20%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%8C%E0%B8%B1%E0%B8%81%20%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%8C%E0%B8%B1%E0%B8%81%20%E0%B9%80%E0%B8%94%E0%B8%AD%E0%B8%A5%E0%B8%AD%E0%B8%A3%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/1gvzeh2a",
     "badges": [
       "Museum Collection",
       "สหภาพยุโรป"
@@ -643,7 +643,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%96%E0%B8%99%E0%B8%B1%E0%B8%94%20%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%96%E0%B8%99%E0%B8%B1%E0%B8%94%20%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%96%E0%B8%99%E0%B8%B1%E0%B8%94%20%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/j67auklu",
     "badges": [
       "Museum Collection",
       "อาเซียน"
@@ -661,7 +661,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%B1%E0%B8%A1%20%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%81.webp",
     "backImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%B1%E0%B8%A1%20%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%81.webp",
     "sculptureImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%94%E0%B8%B1%E0%B8%A1%20%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B8%B4%E0%B8%81.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/q6xoquy1",
     "badges": [
       "Museum Collection",
       "อาเซียน"
@@ -679,7 +679,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%8B%E0%B8%B4%E0%B9%82%E0%B8%8B%20%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%AA.webp",
     "backImage": "/sculptures/%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%8B%E0%B8%B4%E0%B9%82%E0%B8%8B%20%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%AA.webp",
     "sculptureImage": "/sculptures/%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%8B%E0%B8%B4%E0%B9%82%E0%B8%8B%20%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AD%E0%B8%AA.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bs6as71u",
     "badges": [
       "Museum Collection",
       "อาเซียน"
@@ -697,7 +697,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B8%AA.%20%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%B1%E0%B8%A1.webp",
     "backImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B8%AA.%20%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%B1%E0%B8%A1.webp",
     "sculptureImage": "/sculptures/%E0%B9%80%E0%B8%AD%E0%B8%AA.%20%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%B1%E0%B8%A1.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/6akmdlay",
     "badges": [
       "Museum Collection",
       "อาเซียน"
@@ -715,7 +715,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%94%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%B4%E0%B8%A5.webp",
     "backImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%94%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%B4%E0%B8%A5.webp",
     "sculptureImage": "/sculptures/%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%94%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%B4%E0%B8%A5.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/ahsptscl",
     "badges": [
       "Museum Collection",
       "องค์การการค้าโลก"
@@ -733,7 +733,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%9B%E0%B8%B5%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%8B%E0%B8%B1%E0%B8%97%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B8%94%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%9B%E0%B8%B5%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%8B%E0%B8%B1%E0%B8%97%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B8%94%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%9B%E0%B8%B5%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%20%E0%B8%8B%E0%B8%B1%E0%B8%97%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B8%94%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/nx9zm47s",
     "badges": [
       "Museum Collection",
       "องค์การการค้าโลก"
@@ -751,7 +751,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%9A%E0%B8%B4%E0%B8%A5%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%99.webp",
     "backImage": "/sculptures/%E0%B8%9A%E0%B8%B4%E0%B8%A5%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%99.webp",
     "sculptureImage": "/sculptures/%E0%B8%9A%E0%B8%B4%E0%B8%A5%20%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%99.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/icx0ygdy",
     "badges": [
       "Museum Collection",
       "องค์การการค้าโลก"
@@ -769,7 +769,7 @@ export const STATUE_ITEMS: StatueItem[] = [
     "frontImage": "/sculptures/%E0%B8%A8%E0%B8%B8%E0%B8%A0%E0%B8%8A%E0%B8%B1%E0%B8%A2%20%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%8A%E0%B8%A0%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B4%E0%B9%8C.webp",
     "backImage": "/sculptures/%E0%B8%A8%E0%B8%B8%E0%B8%A0%E0%B8%8A%E0%B8%B1%E0%B8%A2%20%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%8A%E0%B8%A0%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B4%E0%B9%8C.webp",
     "sculptureImage": "/sculptures/%E0%B8%A8%E0%B8%B8%E0%B8%A0%E0%B8%8A%E0%B8%B1%E0%B8%A2%20%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%B4%E0%B8%8A%E0%B8%A0%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B4%E0%B9%8C.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rsvjppum",
     "badges": [
       "Museum Collection",
       "องค์การการค้าโลก"
@@ -786,11 +786,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-1",
     "categoryNameTh": "สงครามเกาหลี",
     "mediaType": "Video",
-    "archiveSource": "BBC News ไทย (YouTube)",
+    "archiveSource": "YouTube (ประวัติศาสตร์สงครามเกาหลี)",
     "summary": "สารคดีประวัติศาสตร์ BBC News ไทย ว่าด้วยจุดเริ่มต้นของสงครามเกาหลี การแทรกแซงของมหาอำนาจสหรัฐฯ และจีน และการแบ่งแยกคาบสมุทรเกาหลีที่เส้นขนานที่ 38 / Documentary by BBC News Thai covering the origins of the Korean War, superpower intervention by the US and China, and the division along the 38th parallel.",
     "frontImage": "/cards/evidence/1.webp",
     "backImage": "/cards/evidence/6.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rx502mk8",
     "isAuthentic": true,
     "price": 800
   },
@@ -802,11 +802,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-1",
     "categoryNameTh": "สงครามเกาหลี",
     "mediaType": "Article",
-    "archiveSource": "The Standard",
+    "archiveSource": "THE STANDARD (วันสงบศึก 27 ก.ค. 1953)",
     "summary": "บทความประวัติศาสตร์ The Standard บันทึกเหตุการณ์การลงนามในความตกลงสงบศึก ณ ปันมุนจอม ยุติการสู้รบและสถาปนาเขตปลอดทหาร (DMZ) / Historical feature on the signing of the Korean Armistice Agreement at Panmunjom, establishing the Demilitarized Zone (DMZ).",
     "frontImage": "/cards/evidence/2.webp",
     "backImage": "/cards/evidence/7.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rb9wt65i",
     "isAuthentic": true,
     "price": 800
   },
@@ -818,11 +818,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-1",
     "categoryNameTh": "สงครามเกาหลี",
     "mediaType": "Article",
-    "archiveSource": "Indo-Pacific Defense Forum",
+    "archiveSource": "IP Defense Forum (วาระครบรอบ 70 ปีสงครามเกาหลี)",
     "summary": "บทวิเคราะห์ Indo-Pacific Defense Forum รำลึก 70 ปีสงครามเกาหลี บทบาทกองกำลังสหประชาชาติ และการเสียสละของกองกำลังพันธมิตรนานาชาติรวมถึงทหารไทยพยัคฆ์น้อย / Analysis commemorating the 70th anniversary of the Korean War, highlighting the role of the UN Command and international coalition including Thai forces.",
     "frontImage": "/cards/evidence/3.webp",
     "backImage": "/cards/evidence/8.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/x78mp9qp",
     "isAuthentic": true,
     "price": 800
   },
@@ -834,11 +834,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-1",
     "categoryNameTh": "สงครามเกาหลี",
     "mediaType": "Article",
-    "archiveSource": "ศิลปวัฒนธรรม (Silpa-Mag)",
+    "archiveSource": "ศิลปวัฒนธรรม (สงครามเกาหลีกับการแบ่งแยกดินแดน)",
     "summary": "บทความศิลปวัฒนธรรม เจาะลึกมิติทางการเมืองและการทหาร มติคณะมนตรีความมั่นคงสหประชาชาติ และการเผชิญหน้าระหว่างค่ายเสรีนิยมกับคอมมิวนิสต์ / Historical essay examining the geopolitical causes, UN Security Council resolutions, and ideological clash between East and West.",
     "frontImage": "/cards/evidence/4.webp",
     "backImage": "/cards/evidence/9.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/46rrgho0",
     "isAuthentic": true,
     "price": 800
   },
@@ -850,11 +850,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-1",
     "categoryNameTh": "สงครามเกาหลี",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (เอกสารหลักฐานสงครามเกาหลี)",
     "summary": "เอกสารหลักฐานปฐมภูมิและบันทึกประวัติศาสตร์สงครามเกาหลี ฉบับดิจิทัล / Digitized primary source document dossier and historical records of the Korean War.",
     "frontImage": "/cards/evidence/5.webp",
     "backImage": "/cards/evidence/10.webp",
-    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/q8sygsyp",
     "isAuthentic": false,
     "price": 800
   },
@@ -870,7 +870,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดีพอดแคสต์โลกวิวัฒน์ EP.83 ถ่ายทอดความขัดแย้งทางอุดมการณ์ในอินโดจีน ยุทธวิธีสงครามกองโจร และผลกระทบต่อภูมิภาคเอเชียตะวันออกเฉียงใต้ / Documentary podcast exploring Indochina's ideological conflict, guerrilla tactics, and broader Southeast Asian geopolitics.",
     "frontImage": "/cards/evidence/11.webp",
     "backImage": "/cards/evidence/16.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/76j81ec0",
     "isAuthentic": true,
     "price": 800
   },
@@ -886,7 +886,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความวิชาการสำนักข่าวประชาไท วิเคราะห์บทเรียนทางประวัติศาสตร์ ความสูญเสียของพลเรือน และผลสะท้อนทางการเมืองในเอเชีย / Scholarly review on historical lessons, civilian toll, and enduring socio-political aftermath in Asia.",
     "frontImage": "/cards/evidence/12.webp",
     "backImage": "/cards/evidence/17.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/xxhbb2r1",
     "isAuthentic": true,
     "price": 800
   },
@@ -902,7 +902,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "วิดีโอ 8 Minutes History วิเคราะห์ยุทธศาสตร์การรบ การยกระดับสู่สงครามเต็มรูปแบบ นโยบายเวียดนามไนเซชัน และการถอนทหารสหรัฐฯ / Concise historical analysis on battlefield strategies, escalation, Vietnamization, and the eventual US withdrawal.",
     "frontImage": "/cards/evidence/13.webp",
     "backImage": "/cards/evidence/18.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qfisx00o",
     "isAuthentic": true,
     "price": 800
   },
@@ -918,7 +918,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความศิลปวัฒนธรรม บันทึกการเดินขบวนครั้งประวัติศาสตร์ของประชาชนอเมริกันกว่าครึ่งล้านคน ณ วอชิงตัน ดี.ซี. เพื่อเรียกร้องสันติภาพ / Detailed record of the massive 1969 Moratorium March on Washington DC where over 500,000 citizens protested for peace.",
     "frontImage": "/cards/evidence/14.webp",
     "backImage": "/cards/evidence/19.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/ozhx1752",
     "isAuthentic": true,
     "price": 800
   },
@@ -930,11 +930,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-2",
     "categoryNameTh": "สงครามเวียดนาม",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (เอกสารข้อตกลงสันติภาพปารีส)",
     "summary": "เอกสารหลักฐานปฐมภูมิ ข้อตกลงสันติภาพปารีส และบันทึกประวัติศาสตร์สงครามเวียดนาม ฉบับดิจิทัล / Digitized primary archival dossier covering diplomatic communications and treaties from the Vietnam War.",
     "frontImage": "/cards/evidence/15.webp",
     "backImage": "/cards/evidence/20.webp",
-    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/803m1cnv",
     "isAuthentic": false,
     "price": 800
   },
@@ -950,7 +950,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดี Inside-History เจาะลึกเหตุการณ์ 13 วันวิกฤตนิวเคลียร์ การเผชิญหน้าระหว่างเคเนดีและครุสชอฟ และการปิดล้อมทางทะเล / Comprehensive video on the 13 days of nuclear brinkmanship between Kennedy and Khrushchev, naval quarantine, and backchannel diplomacy.",
     "frontImage": "/cards/evidence/21.webp",
     "backImage": "/cards/evidence/26.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/8n6bgnyk",
     "isAuthentic": true,
     "price": 800
   },
@@ -966,7 +966,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดี On This Day จำลองสถานการณ์การค้นพบฐานยิงขีปนาวุธ SS-4 ของโซเวียตในคิวบาโดยเครื่องบิน U-2 และการตัดสินใจของทำเนียบขาว / Historical timeline detailing the U-2 discovery of Soviet SS-4 missile sites in Cuba and critical White House EXCOMM deliberations.",
     "frontImage": "/cards/evidence/22.webp",
     "backImage": "/cards/evidence/27.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qw1ep8f3",
     "isAuthentic": true,
     "price": 800
   },
@@ -978,11 +978,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-3",
     "categoryNameTh": "วิกฤตการณ์ขีปนาวุธคิวบา",
     "mediaType": "Article",
-    "archiveSource": "Blockdit",
+    "archiveSource": "Blockdit (วิเคราะห์การเจรจาลับคิวบา)",
     "summary": "บทความประวัติศาสตร์ Blockdit วิเคราะห์การทูตหลังม่าน การแลกเปลี่ยนข้อตกลงถอนขีปนาวุธจูปิเตอร์ในตุรกี และการจัดตั้งสายด่วนมอสโก-วอชิงตัน / In-depth historical article on clandestine diplomacy, the Jupiter missiles withdrawal in Turkey, and the establishment of the Moscow-Washington hotline.",
     "frontImage": "/cards/evidence/23.webp",
     "backImage": "/cards/evidence/28.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/150zgard",
     "isAuthentic": true,
     "price": 800
   },
@@ -994,11 +994,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-3",
     "categoryNameTh": "วิกฤตการณ์ขีปนาวุธคิวบา",
     "mediaType": "Article",
-    "archiveSource": "The People",
+    "archiveSource": "The People (จิตวิทยาและความกลัวในวิกฤตคิวบา)",
     "summary": "บทความ The People วิเคราะห์ทฤษฎีเกม จิตวิทยาการตัดสินใจ และความขัดแย้งระดับมหาอำนาจในวิกฤตการณ์ขีปนาวุธคิวบา / Critical essay examining game theory, deterrence psychology, and leadership decision-making during peak Cold War tension.",
     "frontImage": "/cards/evidence/24.webp",
     "backImage": "/cards/evidence/29.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/qfitos5z",
     "isAuthentic": true,
     "price": 800
   },
@@ -1010,11 +1010,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-3",
     "categoryNameTh": "วิกฤตการณ์ขีปนาวุธคิวบา",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (เอกสารและภาพถ่ายสอดแนม U-2)",
     "summary": "เอกสารหลักฐานปฐมภูมิ ภาพถ่ายสอดแนมทางอากาศ U-2 และบันทึกโทรเลขระหว่างสหรัฐฯ-สหภาพโซเวียต / Digitized archival dossier containing U-2 reconnaissance photos, diplomatic telegrams, and declassified communications.",
     "frontImage": "/cards/evidence/25.webp",
     "backImage": "/cards/evidence/30.webp",
-    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/1gmr65ln",
     "isAuthentic": false,
     "price": 800
   },
@@ -1030,7 +1030,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมบริแทนนิกา สรุปประวัติการก่อสร้างกำแพงเบอร์ลินในปี 1961 ระบบป้องกันพรมแดน และบทบาทในฐานะสัญลักษณ์ม่านเหล็ก / Comprehensive Britannica entry on the construction of the Berlin Wall in 1961, border fortifications, and its role as the definitive Iron Curtain symbol.",
     "frontImage": "/cards/evidence/31.webp",
     "backImage": "/cards/evidence/36.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/b51rpn56",
     "isAuthentic": true,
     "price": 800
   },
@@ -1042,11 +1042,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-4",
     "categoryNameTh": "การทลายกำแพงเบอร์ลินและการสิ้นสุดสงครามเย็น",
     "mediaType": "Article",
-    "archiveSource": "BBC News",
+    "archiveSource": "BBC News (ค่ำคืน 9 พ.ย. 1989)",
     "summary": "บทความพิเศษ BBC News ย้อนรอยค่ำคืนประวัติศาสตร์ 9 พฤศจิกายน 1989 การเปิดด่านพรมแดน และการล่มสลายของลัทธิคอมมิวนิสต์ในยุโรปตะวันออก / Special BBC report revisiting 9 November 1989, the opening of border checkpoints, and the collapse of Soviet-aligned regimes.",
     "frontImage": "/cards/evidence/32.webp",
     "backImage": "/cards/evidence/37.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/85qsei64",
     "isAuthentic": true,
     "price": 800
   },
@@ -1058,11 +1058,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-4",
     "categoryNameTh": "การทลายกำแพงเบอร์ลินและการสิ้นสุดสงครามเย็น",
     "mediaType": "Article",
-    "archiveSource": "Blockdit (Timeless History)",
+    "archiveSource": "Blockdit (ประวัติศาสตร์กำแพงเบอร์ลิน ตอนที่ 1)",
     "summary": "บทความประวัติศาสตร์ไร้กาลเวลา ศึกษากำเนิดการแบ่งแยกเยอรมนีเป็นฝั่งตะวันออกและตะวันตกหลังสงครามโลกครั้งที่ 2 / Chronological study of post-WWII German partition, the Berlin Airlift, and the construction of the border barrier.",
     "frontImage": "/cards/evidence/33.webp",
     "backImage": "/cards/evidence/38.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
     "isAuthentic": true,
     "price": 800
   },
@@ -1074,11 +1074,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-4",
     "categoryNameTh": "การทลายกำแพงเบอร์ลินและการสิ้นสุดสงครามเย็น",
     "mediaType": "Article",
-    "archiveSource": "Blockdit (Timeless History)",
+    "archiveSource": "Blockdit (การรวมชาติเยอรมนี ตอนที่ 2)",
     "summary": "บทความประวัติศาสตร์ไร้กาลเวลา ศึกษาการเคลื่อนไหวเพื่อเสรีภาพ สนธิสัญญา Two Plus Four และการรวมชาติเยอรมนีอย่างสมบูรณ์ / Comprehensive account of peaceful revolutions, the Two Plus Four Treaty, and formal German Reunification in 1990.",
     "frontImage": "/cards/evidence/34.webp",
     "backImage": "/cards/evidence/39.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
     "isAuthentic": true,
     "price": 800
   },
@@ -1090,11 +1090,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-4",
     "categoryNameTh": "การทลายกำแพงเบอร์ลินและการสิ้นสุดสงครามเย็น",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (สนธิสัญญาการรวมชาติเยอรมนี)",
     "summary": "เอกสารหลักฐานปฐมภูมิ สนธิสัญญาการรวมชาติเยอรมนี และภาพถ่ายประวัติศาสตร์การทลายกำแพงเบอร์ลิน / Digitized primary archival dossier featuring official reunification treaties, diplomatic notes, and border checkpoint logs.",
     "frontImage": "/cards/evidence/35.webp",
     "backImage": "/cards/evidence/40.webp",
-    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/cbkvxtb0",
     "isAuthentic": false,
     "price": 800
   },
@@ -1110,7 +1110,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการองค์การสหประชาชาติ บันทึกการประชุมซานฟรานซิสโก การลงนามกฎบัตรสหประชาชาติ และพันธกิจด้านสันติภาพสากล / Official UN portal detailing the 1945 San Francisco Conference, the drafting of the UN Charter, and global peacekeeping missions.",
     "frontImage": "/cards/evidence/41.webp",
     "backImage": "/cards/evidence/46.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/l7auhtni",
     "isAuthentic": true,
     "price": 800
   },
@@ -1126,7 +1126,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมบริแทนนิกา อธิบายโครงสร้างสมัชชาใหญ่ คณะมนตรีความมั่นคง และองค์กรชำนัญพิเศษแห่งสหประชาชาติ / Comprehensive Britannica analysis of the General Assembly, Security Council, ICJ, and specialized international agencies.",
     "frontImage": "/cards/evidence/42.webp",
     "backImage": "/cards/evidence/47.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/cs3bpikj",
     "isAuthentic": true,
     "price": 800
   },
@@ -1142,7 +1142,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เว็บไซต์กรมองค์การระหว่างประเทศ กระทรวงการต่างประเทศ บันทึกการเข้าเป็นสมาชิกสหประชาชาติของไทย (ลำดับที่ 55) และบทบาททางการทูต / Official Thai MFA record detailing Thailand's accession as the 55th UN member state and contributions to multilateralism.",
     "frontImage": "/cards/evidence/43.webp",
     "backImage": "/cards/evidence/48.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/zx35ucib",
     "isAuthentic": true,
     "price": 800
   },
@@ -1158,7 +1158,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "รายงานวิจัยรัฐสภาสหราชอาณาจักร วิเคราะห์พัฒนาการ 80 ปีของสหประชาชาติ ความท้าทายทางภูมิรัฐศาสตร์ และแนวทางการปฏิรูป / UK Parliamentary research briefing evaluating eight decades of UN peacekeeping, SDGs, and institutional reform.",
     "frontImage": "/cards/evidence/44.webp",
     "backImage": "/cards/evidence/49.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/1gvzeh2a",
     "isAuthentic": true,
     "price": 800
   },
@@ -1170,11 +1170,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-5",
     "categoryNameTh": "สหประชาชาติและสิทธิมนุษยชน",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (กฎบัตรสหประชาชาติและ UDHR)",
     "summary": "เอกสารหลักฐานปฐมภูมิ กฎบัตรสหประชาชาติ และปฏิญญาสากลว่าด้วยสิทธิมนุษยชน (UDHR 1948) / Digitized archival dossier containing the UN Charter, Universal Declaration of Human Rights (UDHR), and founding protocols.",
     "frontImage": "/cards/evidence/45.webp",
     "backImage": "/cards/evidence/50.webp",
-    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/j67auklu",
     "isAuthentic": false,
     "price": 800
   },
@@ -1190,7 +1190,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ข้อมูลทางการกระทรวงการต่างประเทศว่าด้วยวิวัฒนาการสหภาพยุโรป สนธิสัญญามาสทริชต์ และกรอบความร่วมมือไทย-อียู / Official Thai MFA portal documenting European integration history, Maastricht Treaty, and EU-Thailand partnership frameworks.",
     "frontImage": "/cards/evidence/51.webp",
     "backImage": "/cards/evidence/56.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/q6xoquy1",
     "isAuthentic": true,
     "price": 800
   },
@@ -1206,7 +1206,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ฐานข้อมูลการเมืองการปกครอง สถาบันพระปกเกล้า อธิบายสถาบันหลักของอียู ระบบกฎหมายสหภาพยุโรป และการรวมกลุ่มเหนือรัฐ / Academic wiki detailing EU governance architecture, European Parliament, European Commission, and supranational integration.",
     "frontImage": "/cards/evidence/52.webp",
     "backImage": "/cards/evidence/57.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/bs6as71u",
     "isAuthentic": true,
     "price": 800
   },
@@ -1218,11 +1218,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-6",
     "categoryNameTh": "สหภาพยุโรป",
     "mediaType": "Encyclopedia",
-    "archiveSource": "Encyclopaedia Britannica",
+    "archiveSource": "Encyclopaedia Britannica (แปลไทย)",
     "summary": "สารานุกรมบริแทนนิกา วิเคราะห์การจัดตั้งประชาคมถ่านหินและเหล็กกล้าแห่งยุโรป (ECSC) สนธิสัญญากรุงโรม และตลาดร่วมยุโรป / Britannica encyclopedic overview covering the ECSC, Single European Market, Schengen Area, and Eurozone monetary union.",
     "frontImage": "/cards/evidence/53.webp",
     "backImage": "/cards/evidence/58.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/6akmdlay",
     "isAuthentic": true,
     "price": 800
   },
@@ -1238,7 +1238,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการของสหภาพยุโรป บันทึกคำประกาศชูมาน (Schuman Declaration 1950) และก้าวแรกแห่งการสร้างสันติภาพในยุโรป / Official EU historical archives detailing the 1950 Schuman Plan and initial post-war economic integration across Western Europe.",
     "frontImage": "/cards/evidence/54.webp",
     "backImage": "/cards/evidence/59.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/ahsptscl",
     "isAuthentic": true,
     "price": 800
   },
@@ -1250,11 +1250,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-6",
     "categoryNameTh": "สหภาพยุโรป",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (สนธิสัญญากรุงโรมและมาสทริชท์)",
     "summary": "เอกสารหลักฐานปฐมภูมิ สนธิสัญญากรุงปารีส สนธิสัญญากรุงโรม และสนธิสัญญามาสทริชต์ ฉบับดิจิทัล / Digitized primary archival dossier featuring core European founding treaties and diplomatic milestone accords.",
     "frontImage": "/cards/evidence/55.webp",
     "backImage": "/cards/evidence/60.webp",
-    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/nx9zm47s",
     "isAuthentic": false,
     "price": 800
   },
@@ -1270,7 +1270,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการสำนักเลขาธิการอาเซียน บันทึกการลงนามปฏิญญากรุงเทพ ณ วังสราญรมย์ โดย 5 รัฐมนตรีต่างประเทศผู้ก่อตั้ง / Official ASEAN Secretariat documentation on the signing of the Bangkok Declaration at Saranrom Palace by the 5 Founding Fathers.",
     "frontImage": "/cards/evidence/61.webp",
     "backImage": "/cards/evidence/66.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/icx0ygdy",
     "isAuthentic": true,
     "price": 800
   },
@@ -1286,7 +1286,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารรายงานวิชาการสำนักงานเลขาธิการสภาผู้แทนราษฎร ว่าด้วยวิวัฒนาการ ประชาคมอาเซียน 3 เสาหลัก และกฎบัตรอาเซียน / Official Thai Parliamentary analytical report detailing the 3 ASEAN Community pillars, ASEAN Charter, and legislative integration.",
     "frontImage": "/cards/evidence/62.webp",
     "backImage": "/cards/evidence/67.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/rsvjppum",
     "isAuthentic": true,
     "price": 800
   },
@@ -1302,7 +1302,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เว็บไซต์ธนาคารแห่งประเทศไทย อธิบายกรอบความร่วมมือทางการเงินการธนาคารในอาเซียน การเชื่อมโยงระบบการชำระเงิน และการเปิดเสรีภาคบริการ / Bank of Thailand official portal covering regional financial cooperation, cross-border payment connectivity, and capital market integration.",
     "frontImage": "/cards/evidence/63.webp",
     "backImage": "/cards/evidence/68.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/dce6zcj1",
     "isAuthentic": true,
     "price": 800
   },
@@ -1318,7 +1318,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมการเมืองการปกครอง สถาบันพระปกเกล้า อธิบายแผนงาน IAI ในการลดช่องว่างการพัฒนาระหว่างสมาชิกเก่าและกลุ่มประเทศ CLMV / Academic KPI wiki detailing the Initiative for ASEAN Integration (IAI) framework designed to narrow development gaps for CLMV nations.",
     "frontImage": "/cards/evidence/64.webp",
     "backImage": "/cards/evidence/69.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/pt4pj8t7",
     "isAuthentic": true,
     "price": 800
   },
@@ -1330,11 +1330,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-7",
     "categoryNameTh": "อาเซียน",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (ปฏิญญากรุงเทพและสนธิสัญญาอาเซียน)",
     "summary": "เอกสารหลักฐานปฐมภูมิ ปฏิญญากรุงเทพ 1967 สนธิสัญญาไมตรีและความร่วมมือ (TAC) และบันทึกประวัติศาสตร์อาเซียน / Digitized primary archival dossier containing the original 1967 Bangkok Declaration text, TAC treaty, and diplomatic communiqués.",
     "frontImage": "/cards/evidence/65.webp",
     "backImage": "/cards/evidence/70.webp",
-    "qrUrl": "https://drive.google.com/file/d/1zOSJSl_QUbJ69hnyjTiNg0hL779ziWM9/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/wny08swc",
     "isAuthentic": false,
     "price": 800
   },
@@ -1350,7 +1350,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการกระทรวงการต่างประเทศ อธิบายพันธกิจของ WTO การเจรจาการค้าพหุภาคี และผลประโยชน์ของไทยในระบบการค้าโลก / Official Thai MFA portal outlining the WTO mission, GATT history, multilateral trade negotiations, and Thailand's strategic trade interests.",
     "frontImage": "/cards/evidence/71.webp",
     "backImage": "/cards/evidence/76.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/b2n3wpwu",
     "isAuthentic": true,
     "price": 800
   },
@@ -1366,7 +1366,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ฐานข้อมูลการเมืองการปกครอง สถาบันพระปกเกล้า วิเคราะห์หลักการสำคัญของ WTO เช่น MFN และการระงับข้อพิพาททางการค้า (DSB) / KPI encyclopedia detailing WTO core legal principles including Most-Favoured-Nation (MFN), National Treatment, and the Dispute Settlement Body.",
     "frontImage": "/cards/evidence/72.webp",
     "backImage": "/cards/evidence/77.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/u9jbwegi",
     "isAuthentic": true,
     "price": 800
   },
@@ -1382,7 +1382,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารวิจัยรัฐสภาสหราชอาณาจักร วิเคราะห์วิกฤตของกลไกอุทธรณ์ WTO สงครามการค้า และทิศทางการปฏิรูปการค้าโลก / UK Parliamentary research briefing analyzing the WTO Appellate Body impasse, trade conflicts, and modernization initiatives.",
     "frontImage": "/cards/evidence/73.webp",
     "backImage": "/cards/evidence/78.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/d6ac38uq",
     "isAuthentic": true,
     "price": 800
   },
@@ -1398,7 +1398,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดีทันโลก Express ย้อนรอยความตกลงมาร์ราเคช การเปลี่ยนผ่านจาก GATT สู่ WTO และบทบาทในการกำกับดูแลการค้าโลก / Historical documentary feature chronicling the 1994 Marrakesh Agreement, the transition from GATT 1947 to WTO in 1995, and global market rules.",
     "frontImage": "/cards/evidence/74.webp",
     "backImage": "/cards/evidence/79.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/y8891kit",
     "isAuthentic": true,
     "price": 800
   },
@@ -1410,11 +1410,11 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "categoryId": "CAT-8",
     "categoryNameTh": "องค์การการค้าโลก",
     "mediaType": "PDF",
-    "archiveSource": "Google Drive Repository",
+    "archiveSource": "Google Drive (ความตกลงมาร์ราเคชและ GATT)",
     "summary": "เอกสารหลักฐานปฐมภูมิ ความตกลงมาร์ราเคช เอกสารการเจรจารอบอุรุกวัย และระเบียบการค้าเสรีโลก ฉบับดิจิทัล / Digitized primary archival dossier containing the Marrakesh Agreement, Uruguay Round legal texts, and WTO founding instruments.",
     "frontImage": "/cards/evidence/75.webp",
     "backImage": "/cards/evidence/80.webp",
-    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
+    "qrUrl": "https://q.me-qr.com/cox4iwbi",
     "isAuthentic": false,
     "price": 800
   }

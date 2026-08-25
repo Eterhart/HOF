@@ -329,43 +329,17 @@ export const StoryPlacardsView: React.FC<StoryPlacardsViewProps> = ({
                   </div>
                 </div>
 
-                {/* ── QR CODE SECTION (ตรงกลางระหว่างหัวข้อและเนื้อหา — แสดงแค่ QRCODE เหมือนหลักฐาน) ── */}
-                {currentPlacard.qrCodeUrl && (
-                  <div className="py-2 flex flex-col items-center justify-center">
-                    <div className="p-2 bg-white rounded-[8px] shadow-[0_0_20px_rgba(225,29,72,0.3)] border border-rose-500/60 relative transition-transform hover:scale-105">
-                      <a
-                        href={currentPlacard.qrCodeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block cursor-pointer"
-                        title="คลิกหรือสแกนเพื่อเปิดลิงก์"
-                      >
-                        <img
-                          src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(
-                            currentPlacard.qrCodeUrl
-                          )}`}
-                          alt={`QR Code for ${currentPlacard.titleTh}`}
-                          className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
-                          loading="eager"
-                        />
-                      </a>
-                    </div>
-                    <div className="text-[11px] font-mono text-rose-300/85 pt-2 flex flex-wrap items-center justify-center gap-1 text-center select-none">
-                      <span>✦</span>
-                      <span>สแกน QR CODE หรือ</span>
-                      <a
-                        href={currentPlacard.qrCodeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-rose-200 underline decoration-rose-400/80 font-bold transition-colors cursor-pointer"
-                      >
-                        คลิกที่นี่
-                      </a>
-                      <span>เพื่อเข้าสู่เว็บไซต์</span>
-                      <span>✦</span>
-                    </div>
+                {/* ── ARTIFACT ICON / IMAGE DISPLAY (แสดงรูปภาพจาก Iconเรื่องราว แทน QR Code) ── */}
+                <div className="py-2.5 flex flex-col items-center justify-center">
+                  <div className="relative p-2 bg-black/40 rounded-[12px] shadow-[0_0_24px_rgba(225,29,72,0.3)] border border-rose-500/40 flex items-center justify-center overflow-hidden max-w-[280px]">
+                    <img
+                      src={currentPlacard.image}
+                      alt={currentPlacard.titleTh}
+                      className="max-h-40 sm:max-h-48 w-auto object-contain rounded-[6px] drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]"
+                      loading="eager"
+                    />
                   </div>
-                )}
+                </div>
 
                 {/* Story Summary / Content */}
                 <div className="flex-1 overflow-y-auto custom-dark-scrollbar pr-1.5 space-y-3 max-h-[160px] sm:max-h-[200px]">
