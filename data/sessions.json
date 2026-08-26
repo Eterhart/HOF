@@ -56,9 +56,7 @@
         "storyInventory": [
           1
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130241,
-        "submittedBy": "กิตติพงษ์",
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -193,8 +191,7 @@
         "storyInventory": [
           6
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130238,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -339,8 +336,7 @@
         "storyInventory": [
           11
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130238,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -485,8 +481,7 @@
         "storyInventory": [
           16
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130239,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -631,8 +626,7 @@
         "storyInventory": [
           21
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130239,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -777,8 +771,7 @@
         "storyInventory": [
           26
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130239,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -923,8 +916,7 @@
         "storyInventory": [
           31
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130239,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -1069,8 +1061,7 @@
         "storyInventory": [
           36
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787745130239,
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -1176,9 +1167,9 @@
     "sessionCode": "301",
     "sessionName": "TEST คะแนนเต็ม",
     "createdAt": 1787735599423,
-    "phase": "BRIEFING",
-    "startTime": 1787749458355,
-    "durationSeconds": 300,
+    "phase": "SHOPPING",
+    "startTime": 1787749760563,
+    "durationSeconds": 1200,
     "teams": {
       "team_301_1": {
         "id": "team_301_1",
@@ -1223,9 +1214,7 @@
         "storyInventory": [
           1
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787736199423,
-        "submittedBy": "กิตติพงษ์",
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -1370,9 +1359,7 @@
         "storyInventory": [
           6
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787736299423,
-        "submittedBy": "อิทธิพล",
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 400,
@@ -1520,9 +1507,7 @@
         "storyInventory": [
           11
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787736399423,
-        "submittedBy": "นพดล",
+        "isSubmitted": false,
         "score": {
           "statuePoints": 320,
           "evidencePoints": 400,
@@ -1662,9 +1647,7 @@
         "storyInventory": [
           16
         ],
-        "isSubmitted": true,
-        "submittedAt": 1787736499423,
-        "submittedBy": "พิชญะ",
+        "isSubmitted": false,
         "score": {
           "statuePoints": 400,
           "evidencePoints": 300,
@@ -1770,9 +1753,9 @@
     "sessionCode": "303",
     "sessionName": "TEST คะแนน 55%",
     "createdAt": 1787735599423,
-    "phase": "LEADERBOARD",
-    "startTime": 1787749465141,
-    "durationSeconds": 0,
+    "phase": "SHOPPING",
+    "startTime": 1787749760493,
+    "durationSeconds": 1200,
     "teams": {
       "team_303_1": {
         "id": "team_303_1",
@@ -1813,15 +1796,14 @@
           21
         ],
         "isSubmitted": true,
-        "submittedAt": 1787736599423,
-        "submittedBy": "ชยพล",
+        "submittedAt": 1787749751546,
         "score": {
           "statuePoints": 240,
           "evidencePoints": 240,
           "trapPenalties": 0,
           "budgetBonus": 42,
-          "speedBonus": 100,
-          "totalScore": 622,
+          "speedBonus": 0,
+          "totalScore": 522,
           "statueDetails": [
             {
               "id": 17,
