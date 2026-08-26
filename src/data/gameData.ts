@@ -790,7 +790,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดีประวัติศาสตร์ BBC News ไทย ว่าด้วยจุดเริ่มต้นของสงครามเกาหลี การแทรกแซงของมหาอำนาจสหรัฐฯ และจีน และการแบ่งแยกคาบสมุทรเกาหลีที่เส้นขนานที่ 38 / Documentary by BBC News Thai covering the origins of the Korean War, superpower intervention by the US and China, and the division along the 38th parallel.",
     "frontImage": "/cards/evidence/1.webp",
     "backImage": "/cards/evidence/6.webp",
-    "qrUrl": "https://q.me-qr.com/rx502mk8",
+    "qrUrl": "https://www.youtube.com/watch?si=mAD8UseKD6Gbc1AZ&v=KCe-ODOEoYM&feature=youtu.be",
     "isAuthentic": true,
     "price": 800
   },
@@ -806,7 +806,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความประวัติศาสตร์ The Standard บันทึกเหตุการณ์การลงนามในความตกลงสงบศึก ณ ปันมุนจอม ยุติการสู้รบและสถาปนาเขตปลอดทหาร (DMZ) / Historical feature on the signing of the Korean Armistice Agreement at Panmunjom, establishing the Demilitarized Zone (DMZ).",
     "frontImage": "/cards/evidence/2.webp",
     "backImage": "/cards/evidence/7.webp",
-    "qrUrl": "https://q.me-qr.com/rb9wt65i",
+    "qrUrl": "https://thestandard.co/onthisday27071953/",
     "isAuthentic": true,
     "price": 800
   },
@@ -822,7 +822,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทวิเคราะห์ Indo-Pacific Defense Forum รำลึก 70 ปีสงครามเกาหลี บทบาทกองกำลังสหประชาชาติ และการเสียสละของกองกำลังพันธมิตรนานาชาติรวมถึงทหารไทยพยัคฆ์น้อย / Analysis commemorating the 70th anniversary of the Korean War, highlighting the role of the UN Command and international coalition including Thai forces.",
     "frontImage": "/cards/evidence/3.webp",
     "backImage": "/cards/evidence/8.webp",
-    "qrUrl": "https://q.me-qr.com/x78mp9qp",
+    "qrUrl": "https://ipdefenseforum.com/th/2020/06/%E0%B8%A7%E0%B8%B2%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%A3%E0%B8%AD%E0%B8%9A-70-%E0%B8%9B%E0%B8%B5%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%81%E0%B8%B2/",
     "isAuthentic": true,
     "price": 800
   },
@@ -838,7 +838,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความศิลปวัฒนธรรม เจาะลึกมิติทางการเมืองและการทหาร มติคณะมนตรีความมั่นคงสหประชาชาติ และการเผชิญหน้าระหว่างค่ายเสรีนิยมกับคอมมิวนิสต์ / Historical essay examining the geopolitical causes, UN Security Council resolutions, and ideological clash between East and West.",
     "frontImage": "/cards/evidence/4.webp",
     "backImage": "/cards/evidence/9.webp",
-    "qrUrl": "https://q.me-qr.com/46rrgho0",
+    "qrUrl": "https://www.silpa-mag.com/history/article_34835",
     "isAuthentic": true,
     "price": 800
   },
@@ -854,7 +854,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิและบันทึกประวัติศาสตร์สงครามเกาหลี ฉบับดิจิทัล / Digitized primary source document dossier and historical records of the Korean War.",
     "frontImage": "/cards/evidence/5.webp",
     "backImage": "/cards/evidence/10.webp",
-    "qrUrl": "https://q.me-qr.com/q8sygsyp",
+    "qrUrl": "https://drive.google.com/file/d/19FyOyKP7YimT7X3JOSjfZZinFS-dhxBY/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -870,7 +870,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดีพอดแคสต์โลกวิวัฒน์ EP.83 ถ่ายทอดความขัดแย้งทางอุดมการณ์ในอินโดจีน ยุทธวิธีสงครามกองโจร และผลกระทบต่อภูมิภาคเอเชียตะวันออกเฉียงใต้ / Documentary podcast exploring Indochina's ideological conflict, guerrilla tactics, and broader Southeast Asian geopolitics.",
     "frontImage": "/cards/evidence/11.webp",
     "backImage": "/cards/evidence/16.webp",
-    "qrUrl": "https://q.me-qr.com/76j81ec0",
+    "qrUrl": "https://www.youtube.com/watch?v=A0LRLAe_HRc",
     "isAuthentic": true,
     "price": 800
   },
@@ -886,7 +886,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความวิชาการสำนักข่าวประชาไท วิเคราะห์บทเรียนทางประวัติศาสตร์ ความสูญเสียของพลเรือน และผลสะท้อนทางการเมืองในเอเชีย / Scholarly review on historical lessons, civilian toll, and enduring socio-political aftermath in Asia.",
     "frontImage": "/cards/evidence/12.webp",
     "backImage": "/cards/evidence/17.webp",
-    "qrUrl": "https://q.me-qr.com/xxhbb2r1",
+    "qrUrl": "https://prachatai.com/journal/2015/03/58623",
     "isAuthentic": true,
     "price": 800
   },
@@ -902,7 +902,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "วิดีโอ 8 Minutes History วิเคราะห์ยุทธศาสตร์การรบ การยกระดับสู่สงครามเต็มรูปแบบ นโยบายเวียดนามไนเซชัน และการถอนทหารสหรัฐฯ / Concise historical analysis on battlefield strategies, escalation, Vietnamization, and the eventual US withdrawal.",
     "frontImage": "/cards/evidence/13.webp",
     "backImage": "/cards/evidence/18.webp",
-    "qrUrl": "https://q.me-qr.com/qfisx00o",
+    "qrUrl": "https://www.youtube.com/watch?v=JrWYIPI8lD0",
     "isAuthentic": true,
     "price": 800
   },
@@ -918,7 +918,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความศิลปวัฒนธรรม บันทึกการเดินขบวนครั้งประวัติศาสตร์ของประชาชนอเมริกันกว่าครึ่งล้านคน ณ วอชิงตัน ดี.ซี. เพื่อเรียกร้องสันติภาพ / Detailed record of the massive 1969 Moratorium March on Washington DC where over 500,000 citizens protested for peace.",
     "frontImage": "/cards/evidence/14.webp",
     "backImage": "/cards/evidence/19.webp",
-    "qrUrl": "https://q.me-qr.com/ozhx1752",
+    "qrUrl": "https://www.silpa-mag.com/this-day-in-history/article_41717",
     "isAuthentic": true,
     "price": 800
   },
@@ -934,7 +934,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ ข้อตกลงสันติภาพปารีส และบันทึกประวัติศาสตร์สงครามเวียดนาม ฉบับดิจิทัล / Digitized primary archival dossier covering diplomatic communications and treaties from the Vietnam War.",
     "frontImage": "/cards/evidence/15.webp",
     "backImage": "/cards/evidence/20.webp",
-    "qrUrl": "https://q.me-qr.com/803m1cnv",
+    "qrUrl": "https://drive.google.com/file/d/1c64qivNbJ-N5AgtNzza9_QGDJziNuKsH/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -950,7 +950,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดี Inside-History เจาะลึกเหตุการณ์ 13 วันวิกฤตนิวเคลียร์ การเผชิญหน้าระหว่างเคเนดีและครุสชอฟ และการปิดล้อมทางทะเล / Comprehensive video on the 13 days of nuclear brinkmanship between Kennedy and Khrushchev, naval quarantine, and backchannel diplomacy.",
     "frontImage": "/cards/evidence/21.webp",
     "backImage": "/cards/evidence/26.webp",
-    "qrUrl": "https://q.me-qr.com/8n6bgnyk",
+    "qrUrl": "https://www.youtube.com/watch?v=GlwRceLadzk",
     "isAuthentic": true,
     "price": 800
   },
@@ -966,7 +966,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดี On This Day จำลองสถานการณ์การค้นพบฐานยิงขีปนาวุธ SS-4 ของโซเวียตในคิวบาโดยเครื่องบิน U-2 และการตัดสินใจของทำเนียบขาว / Historical timeline detailing the U-2 discovery of Soviet SS-4 missile sites in Cuba and critical White House EXCOMM deliberations.",
     "frontImage": "/cards/evidence/22.webp",
     "backImage": "/cards/evidence/27.webp",
-    "qrUrl": "https://q.me-qr.com/qw1ep8f3",
+    "qrUrl": "https://www.youtube.com/watch?v=n1fLjILHBFw",
     "isAuthentic": true,
     "price": 800
   },
@@ -1014,7 +1014,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ ภาพถ่ายสอดแนมทางอากาศ U-2 และบันทึกโทรเลขระหว่างสหรัฐฯ-สหภาพโซเวียต / Digitized archival dossier containing U-2 reconnaissance photos, diplomatic telegrams, and declassified communications.",
     "frontImage": "/cards/evidence/25.webp",
     "backImage": "/cards/evidence/30.webp",
-    "qrUrl": "https://q.me-qr.com/1gmr65ln",
+    "qrUrl": "https://drive.google.com/file/d/19KwsCv-IwR6USA94fQo5SxxwJSO-RJXw/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -1030,7 +1030,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมบริแทนนิกา สรุปประวัติการก่อสร้างกำแพงเบอร์ลินในปี 1961 ระบบป้องกันพรมแดน และบทบาทในฐานะสัญลักษณ์ม่านเหล็ก / Comprehensive Britannica entry on the construction of the Berlin Wall in 1961, border fortifications, and its role as the definitive Iron Curtain symbol.",
     "frontImage": "/cards/evidence/31.webp",
     "backImage": "/cards/evidence/36.webp",
-    "qrUrl": "https://q.me-qr.com/b51rpn56",
+    "qrUrl": "https://www.britannica.com/topic/Berlin-Wall",
     "isAuthentic": true,
     "price": 800
   },
@@ -1046,7 +1046,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความพิเศษ BBC News ย้อนรอยค่ำคืนประวัติศาสตร์ 9 พฤศจิกายน 1989 การเปิดด่านพรมแดน และการล่มสลายของลัทธิคอมมิวนิสต์ในยุโรปตะวันออก / Special BBC report revisiting 9 November 1989, the opening of border checkpoints, and the collapse of Soviet-aligned regimes.",
     "frontImage": "/cards/evidence/32.webp",
     "backImage": "/cards/evidence/37.webp",
-    "qrUrl": "https://q.me-qr.com/85qsei64",
+    "qrUrl": "https://www.bbc.com/news/world-europe-50013048",
     "isAuthentic": true,
     "price": 800
   },
@@ -1062,7 +1062,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความประวัติศาสตร์ไร้กาลเวลา ศึกษากำเนิดการแบ่งแยกเยอรมนีเป็นฝั่งตะวันออกและตะวันตกหลังสงครามโลกครั้งที่ 2 / Chronological study of post-WWII German partition, the Berlin Airlift, and the construction of the border barrier.",
     "frontImage": "/cards/evidence/33.webp",
     "backImage": "/cards/evidence/38.webp",
-    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
+    "qrUrl": "https://www.blockdit.com/posts/5dac69501699494eba26f342",
     "isAuthentic": true,
     "price": 800
   },
@@ -1078,7 +1078,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "บทความประวัติศาสตร์ไร้กาลเวลา ศึกษาการเคลื่อนไหวเพื่อเสรีภาพ สนธิสัญญา Two Plus Four และการรวมชาติเยอรมนีอย่างสมบูรณ์ / Comprehensive account of peaceful revolutions, the Two Plus Four Treaty, and formal German Reunification in 1990.",
     "frontImage": "/cards/evidence/34.webp",
     "backImage": "/cards/evidence/39.webp",
-    "qrUrl": "https://q.me-qr.com/bsbhcbfn",
+    "qrUrl": "https://www.blockdit.com/posts/5dac69501699494eba26f342",
     "isAuthentic": true,
     "price": 800
   },
@@ -1094,7 +1094,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ สนธิสัญญาการรวมชาติเยอรมนี และภาพถ่ายประวัติศาสตร์การทลายกำแพงเบอร์ลิน / Digitized primary archival dossier featuring official reunification treaties, diplomatic notes, and border checkpoint logs.",
     "frontImage": "/cards/evidence/35.webp",
     "backImage": "/cards/evidence/40.webp",
-    "qrUrl": "https://q.me-qr.com/cbkvxtb0",
+    "qrUrl": "https://drive.google.com/file/d/1PvTbT-Yq5YTKIm-rbo5nXLffRwRVM40T/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -1110,7 +1110,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการองค์การสหประชาชาติ บันทึกการประชุมซานฟรานซิสโก การลงนามกฎบัตรสหประชาชาติ และพันธกิจด้านสันติภาพสากล / Official UN portal detailing the 1945 San Francisco Conference, the drafting of the UN Charter, and global peacekeeping missions.",
     "frontImage": "/cards/evidence/41.webp",
     "backImage": "/cards/evidence/46.webp",
-    "qrUrl": "https://q.me-qr.com/l7auhtni",
+    "qrUrl": "https://www.un.org/en/about-us/history-of-the-un",
     "isAuthentic": true,
     "price": 800
   },
@@ -1126,7 +1126,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมบริแทนนิกา อธิบายโครงสร้างสมัชชาใหญ่ คณะมนตรีความมั่นคง และองค์กรชำนัญพิเศษแห่งสหประชาชาติ / Comprehensive Britannica analysis of the General Assembly, Security Council, ICJ, and specialized international agencies.",
     "frontImage": "/cards/evidence/42.webp",
     "backImage": "/cards/evidence/47.webp",
-    "qrUrl": "https://q.me-qr.com/cs3bpikj",
+    "qrUrl": "https://www.britannica.com/topic/United-Nations",
     "isAuthentic": true,
     "price": 800
   },
@@ -1142,7 +1142,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เว็บไซต์กรมองค์การระหว่างประเทศ กระทรวงการต่างประเทศ บันทึกการเข้าเป็นสมาชิกสหประชาชาติของไทย (ลำดับที่ 55) และบทบาททางการทูต / Official Thai MFA record detailing Thailand's accession as the 55th UN member state and contributions to multilateralism.",
     "frontImage": "/cards/evidence/43.webp",
     "backImage": "/cards/evidence/48.webp",
-    "qrUrl": "https://q.me-qr.com/zx35ucib",
+    "qrUrl": "https://thai-inter-org.mfa.go.th/th/page/%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%AB%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4?menu=5d6bb81015e39c3c8c005d48",
     "isAuthentic": true,
     "price": 800
   },
@@ -1158,7 +1158,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "รายงานวิจัยรัฐสภาสหราชอาณาจักร วิเคราะห์พัฒนาการ 80 ปีของสหประชาชาติ ความท้าทายทางภูมิรัฐศาสตร์ และแนวทางการปฏิรูป / UK Parliamentary research briefing evaluating eight decades of UN peacekeeping, SDGs, and institutional reform.",
     "frontImage": "/cards/evidence/44.webp",
     "backImage": "/cards/evidence/49.webp",
-    "qrUrl": "https://q.me-qr.com/1gvzeh2a",
+    "qrUrl": "https://commonslibrary.parliament.uk/research-briefings/cbp-10380/",
     "isAuthentic": true,
     "price": 800
   },
@@ -1174,7 +1174,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ กฎบัตรสหประชาชาติ และปฏิญญาสากลว่าด้วยสิทธิมนุษยชน (UDHR 1948) / Digitized archival dossier containing the UN Charter, Universal Declaration of Human Rights (UDHR), and founding protocols.",
     "frontImage": "/cards/evidence/45.webp",
     "backImage": "/cards/evidence/50.webp",
-    "qrUrl": "https://q.me-qr.com/j67auklu",
+    "qrUrl": "https://drive.google.com/file/d/1IZrtC53IpmzcPxkMqNH6We3fhixZRrx1/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -1190,7 +1190,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ข้อมูลทางการกระทรวงการต่างประเทศว่าด้วยวิวัฒนาการสหภาพยุโรป สนธิสัญญามาสทริชต์ และกรอบความร่วมมือไทย-อียู / Official Thai MFA portal documenting European integration history, Maastricht Treaty, and EU-Thailand partnership frameworks.",
     "frontImage": "/cards/evidence/51.webp",
     "backImage": "/cards/evidence/56.webp",
-    "qrUrl": "https://q.me-qr.com/q6xoquy1",
+    "qrUrl": "https://www.mfa.go.th/th/content/5d5bcc2715e39c306000a35d?cate=5d5bcb4e15e39c3060006872",
     "isAuthentic": true,
     "price": 800
   },
@@ -1206,7 +1206,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ฐานข้อมูลการเมืองการปกครอง สถาบันพระปกเกล้า อธิบายสถาบันหลักของอียู ระบบกฎหมายสหภาพยุโรป และการรวมกลุ่มเหนือรัฐ / Academic wiki detailing EU governance architecture, European Parliament, European Commission, and supranational integration.",
     "frontImage": "/cards/evidence/52.webp",
     "backImage": "/cards/evidence/57.webp",
-    "qrUrl": "https://q.me-qr.com/bs6as71u",
+    "qrUrl": "https://wiki.kpi.ac.th/index.php?title=%E0%B8%AA%E0%B8%AB%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A2%E0%B8%B8%E0%B9%82%E0%B8%A3%E0%B8%9B",
     "isAuthentic": true,
     "price": 800
   },
@@ -1222,7 +1222,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมบริแทนนิกา วิเคราะห์การจัดตั้งประชาคมถ่านหินและเหล็กกล้าแห่งยุโรป (ECSC) สนธิสัญญากรุงโรม และตลาดร่วมยุโรป / Britannica encyclopedic overview covering the ECSC, Single European Market, Schengen Area, and Eurozone monetary union.",
     "frontImage": "/cards/evidence/53.webp",
     "backImage": "/cards/evidence/58.webp",
-    "qrUrl": "https://q.me-qr.com/6akmdlay",
+    "qrUrl": "https://www.britannica.com/topic/European-Union",
     "isAuthentic": true,
     "price": 800
   },
@@ -1238,7 +1238,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการของสหภาพยุโรป บันทึกคำประกาศชูมาน (Schuman Declaration 1950) และก้าวแรกแห่งการสร้างสันติภาพในยุโรป / Official EU historical archives detailing the 1950 Schuman Plan and initial post-war economic integration across Western Europe.",
     "frontImage": "/cards/evidence/54.webp",
     "backImage": "/cards/evidence/59.webp",
-    "qrUrl": "https://q.me-qr.com/ahsptscl",
+    "qrUrl": "https://european-union.europa.eu/principles-countries-history/history-eu/1945-59_en",
     "isAuthentic": true,
     "price": 800
   },
@@ -1254,7 +1254,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ สนธิสัญญากรุงปารีส สนธิสัญญากรุงโรม และสนธิสัญญามาสทริชต์ ฉบับดิจิทัล / Digitized primary archival dossier featuring core European founding treaties and diplomatic milestone accords.",
     "frontImage": "/cards/evidence/55.webp",
     "backImage": "/cards/evidence/60.webp",
-    "qrUrl": "https://q.me-qr.com/nx9zm47s",
+    "qrUrl": "https://drive.google.com/file/d/1kAUKlltNwhybvg39dd7hbpqpgtX5-YRO/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   },
@@ -1270,7 +1270,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการสำนักเลขาธิการอาเซียน บันทึกการลงนามปฏิญญากรุงเทพ ณ วังสราญรมย์ โดย 5 รัฐมนตรีต่างประเทศผู้ก่อตั้ง / Official ASEAN Secretariat documentation on the signing of the Bangkok Declaration at Saranrom Palace by the 5 Founding Fathers.",
     "frontImage": "/cards/evidence/61.webp",
     "backImage": "/cards/evidence/66.webp",
-    "qrUrl": "https://q.me-qr.com/icx0ygdy",
+    "qrUrl": "https://asean.org/the-founding-of-asean/",
     "isAuthentic": true,
     "price": 800
   },
@@ -1286,7 +1286,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารรายงานวิชาการสำนักงานเลขาธิการสภาผู้แทนราษฎร ว่าด้วยวิวัฒนาการ ประชาคมอาเซียน 3 เสาหลัก และกฎบัตรอาเซียน / Official Thai Parliamentary analytical report detailing the 3 ASEAN Community pillars, ASEAN Charter, and legislative integration.",
     "frontImage": "/cards/evidence/62.webp",
     "backImage": "/cards/evidence/67.webp",
-    "qrUrl": "https://q.me-qr.com/rsvjppum",
+    "qrUrl": "https://www.parliament.go.th/assets/portals/61/filenewspar/61_180_file.pdf",
     "isAuthentic": true,
     "price": 800
   },
@@ -1302,7 +1302,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เว็บไซต์ธนาคารแห่งประเทศไทย อธิบายกรอบความร่วมมือทางการเงินการธนาคารในอาเซียน การเชื่อมโยงระบบการชำระเงิน และการเปิดเสรีภาคบริการ / Bank of Thailand official portal covering regional financial cooperation, cross-border payment connectivity, and capital market integration.",
     "frontImage": "/cards/evidence/63.webp",
     "backImage": "/cards/evidence/68.webp",
-    "qrUrl": "https://q.me-qr.com/dce6zcj1",
+    "qrUrl": "https://www.bot.or.th/th/our-roles/international-cooperation/regionalfora/asean.html",
     "isAuthentic": true,
     "price": 800
   },
@@ -1318,7 +1318,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารานุกรมการเมืองการปกครอง สถาบันพระปกเกล้า อธิบายแผนงาน IAI ในการลดช่องว่างการพัฒนาระหว่างสมาชิกเก่าและกลุ่มประเทศ CLMV / Academic KPI wiki detailing the Initiative for ASEAN Integration (IAI) framework designed to narrow development gaps for CLMV nations.",
     "frontImage": "/cards/evidence/64.webp",
     "backImage": "/cards/evidence/69.webp",
-    "qrUrl": "https://q.me-qr.com/pt4pj8t7",
+    "qrUrl": "https://wiki.kpi.ac.th/index.php?title=%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%A3%E0%B8%B4%E0%B9%80%E0%B8%A3%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%A7%E0%B8%A1%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%B2%E0%B9%80%E0%B8%8B%E0%B8%B5%E0%B8%A2%E0%B8%99",
     "isAuthentic": true,
     "price": 800
   },
@@ -1334,7 +1334,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ ปฏิญญากรุงเทพ 1967 สนธิสัญญาไมตรีและความร่วมมือ (TAC) และบันทึกประวัติศาสตร์อาเซียน / Digitized primary archival dossier containing the original 1967 Bangkok Declaration text, TAC treaty, and diplomatic communiqués.",
     "frontImage": "/cards/evidence/65.webp",
     "backImage": "/cards/evidence/70.webp",
-    "qrUrl": "https://q.me-qr.com/wny08swc",
+    "qrUrl": "https://drive.google.com/drive/folders/1mAeaNvoWKtKEAQ9fClvwyaQpmFfn4_Gc",
     "isAuthentic": false,
     "price": 800
   },
@@ -1350,7 +1350,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "พอร์ทัลทางการกระทรวงการต่างประเทศ อธิบายพันธกิจของ WTO การเจรจาการค้าพหุภาคี และผลประโยชน์ของไทยในระบบการค้าโลก / Official Thai MFA portal outlining the WTO mission, GATT history, multilateral trade negotiations, and Thailand's strategic trade interests.",
     "frontImage": "/cards/evidence/71.webp",
     "backImage": "/cards/evidence/76.webp",
-    "qrUrl": "https://q.me-qr.com/b2n3wpwu",
+    "qrUrl": "https://mfa.go.th/th/content/5d5bcc2715e39c306000a368?cate=5d5bcb4e15e39c3060006872",
     "isAuthentic": true,
     "price": 800
   },
@@ -1366,7 +1366,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "ฐานข้อมูลการเมืองการปกครอง สถาบันพระปกเกล้า วิเคราะห์หลักการสำคัญของ WTO เช่น MFN และการระงับข้อพิพาททางการค้า (DSB) / KPI encyclopedia detailing WTO core legal principles including Most-Favoured-Nation (MFN), National Treatment, and the Dispute Settlement Body.",
     "frontImage": "/cards/evidence/72.webp",
     "backImage": "/cards/evidence/77.webp",
-    "qrUrl": "https://q.me-qr.com/u9jbwegi",
+    "qrUrl": "https://wiki.kpi.ac.th/index.php?title=WTO",
     "isAuthentic": true,
     "price": 800
   },
@@ -1382,7 +1382,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารวิจัยรัฐสภาสหราชอาณาจักร วิเคราะห์วิกฤตของกลไกอุทธรณ์ WTO สงครามการค้า และทิศทางการปฏิรูปการค้าโลก / UK Parliamentary research briefing analyzing the WTO Appellate Body impasse, trade conflicts, and modernization initiatives.",
     "frontImage": "/cards/evidence/73.webp",
     "backImage": "/cards/evidence/78.webp",
-    "qrUrl": "https://q.me-qr.com/d6ac38uq",
+    "qrUrl": "https://commonslibrary.parliament.uk/research-briefings/cbp-9942/",
     "isAuthentic": true,
     "price": 800
   },
@@ -1398,7 +1398,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "สารคดีทันโลก Express ย้อนรอยความตกลงมาร์ราเคช การเปลี่ยนผ่านจาก GATT สู่ WTO และบทบาทในการกำกับดูแลการค้าโลก / Historical documentary feature chronicling the 1994 Marrakesh Agreement, the transition from GATT 1947 to WTO in 1995, and global market rules.",
     "frontImage": "/cards/evidence/74.webp",
     "backImage": "/cards/evidence/79.webp",
-    "qrUrl": "https://q.me-qr.com/y8891kit",
+    "qrUrl": "https://www.youtube.com/watch?v=MyYKlJ34pJ0",
     "isAuthentic": true,
     "price": 800
   },
@@ -1414,7 +1414,7 @@ export const EVIDENCE_ITEMS: EvidenceItem[] = [
     "summary": "เอกสารหลักฐานปฐมภูมิ ความตกลงมาร์ราเคช เอกสารการเจรจารอบอุรุกวัย และระเบียบการค้าเสรีโลก ฉบับดิจิทัล / Digitized primary archival dossier containing the Marrakesh Agreement, Uruguay Round legal texts, and WTO founding instruments.",
     "frontImage": "/cards/evidence/75.webp",
     "backImage": "/cards/evidence/80.webp",
-    "qrUrl": "https://q.me-qr.com/cox4iwbi",
+    "qrUrl": "https://drive.google.com/file/d/1d1nGCobrb02cGRJJuojyzeB3L5IRrb41/view?usp=sharing",
     "isAuthentic": false,
     "price": 800
   }

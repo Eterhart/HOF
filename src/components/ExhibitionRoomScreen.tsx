@@ -565,7 +565,7 @@ export const ExhibitionRoomScreen: React.FC<ExhibitionRoomScreenProps> = ({
                           }}
                         >
                           <span className="text-rose-200 font-sans font-extrabold text-[10px] sm:text-xs tracking-[0.25em] uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                            {evidence.isAuthentic === false ? 'COUNTERFEIT' : 'UNRELATED'}
+                            {evidence.isAuthentic === false ? 'Fake evidence' : 'UNRELATED'}
                           </span>
                         </div>
                       </div>

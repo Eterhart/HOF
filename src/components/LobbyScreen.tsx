@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Users, User, PlusCircle, LogIn, Sparkles, ArrowLeft, ArrowRight, Crown, Landmark, Flag, Gamepad2, UserCheck, UserPlus } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { Users, User, PlusCircle, LogIn, Sparkles, ArrowLeft, ArrowRight, Crown, Landmark, Flag, Gamepad2, UserCheck, UserPlus, X } from 'lucide-react';
 import { GameSessionState } from '@/data/types';
 
 interface LobbyScreenProps {
@@ -32,12 +33,12 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
   const [leaderName, setLeaderName] = useState('');
   const [joinCode, setJoinCode] = useState('');
   const [memberName, setMemberName] = useState('');
-  const [joinUserMode, setJoinUserMode] = useState<'choose' | 'existing' | 'new'>('choose');
+  const [showNewUserModal, setShowNewUserModal] = useState(false);
 
   useEffect(() => {
     setJoinCode('');
     setMemberName('');
-    setJoinUserMode('choose');
+    setShowNewUserModal(false);
   }, [mode]);
 
   const teamsList = Object.values(session.teams || {});
@@ -137,20 +138,27 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
               </div>
             )}
             {/* Choice 1: Create Team Button */}
-            <button
-              type="button"
-              onClick={() => session.phase === 'LOBBY' && teamsList.length < 8 && setMode('create')}
-              disabled={session.phase !== 'LOBBY' || teamsList.length >= 8}
-              className={`w-[260px] max-w-full mx-auto py-3.5 px-4 rounded-[4px] cyber-glass-btn text-center block ${
-                session.phase !== 'LOBBY' || teamsList.length >= 8
-                  ? 'opacity-40 cursor-not-allowed text-slate-400'
-                  : 'text-white hover:text-cyan-100 cursor-pointer'
-              }`}
-            >
-              <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
-                สร้างกลุ่มใหม่
-              </span>
-            </button>
+            <div className="w-[260px] max-w-full mx-auto space-y-1">
+              <button
+                type="button"
+                onClick={() => session.phase === 'LOBBY' && teamsList.length < 8 && setMode('create')}
+                disabled={session.phase !== 'LOBBY' || teamsList.length >= 8}
+                className={`w-full py-3.5 px-4 rounded-[4px] cyber-glass-btn text-center block ${
+                  session.phase !== 'LOBBY' || teamsList.length >= 8
+                    ? 'opacity-40 cursor-not-allowed text-slate-400 pointer-events-none'
+                    : 'text-white hover:text-cyan-100 cursor-pointer'
+                }`}
+              >
+                <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
+                  {teamsList.length >= 8 ? 'ไม่สามารถสร้างทีมได้' : 'สร้างกลุ่มใหม่'}
+                </span>
+              </button>
+              {teamsList.length >= 8 && session.phase === 'LOBBY' && (
+                <p className="text-[11px] text-rose-400 font-mono text-center tracking-tight">
+                  * ห้องนี้มีกลุ่มครบ 8 ทีมแล้ว
+                </p>
+              )}
+            </div>
 
             {/* Choice 2: Join Team Button */}
             <button
@@ -164,97 +172,109 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
               }`}
             >
               <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
-                เข้าร่วมกลุ่ม
+                เข้าร่วมทีม
               </span>
             </button>
-
-            {/* Choice 3: Grand Archive Button */}
-            {onOpenArchive && (
-              <>
-                {/* ── Divider Line (ขีดกั้น) ── */}
-                <div className="w-full pt-2 pb-0.5 flex items-center justify-center">
-                  <div className="w-[260px] max-w-full h-[1px] bg-gradient-to-r from-transparent via-sky-500/50 to-transparent shadow-[0_0_8px_rgba(14,165,233,0.5)]" />
-                </div>
-
-                <button
-                  type="button"
-                  onClick={onOpenArchive}
-                  className="w-[260px] max-w-full mx-auto py-3.5 px-4 rounded-[4px] cyber-glass-btn text-center text-white hover:text-cyan-100 cursor-pointer block"
-                >
-                  <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
-                    พิพิธภัณฑ์
-                  </span>
-                </button>
-              </>
-            )}
           </div>
+
+          {/* ── Return to Home Button (กลับสู่หน้าแรก - สไตล์เดียวกับ /// THE HALL OF FAME) ── */}
+          {onExitSession && (
+            <div className="pt-2 text-center">
+              <button
+                type="button"
+                onClick={onExitSession}
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400/70 hover:text-white tracking-[0.15em] transition-colors cursor-pointer active:scale-95 py-1 px-3"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 text-sky-400/70" />
+                <span>กลับสู่หน้าแรก</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
 
       {/* ─── MODE 2: FORM CREATE TEAM (สร้างกลุ่มใหม่) ─── */}
       {mode === 'create' && (
         <div className="relative z-10 w-full max-w-[360px] mx-auto animate-fadeIn">
-          <form onSubmit={handleCreate} className="relative p-2 sm:p-3 space-y-4">
-            {/* Back Header */}
-            <div className="flex items-center justify-between pb-2.5 border-b border-sky-950/60">
+          {teamsList.length >= 8 ? (
+            <div className="relative p-4 text-center space-y-4">
+              <div className="p-3 bg-amber-950/50 border border-amber-500/50 rounded-[4px] text-xs text-amber-200 space-y-1">
+                <p className="font-bold">ห้องนี้สร้างกลุ่มครบ 8 ทีมแล้ว</p>
+                <p className="text-amber-300/80">ไม่สามารถสร้างกลุ่มใหม่เพิ่มได้ กรุณาเลือกเข้าร่วมกลุ่มที่มีอยู่</p>
+              </div>
               <button
                 type="button"
-                onClick={() => setMode('select')}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sky-300 hover:text-white transition cursor-pointer"
+                onClick={() => setMode('join')}
+                className="w-[220px] max-w-full mx-auto py-3 px-4 rounded-[4px] cyber-glass-btn-gold text-center block text-white hover:text-[#fde68a] cursor-pointer"
               >
-                <ArrowLeft className="w-4 h-4 text-sky-300" />
-                <span>&lt; ย้อนกลับ</span>
+                <span className="text-sm font-serif font-bold tracking-wide">
+                  ไปที่หน้าเข้าร่วมกลุ่ม ➔
+                </span>
               </button>
-              <span className="text-[10px] font-mono text-sky-400/70 tracking-widest uppercase">
-                /// CREATE TEAM
-              </span>
             </div>
-
-            <div className="text-center space-y-1">
-              <h2 className="text-base sm:text-lg font-serif font-bold text-white tracking-tight">
-                สร้างกลุ่มใหม่
-              </h2>
-            </div>
-
-            <div className="space-y-3 pt-1">
-              <div>
-                <input
-                  type="text"
-                  required
-                  autoFocus
-                  placeholder="ชื่อกลุ่ม"
-                  value={teamName}
-                  onChange={(e) => setTeamName(e.target.value)}
-                  className="w-full py-3 px-4 rounded-[4px] cyber-glass-btn text-sm font-serif text-white placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 transition-all duration-200"
-                />
+          ) : (
+            <form onSubmit={handleCreate} className="relative p-2 sm:p-3 space-y-4">
+              {/* Back Header */}
+              <div className="flex items-center justify-between pb-2.5 border-b border-sky-950/60">
+                <button
+                  type="button"
+                  onClick={() => setMode('select')}
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sky-300 hover:text-white transition cursor-pointer"
+                >
+                  <ArrowLeft className="w-4 h-4 text-sky-300" />
+                  <span>ย้อนกลับ</span>
+                </button>
+                <span className="text-[10px] font-mono text-sky-400/70 tracking-widest uppercase">
+                  /// CREATE TEAM
+                </span>
               </div>
 
-              <div>
-                <input
-                  type="text"
-                  required
-                  placeholder="ชื่อของคุณ"
-                  value={leaderName}
-                  onChange={(e) => setLeaderName(e.target.value)}
-                  className="w-full py-3 px-4 rounded-[4px] cyber-glass-btn text-sm font-serif text-white placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 transition-all duration-200"
-                />
+              <div className="text-center space-y-1">
+                <h2 className="text-base sm:text-lg font-serif font-bold text-white tracking-tight">
+                  สร้างกลุ่มใหม่
+                </h2>
               </div>
-            </div>
 
-            <button
-              type="submit"
-              disabled={isLoading || teamsList.length >= 8}
-              className={`w-[200px] max-w-full mx-auto py-3 px-4 rounded-[4px] cyber-glass-btn text-center block ${
-                isLoading || teamsList.length >= 8
-                  ? 'opacity-40 cursor-not-allowed text-slate-400'
-                  : 'text-white hover:text-cyan-100 cursor-pointer'
-              }`}
-            >
-              <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
-                {isLoading ? 'กำลังสร้างกลุ่ม...' : 'สร้างกลุ่มใหม่'}
-              </span>
-            </button>
-          </form>
+              <div className="space-y-3 pt-1">
+                <div>
+                  <input
+                    type="text"
+                    required
+                    autoFocus
+                    placeholder="ชื่อกลุ่ม"
+                    value={teamName}
+                    onChange={(e) => setTeamName(e.target.value)}
+                    className="w-full py-3 px-4 rounded-[4px] cyber-glass-btn text-sm font-serif text-white placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 transition-all duration-200"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="text"
+                    required
+                    placeholder="ชื่อของคุณ"
+                    value={leaderName}
+                    onChange={(e) => setLeaderName(e.target.value)}
+                    className="w-full py-3 px-4 rounded-[4px] cyber-glass-btn text-sm font-serif text-white placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 transition-all duration-200"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading || teamsList.length >= 8}
+                className={`w-[200px] max-w-full mx-auto py-3 px-4 rounded-[4px] cyber-glass-btn text-center block ${
+                  isLoading || teamsList.length >= 8
+                    ? 'opacity-40 cursor-not-allowed text-slate-400'
+                    : 'text-white hover:text-cyan-100 cursor-pointer'
+                }`}
+              >
+                <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
+                  {isLoading ? 'กำลังสร้างกลุ่ม...' : 'สร้างกลุ่มใหม่'}
+                </span>
+              </button>
+            </form>
+          )}
         </div>
       )}
 
@@ -267,23 +287,21 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
               <button
                 type="button"
                 onClick={() => {
-                  if (joinUserMode !== 'choose') {
-                    setJoinUserMode('choose');
-                  } else if (joinCode) {
+                  if (joinCode) {
                     setJoinCode('');
                     setMemberName('');
-                    setJoinUserMode('choose');
+                    setShowNewUserModal(false);
                   } else {
                     setJoinCode('');
                     setMemberName('');
-                    setJoinUserMode('choose');
+                    setShowNewUserModal(false);
                     setMode('select');
                   }
                 }}
                 className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sky-300 hover:text-white transition cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4 text-sky-300" />
-                <span>&lt; ย้อนกลับ</span>
+                <span>ย้อนกลับ</span>
               </button>
               <span className="text-[10px] font-mono text-sky-400/70 tracking-widest uppercase">
                 /// SELECT TEAM & IDENTITY
@@ -297,7 +315,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
                     เลือกกลุ่มของคุณ
                   </h2>
                   <p className="text-[11.5px] text-sky-300/75">
-                    แตะเลือกกลุ่มเพื่อสวมตัวตนเดิมเล่นต่อ หรือเข้าร่วมเป็นสมาชิกใหม่
+                    แตะเลือกกลุ่มเพื่อสวมตัวตนเดิมเล่นต่อ หรือสร้าง User ใหม่
                   </p>
                 </div>
 
@@ -317,7 +335,8 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
                           key={team.id}
                           onClick={() => {
                             setJoinCode(team.code);
-                            setJoinUserMode('choose');
+                            setMemberName('');
+                            setShowNewUserModal(false);
                           }}
                           className="w-full py-3.5 px-4 rounded-[4px] cyber-glass-btn flex items-center justify-between transition-all duration-200 cursor-pointer hover:border-sky-400/80 active:scale-98"
                         >
@@ -332,7 +351,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
                               isFull ? 'text-rose-400 font-bold' : 'text-sky-300/80'
                             }`}
                           >
-                            {isFull ? '5/5 คน (เต็ม)' : `${membersCount}/5 คน`}
+                            {isFull ? 'เต็ม' : `${membersCount}/5 คน`}
                           </span>
                         </div>
                       );
@@ -344,161 +363,170 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
               (() => {
                 const selectedTeam = teamsList.find((t) => t.code === joinCode);
                 if (!selectedTeam) return null;
-                const hasMembers = selectedTeam.members && selectedTeam.members.length > 0;
-                const canAddNew = selectedTeam.members.length < 5;
+                const members = selectedTeam.members || [];
+                const canAddNew = members.length < 5;
 
                 return (
-                  <div className="space-y-4 pt-1 animate-fadeIn">
-                    {/* Big Prominent Team Title (ทีม อาฟู่ ตัวใหญ่) */}
+                  <div className="space-y-3 pt-1 animate-fadeIn">
+                    {/* Big Prominent Team Title */}
                     <div className="text-center space-y-1 py-1">
                       <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black text-white tracking-wide drop-shadow-[0_0_25px_rgba(125,211,252,0.4)]">
-                        ทีม {selectedTeam.name}
+                        {selectedTeam.name}
                       </h2>
+                      <p className="text-[11px] text-sky-300/80 font-sans">
+                        เลือก User เดิมเพื่อสวมตัวตน {canAddNew && 'หรือแตะ (+) เพื่อสร้าง User ใหม่'}
+                      </p>
                     </div>
 
-                    {/* Step 1: Choice Buttons (ยังไม่โผล่ฟอร์มจนกว่าจะกดเลือก) */}
-                    {joinUserMode === 'choose' && (
-                      <div className="space-y-3 pt-2">
-                        <div className="text-center pb-0.5">
-                          <span className="text-xs text-sky-300/80 font-sans font-medium">
-                            เลือกรูปแบบการเข้าสู่กลุ่ม
+                    {/* Grid 3 Columns: Existing Members + Yellow Create New User Card */}
+                    <div className="grid grid-cols-3 gap-2.5 sm:gap-3 pt-1">
+                      {/* 1. Existing Members */}
+                      {members.map((m, mIdx) => (
+                        <button
+                          key={m.id || mIdx}
+                          type="button"
+                          onClick={() =>
+                            onReclaimIdentity
+                              ? onReclaimIdentity(selectedTeam.id, m.id)
+                              : onJoinTeam(selectedTeam.code, m.name)
+                          }
+                          disabled={isLoading}
+                          className="aspect-square p-2.5 rounded-[6px] cyber-glass-btn flex flex-col items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:border-sky-400 active:scale-95 group text-center select-none"
+                        >
+                          <User className="w-8 h-8 sm:w-9 sm:h-9 text-sky-300 group-hover:text-white transition-all drop-shadow-[0_0_12px_rgba(125,211,252,0.6)] stroke-[1.6]" />
+                          <span className="font-serif font-bold text-xs sm:text-sm text-white group-hover:text-cyan-200 truncate max-w-full px-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                            {m.name}
                           </span>
-                        </div>
+                        </button>
+                      ))}
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                          {/* Option 1: เคยสร้าง User แล้ว */}
-                          <button
-                            type="button"
-                            onClick={() => setJoinUserMode('existing')}
-                            disabled={!hasMembers}
-                            className={`py-3.5 px-3 rounded-[4px] cyber-glass-btn flex flex-col items-center justify-center gap-1.5 transition active:scale-[0.98] ${
-                              !hasMembers
-                                ? 'opacity-40 cursor-not-allowed border-sky-950/40'
-                                : 'cursor-pointer hover:border-sky-400/80'
-                            }`}
-                          >
-                            <UserCheck className="w-5 h-5 text-sky-400" />
-                            <span className="text-xs sm:text-sm font-serif font-bold text-white">
-                              เคยสร้าง User แล้ว
-                            </span>
-                            <span className="text-[10px] text-sky-300/60 font-sans">
-                              {hasMembers ? `สวมตัวตน (${selectedTeam.members.length} คน)` : 'ยังไม่มีสมาชิก'}
-                            </span>
-                          </button>
-
-                          {/* Option 2: สร้างบัญชีใหม่ */}
-                          <button
-                            type="button"
-                            onClick={() => setJoinUserMode('new')}
-                            disabled={!canAddNew}
-                            className={`py-3.5 px-3 rounded-[4px] cyber-glass-btn flex flex-col items-center justify-center gap-1.5 transition active:scale-[0.98] ${
-                              !canAddNew
-                                ? 'opacity-40 cursor-not-allowed border-sky-950/40'
-                                : 'cursor-pointer hover:border-sky-400/80'
-                            }`}
-                          >
-                            <UserPlus className="w-5 h-5 text-amber-400" />
-                            <span className="text-xs sm:text-sm font-serif font-bold text-white">
-                              สร้างบัญชีใหม่
-                            </span>
-                            <span className="text-[10px] text-sky-300/60 font-sans">
-                              {canAddNew ? 'เข้าร่วมเป็นสมาชิกใหม่' : 'กลุ่มเต็มแล้ว (5/5)'}
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                  {/* Step 2A: เคยสร้าง User แล้ว (สวมตัวตน) */}
-                  {joinUserMode === 'existing' && (
-                    <div className="space-y-2.5 animate-fadeIn">
-                      <div className="flex items-center justify-between pb-1">
+                      {/* 2. Card: Create New User (Hidden if team has 5 members) */}
+                      {canAddNew && (
                         <button
                           type="button"
-                          onClick={() => setJoinUserMode('choose')}
-                          className="inline-flex items-center gap-1 text-xs text-sky-300 hover:text-white transition font-mono cursor-pointer"
-                        >
-                          <ArrowLeft className="w-3.5 h-3.5" />
-                          <span>&lt; เลือกวิธีอื่น</span>
-                        </button>
-                        <span className="text-[11px] text-sky-300/80 font-sans font-medium">
-                          เลือกชื่อของคุณเพื่อสวมตัวตน
-                        </span>
-                      </div>
-
-                      {/* Grid 3 Columns with Square Cards (สี่เหลี่ยมจัตุรัส แถวละ 3 ไอคอน user + ชื่อ user) */}
-                      <div className="grid grid-cols-3 gap-2.5 sm:gap-3 pt-1">
-                        {selectedTeam.members.map((m, mIdx) => (
-                          <button
-                            key={m.id || mIdx}
-                            type="button"
-                            onClick={() =>
-                              onReclaimIdentity
-                                ? onReclaimIdentity(selectedTeam.id, m.id)
-                                : onJoinTeam(selectedTeam.code, m.name)
-                            }
-                            disabled={isLoading}
-                            className="aspect-square p-2.5 rounded-[4px] cyber-glass-btn flex flex-col items-center justify-center gap-2 transition-all duration-200 cursor-pointer hover:border-sky-400 active:scale-95 group text-center select-none"
-                          >
-                            <User className="w-8 h-8 sm:w-9 sm:h-9 text-sky-300 group-hover:text-white transition-all drop-shadow-[0_0_12px_rgba(125,211,252,0.6)] stroke-[1.6]" />
-
-                            <span className="font-serif font-bold text-xs sm:text-sm text-white group-hover:text-cyan-200 truncate max-w-full px-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
-                              {m.name}
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Step 2B: สร้างบัญชีใหม่ */}
-                  {joinUserMode === 'new' && (
-                    <div className="space-y-2.5 animate-fadeIn">
-                      <div className="flex items-center justify-between pb-1">
-                        <button
-                          type="button"
-                          onClick={() => setJoinUserMode('choose')}
-                          className="inline-flex items-center gap-1 text-xs text-sky-300 hover:text-white transition font-mono cursor-pointer"
-                        >
-                          <ArrowLeft className="w-3.5 h-3.5" />
-                          <span>&lt; เลือกวิธีอื่น</span>
-                        </button>
-                        <span className="text-[11px] text-sky-300/80 font-sans font-medium">
-                          ระบุชื่อเพื่อสร้างบัญชีใหม่
-                        </span>
-                      </div>
-
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          placeholder="พิมพ์ชื่อของคุณ (สมาชิกใหม่)"
-                          value={memberName}
-                          onChange={(e) => setMemberName(e.target.value)}
-                          autoFocus
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' && memberName.trim() && !isLoading) {
-                              e.preventDefault();
-                              onJoinTeam(selectedTeam.code, memberName);
-                            }
+                          onClick={() => {
+                            setMemberName('');
+                            setShowNewUserModal(true);
                           }}
-                          className="flex-1 py-3 px-4 rounded-[4px] cyber-glass-btn text-xs sm:text-sm font-serif text-white placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 transition-all duration-200"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => onJoinTeam(selectedTeam.code, memberName)}
-                          disabled={isLoading || !memberName.trim()}
-                          className={`px-5 py-3 rounded-[4px] cyber-glass-btn-gold text-xs font-bold font-serif shrink-0 cursor-pointer transition active:scale-95 ${
-                            isLoading || !memberName.trim() ? 'opacity-40 cursor-not-allowed' : 'text-white hover:text-amber-200'
-                          }`}
+                          disabled={isLoading}
+                          className="aspect-square p-2.5 rounded-[6px] border-0 border-none bg-transparent hover:bg-white/5 flex flex-col items-center justify-center gap-2 transition-all duration-200 cursor-pointer active:scale-95 group text-center select-none shadow-none"
                         >
-                          {isLoading ? '...' : 'เข้าร่วม ➔'}
+                          <UserPlus className="w-8 h-8 sm:w-9 sm:h-9 text-amber-400 group-hover:text-amber-200 transition-all drop-shadow-[0_0_12px_rgba(245,158,11,0.6)] stroke-[1.6]" />
+                          <span className="font-serif font-bold text-xs sm:text-sm text-amber-300 group-hover:text-amber-100 truncate max-w-full px-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                            เพิ่ม
+                          </span>
                         </button>
-                      </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              );
-            })())}
+
+                    {/* New User Creation Cyber Modal (สไตล์เดียวกับ แจ้งเตือนตลาดยังไม่เปิด) */}
+                    {typeof document !== 'undefined' &&
+                      showNewUserModal &&
+                      createPortal(
+                        <div
+                          className="fixed inset-0 z-[99999999] bg-[#020617]/85 backdrop-blur-md flex items-center justify-center p-4 select-none animate-in fade-in duration-200"
+                          onClick={() => setShowNewUserModal(false)}
+                        >
+                          {/* Ambient volumetric blue glow */}
+                          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(14,165,233,0.22),transparent_75%)] pointer-events-none" />
+
+                          {/* Cyber Blue Glass Box (สไตล์เดียวกับ Game Overview / แจ้งเตือนตลาด) */}
+                          <div
+                            className="relative w-full max-w-[360px] sm:max-w-[400px] rounded-none bg-[#061224]/95 border border-sky-400/60 shadow-[0_0_40px_rgba(56,189,248,0.45)] backdrop-blur-2xl p-6 sm:p-7 text-center space-y-4 overflow-hidden animate-beam-expand-blink"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {/* Top & Bottom Laser Beams */}
+                            <div className="absolute inset-x-0 top-0 h-[2.5px] bg-sky-400 shadow-[0_0_15px_#38bdf8] animate-pulse pointer-events-none" />
+                            <div className="absolute inset-x-0 bottom-0 h-[2.5px] bg-sky-400 shadow-[0_0_15px_#38bdf8] animate-pulse pointer-events-none" />
+
+                            {/* Left & Right Laser Lines */}
+                            <div className="absolute inset-y-0 left-0 w-[2px] bg-sky-400/80 shadow-[0_0_10px_#38bdf8] animate-pulse pointer-events-none" />
+                            <div className="absolute inset-y-0 right-0 w-[2px] bg-sky-400/80 shadow-[0_0_10px_#38bdf8] animate-pulse pointer-events-none" />
+
+                            {/* 4 Perfectly Aligned Tech Corner Brackets */}
+                            <div className="absolute inset-0 pointer-events-none">
+                              <span className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-sky-300 shadow-[0_0_8px_#38bdf8]" />
+                              <span className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-sky-300 shadow-[0_0_8px_#38bdf8]" />
+                              <span className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-2 border-l-2 border-sky-300 shadow-[0_0_8px_#38bdf8]" />
+                              <span className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-2 border-r-2 border-sky-300 shadow-[0_0_8px_#38bdf8]" />
+                            </div>
+
+                            {/* Scanning Vertical Light Beam */}
+                            <div className="absolute inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-sky-300 to-transparent shadow-[0_0_8px_#38bdf8] pointer-events-none animate-beam-scanline-v" />
+
+                            {/* Icon Box */}
+                            <div className="w-12 h-12 mx-auto rounded-none bg-sky-950/90 border border-sky-400/80 flex items-center justify-center shadow-[0_0_18px_rgba(56,189,248,0.5)]">
+                              <UserPlus className="w-6 h-6 text-sky-300 animate-pulse" />
+                            </div>
+
+                            {/* Content */}
+                            <div className="space-y-1.5">
+                              <span className="text-[10.5px] font-mono text-sky-400 uppercase tracking-widest font-bold block">
+                                /// CREATE NEW IDENTITY
+                              </span>
+                              <h3 className="text-xl sm:text-2xl font-serif font-black text-white tracking-tight drop-shadow-[0_0_15px_rgba(125,211,252,0.4)]">
+                                พิมพ์ชื่อของคุณ
+                              </h3>
+                              <p className="text-xs sm:text-sm text-sky-200/90 font-sans leading-relaxed">
+                                เข้าร่วมเป็นสมาชิกของทีม <strong className="text-white">&ldquo;{selectedTeam.name}&rdquo;</strong>
+                              </p>
+                            </div>
+
+                            {/* Input Form */}
+                            <div className="space-y-3 pt-1">
+                              <input
+                                type="text"
+                                placeholder="USERNAME"
+                                value={memberName}
+                                onChange={(e) => setMemberName(e.target.value)}
+                                autoFocus
+                                maxLength={20}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' && memberName.trim() && !isLoading) {
+                                    e.preventDefault();
+                                    onJoinTeam(selectedTeam.code, memberName.trim());
+                                    setShowNewUserModal(false);
+                                  }
+                                }}
+                                className="w-full py-2.5 px-4 rounded-none bg-sky-950/60 border border-sky-400/70 text-white font-serif text-xs sm:text-sm placeholder-sky-300/40 focus:outline-none focus:border-sky-300 focus:ring-1 focus:ring-sky-300 shadow-[inset_0_0_12px_rgba(56,189,248,0.15)] transition-all text-center"
+                              />
+
+                              {/* Action Buttons */}
+                              <div className="grid grid-cols-2 gap-2 pt-1">
+                                <button
+                                  type="button"
+                                  onClick={() => setShowNewUserModal(false)}
+                                  className="w-full py-2.5 px-3 rounded-none bg-slate-900/80 hover:bg-slate-800/80 border border-slate-600 text-slate-300 font-serif font-bold text-xs sm:text-sm transition active:scale-95 cursor-pointer"
+                                >
+                                  ยกเลิก
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    if (memberName.trim() && !isLoading) {
+                                      onJoinTeam(selectedTeam.code, memberName.trim());
+                                      setShowNewUserModal(false);
+                                    }
+                                  }}
+                                  disabled={isLoading || !memberName.trim()}
+                                  className={`w-full py-2.5 px-3 rounded-none bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400 text-sky-200 font-serif font-bold text-xs sm:text-sm transition active:scale-95 shadow-[0_0_15px_rgba(56,189,248,0.25)] ${
+                                    isLoading || !memberName.trim()
+                                      ? 'opacity-40 cursor-not-allowed'
+                                      : 'cursor-pointer hover:text-white'
+                                  }`}
+                                >
+                                  {isLoading ? 'กำลังเข้าร่วม...' : 'ยืนยันสร้างบัญชี ➔'}
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>,
+                        document.body
+                      )}
+                  </div>
+                );
+              })()
+            )}
           </div>
         </div>
       )}

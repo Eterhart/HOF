@@ -356,7 +356,7 @@ export const WaitingRoomScreen: React.FC<WaitingRoomScreenProps> = ({
             className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400/80 hover:text-rose-400 transition active:scale-95 disabled:opacity-50 cursor-pointer"
           >
             <LogOut className="w-3.5 h-3.5" />
-            <span>&lt; ออกจากกลุ่ม / เปลี่ยนกลุ่ม</span>
+            <span>ออกจากกลุ่ม / เปลี่ยนกลุ่ม</span>
           </button>
         </div>
       </div>

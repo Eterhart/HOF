@@ -13,6 +13,7 @@ import {
   purchaseItem,
   submitExhibitionRoom,
   unlockTeamSubmission,
+  unlockAllTeamsSubmission,
   setGamePhase,
   updateSessionDuration,
   resetGameSession,
@@ -22,6 +23,7 @@ import {
   shuffleTeamsRooms,
   updateTeamName,
   updateMemberName,
+  updateSessionName,
 } from '@/lib/gameState';
 
 export const dynamic = 'force-dynamic';
@@ -129,6 +131,14 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(result);
       }
 
+      case 'update_session_name': {
+        const { newName } = body;
+        if (!newName) return NextResponse.json({ error: 'กรุณาระบุชื่อห้องใหม่' }, { status: 400 });
+        const result = updateSessionName(sessionId, newName);
+        if (!result.success) return NextResponse.json({ error: result.error }, { status: 400 });
+        return NextResponse.json(result);
+      }
+
       case 'update_member_name': {
         const { teamId, memberId, newName } = body;
         if (!teamId || !memberId || !newName) return NextResponse.json({ error: 'ข้อมูลไม่ครบถ้วน' }, { status: 400 });
@@ -159,6 +169,13 @@ export async function POST(req: NextRequest) {
         const { teamId } = body;
         if (!teamId) return NextResponse.json({ error: 'กรุณาระบุ Team ID' }, { status: 400 });
         const result = unlockTeamSubmission(sessionId, teamId);
+        if (!result.success) return NextResponse.json({ error: result.error }, { status: 400 });
+        return NextResponse.json(result);
+      }
+
+      case 'unlock_all_teams_submission':
+      case 'allow_resubmit_all': {
+        const result = unlockAllTeamsSubmission(sessionId);
         if (!result.success) return NextResponse.json({ error: result.error }, { status: 400 });
         return NextResponse.json(result);
       }

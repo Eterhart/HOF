@@ -278,7 +278,7 @@ export default function GamePage() {
     return () => clearInterval(activeSessionsInterval);
   }, []);
 
-  // ── Restore from localStorage (Only when accessing via direct room link) ──
+  // ── Auto-Restore Session, Team & Tabs from localStorage ───────────────────
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
@@ -287,14 +287,36 @@ export default function GamePage() {
     const sid = localStorage.getItem('curator_session_id');
     const teamId = localStorage.getItem('curator_team_id');
     const memberId = localStorage.getItem('curator_member_id');
+    const savedTab = localStorage.getItem('curator_active_tab') as 'briefing' | 'market' | 'room' | null;
+    const savedMarketSubTab = localStorage.getItem('curator_market_subtab') as 'evidence' | 'stories' | 'statues' | null;
 
-    if (queryCode) {
-      // Accessed via direct room link -> auto-restore team/member
-      if (sid) setSessionId(sid);
-      if (teamId) setMyTeamId(teamId);
-      if (memberId) setMyMemberId(memberId);
+    if (sid) {
+      setSessionId(sid);
+      fetch(`/api/game?sid=${sid}`)
+        .then(res => res.ok ? res.json() : null)
+        .then(data => {
+          if (data) {
+            setSession(data);
+          }
+        })
+        .catch(e => console.error('Failed to auto-restore session:', e));
     }
+    if (teamId) setMyTeamId(teamId);
+    if (memberId) setMyMemberId(memberId);
+    if (savedTab) setActiveTab(savedTab);
+    if (savedMarketSubTab) setMarketSubTab(savedMarketSubTab);
   }, []);
+
+  // Persist active tab and subtab to localStorage for smooth mobile app-switching
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    localStorage.setItem('curator_active_tab', activeTab);
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    localStorage.setItem('curator_market_subtab', marketSubTab);
+  }, [marketSubTab]);
 
   // ── Sync URL Query with Active Session Code ────────────────────────────────
   useEffect(() => {
@@ -527,7 +549,25 @@ export default function GamePage() {
     if (!sessionId) return;
     fetchSession();
     const interval = setInterval(() => fetchSession(), 1500);
-    return () => clearInterval(interval);
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchSession();
+      }
+    };
+
+    const handleFocus = () => {
+      fetchSession();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+    };
   }, [fetchSession, sessionId]);
 
   // ── Timer ─────────────────────────────────────────────────────────────────
@@ -983,85 +1023,78 @@ export default function GamePage() {
             </p>
 
             <p className="text-xs sm:text-sm text-sky-200/75 max-w-xs mx-auto leading-relaxed font-sans">
-              ระบุรหัสห้องเรียนเพื่อเข้าสู่ห้องจัดแสดง
+              แตะเลือกห้องที่เปิดให้เล่นเพื่อเข้าสู่ห้องจัดแสดง
             </p>
 
             {/* Glowing Tech Accent Line */}
             <div className="relative pt-1 flex items-center justify-center">
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-sky-400/50 to-transparent shadow-[0_0_8px_rgba(125,211,252,0.4)]" />
               <span className="absolute px-3 bg-[#030712] text-[9.5px] font-mono text-sky-300/80 tracking-widest uppercase">
-                /// ACCESS CODE
+                /// ACTIVE ROOMS
               </span>
             </div>
           </div>
 
-          {/* ── Main Input Form (Frameless & Clean) ── */}
-          <div className="relative space-y-4">
-            <form onSubmit={handleEnterSession} className="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="รหัสห้องเกม"
-                  value={codeInput}
-                  onChange={e => setCodeInput(e.target.value.toUpperCase())}
-                  maxLength={10}
-                  className="w-full px-4 py-3 bg-[#081b33] border-2 border-sky-900/90 focus:border-sky-400 rounded-[4px] text-center text-2xl sm:text-3xl font-mono font-black tracking-[0.25em] text-[#f5c768] placeholder:text-sky-400/35 placeholder:font-sans placeholder:font-medium placeholder:text-lg sm:placeholder:text-xl placeholder:tracking-normal focus:outline-none focus:shadow-[0_0_15px_rgba(125,211,252,0.35)] transition"
-                  autoFocus
-                />
-              </div>
+          {/* ── Error Banner if any ── */}
+          {codeError && (
+            <div className="p-2.5 rounded-[4px] bg-rose-950/80 border border-rose-600/70 text-xs text-rose-300 font-medium animate-fadeIn text-center">
+              {codeError}
+            </div>
+          )}
 
-              {codeError && (
-                <div className="p-2 rounded-[4px] bg-rose-950/80 border border-rose-600/70 text-xs text-rose-300 font-medium animate-fadeIn">
-                  {codeError}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={codeLoading || !codeInput.trim()}
-                className={`w-[220px] max-w-full mx-auto py-3 px-4 rounded-[4px] cyber-glass-btn text-center block ${
-                  codeLoading || !codeInput.trim()
-                    ? 'opacity-40 cursor-not-allowed text-slate-400'
-                    : 'text-white hover:text-cyan-100 cursor-pointer'
-                }`}
-              >
-                <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
-                  {codeLoading ? 'กำลังเข้าห้อง...' : 'เข้าห้อง'}
-                </span>
-              </button>
-            </form>
-          </div>
-
-          {/* ── Available Active Rooms (ห้องที่เปิดให้เล่น) ── */}
-          <div className="relative pt-2 space-y-2 text-left animate-fadeIn">
+          {/* ── Available Active Rooms (ห้องที่เปิดให้เล่น - แตะเข้าได้ทันที) ── */}
+          <div className="relative space-y-2.5 text-left animate-fadeIn">
             <div className="flex items-center justify-between text-xs text-sky-300/80 px-1 pb-1 border-b border-sky-950/70">
               <span className="font-medium flex items-center gap-1.5 text-sky-300/90 font-mono text-[11px] uppercase tracking-wider">
                 <Landmark className="w-3.5 h-3.5 text-sky-400" />
                 ห้องที่เปิดให้เล่น
               </span>
+              <span className="text-[10px] font-mono text-sky-400/60">
+                {availableSessions.length} ห้อง
+              </span>
             </div>
 
-            <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
+            <div className="space-y-3 max-h-[280px] overflow-y-auto overflow-x-hidden px-3 py-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               {availableSessions.length === 0 ? (
-                <div className="py-4 text-center text-xs text-sky-300/50 font-mono">
-                  -- ยังไม่มีห้องที่เปิดให้เล่นในขณะนี้ --
+                <div className="py-8 px-4 rounded-[6px] bg-sky-950/20 border border-sky-900/30 text-center space-y-1.5">
+                  <p className="text-xs sm:text-sm text-sky-200/70 font-mono">
+                    -- ยังไม่มีห้องที่เปิดให้เล่นในขณะนี้ --
+                  </p>
+                  <p className="text-[11px] text-sky-400/50 font-sans">
+                    กรุณารอคุณครูสร้างและเปิดห้องเรียน
+                  </p>
                 </div>
               ) : (
                 availableSessions.map((rs) => (
-                  <div
+                  <button
                     key={rs.sessionCode}
+                    type="button"
                     onClick={() => handleQuickEnterSession(rs.sessionCode)}
-                    className="w-full py-3 px-4 rounded-[4px] cyber-glass-btn flex items-center justify-between transition-all duration-200 cursor-pointer hover:border-sky-400/80"
+                    disabled={codeLoading}
+                    className="w-full py-3.5 px-4 -skew-x-12 rounded-[2px] cyber-glass-btn flex items-center justify-between transition-all duration-200 cursor-pointer hover:border-sky-400/80 active:scale-[0.98] group text-left select-none"
                   >
-                    <div className="min-w-0 pr-2">
-                      <p className="text-xs sm:text-sm font-serif font-bold text-white truncate">
-                        {rs.sessionName || rs.sessionCode}
+                    <div className="min-w-0 pr-2 skew-x-12">
+                      <p className="text-sm font-serif font-bold text-white group-hover:text-cyan-200 transition-colors truncate">
+                        {rs.sessionName || `ห้องเรียน ${rs.sessionCode}`}
                       </p>
+                      <span className="text-[10.5px] font-mono text-sky-300/60">
+                        {rs.phase === 'LOBBY'
+                          ? 'รอเริ่ม (Lobby)'
+                          : rs.phase === 'BRIEFING'
+                          ? 'อ่านบรีฟ (Briefing)'
+                          : rs.phase === 'SHOPPING'
+                          ? 'กำลังเล่น (Shopping)'
+                          : rs.phase === 'LEADERBOARD'
+                          ? 'จบเกม (Leaderboard)'
+                          : 'แตะเพื่อเข้าห้อง'}
+                      </span>
                     </div>
-                    <span className="font-mono font-bold text-xs text-[#f5c768] shrink-0">
-                      {rs.sessionCode}
-                    </span>
-                  </div>
+                    <div className="shrink-0 px-2.5 py-1 bg-amber-950/40 border border-amber-400/60 shadow-[0_0_10px_rgba(245,199,104,0.25)] rounded-[2px]">
+                      <span className="font-mono font-bold text-xs text-[#f5c768] tracking-wider block skew-x-12">
+                        {codeLoading && codeInput === rs.sessionCode ? '...' : rs.sessionCode}
+                      </span>
+                    </div>
+                  </button>
                 ))
               )}
             </div>
@@ -1077,9 +1110,9 @@ export default function GamePage() {
             <button
               type="button"
               onClick={() => setIsArchiveOpen(true)}
-              className="w-[260px] max-w-full mx-auto py-3.5 px-4 rounded-[4px] cyber-glass-btn text-center text-white hover:text-cyan-100 cursor-pointer block"
+              className="w-[260px] max-w-full mx-auto py-3.5 px-4 -skew-x-12 rounded-[2px] cyber-glass-btn text-center text-white hover:text-cyan-100 cursor-pointer block"
             >
-              <span className="text-sm sm:text-base font-serif font-bold tracking-wide">
+              <span className="text-sm sm:text-base font-serif font-bold tracking-wide inline-block skew-x-12">
                 พิพิธภัณฑ์
               </span>
             </button>

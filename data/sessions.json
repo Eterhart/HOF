@@ -1,1 +1,1918 @@
-[]
+[
+  {
+    "sessionId": "sess_308_8teams_full_40players",
+    "sessionCode": "308",
+    "sessionName": "TEST ห้องเต็ม",
+    "createdAt": 1787736308964,
+    "phase": "LOBBY",
+    "startTime": 1787749461271,
+    "durationSeconds": 0,
+    "teams": {
+      "team_308_1": {
+        "id": "team_308_1",
+        "name": "เหยี่ยวราตรี",
+        "code": "HAWK",
+        "roomId": "CAT-1",
+        "budget": 1200,
+        "members": [
+          {
+            "id": "mem_team_308_1_1",
+            "name": "กิตติพงษ์",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_1_2",
+            "name": "ปัณณธร",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_1_3",
+            "name": "ญาณิศา",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_1_4",
+            "name": "ธนกฤต",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_1_5",
+            "name": "วรรณวิสา",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "evidenceInventory": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "storyInventory": [
+          1
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130241,
+        "submittedBy": "กิตติพงษ์",
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 24,
+          "speedBonus": 0,
+          "totalScore": 824,
+          "statueDetails": [
+            {
+              "id": 1,
+              "name": "คิม อิล-ซ็อง",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 2,
+              "name": "อี ซึง-มัน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 3,
+              "name": "แฮร์รี่ เอส. ทรูแมน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 4,
+              "name": "ดักลาส แมกอาร์เธอร์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 1,
+              "title": "สงครามเกาหลี (1950–1953)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 2,
+              "title": "วันสงบศึกสงครามเกาหลี (27 กรกฎาคม 1953)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 3,
+              "title": "วาระครบรอบ 70 ปีสงครามเกาหลีและการรำลึก",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 4,
+              "title": "สงครามเกาหลี 1950–1953 สมรภูมิแรกของสงครามเย็น",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "สมบูรณ์แบบ 100% ตอบโจทย์สงครามเกาหลีครบถ้วน",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_2": {
+        "id": "team_308_2",
+        "name": "เสือขาว",
+        "code": "TIGER",
+        "roomId": "CAT-2",
+        "budget": 950,
+        "members": [
+          {
+            "id": "mem_team_308_2_2",
+            "name": "ณภัทร",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_2_3",
+            "name": "ชนกนันท์",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_2_4",
+            "name": "ธีรภัทร",
+            "joinedAt": 1787736438964
+          }
+        ],
+        "statueInventory": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "evidenceInventory": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "storyInventory": [
+          6
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130238,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 19,
+          "speedBonus": 0,
+          "totalScore": 819,
+          "statueDetails": [
+            {
+              "id": 5,
+              "name": "โฮจิมินห์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 6,
+              "name": "โง ดินห์ เดียม",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 7,
+              "name": "ลินดอน บี. จอห์นสัน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 8,
+              "name": "ริชาร์ด นิกสัน",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 6,
+              "title": "สงครามเวียดนาม (1955–1975)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 7,
+              "title": "บทเรียนและมุมมองประวัติศาสตร์สงครามเวียดนาม",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 8,
+              "title": "สงครามเวียดนามและการถอนทหารสหรัฐฯ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 9,
+              "title": "การประท้วงต่อต้านสงครามเวียดนามในสหรัฐอเมริกา (15 พฤศจิกายน 2512)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "ยอดเยี่ยม จัดแสดงสมรภูมิเวียดนามได้ครบถ้วน",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_3": {
+        "id": "team_308_3",
+        "name": "มังกรฟ้า",
+        "code": "DRAGON",
+        "roomId": "CAT-3",
+        "budget": 800,
+        "members": [
+          {
+            "id": "mem_team_308_3_1",
+            "name": "พงศ์ศรัณย์",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_3_2",
+            "name": "ชนาธิป",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_3_3",
+            "name": "ธัญญารัตน์",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_3_4",
+            "name": "วรัญญา",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_3_5",
+            "name": "ศุภกฤต",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "evidenceInventory": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "storyInventory": [
+          11
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130238,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 16,
+          "speedBonus": 0,
+          "totalScore": 816,
+          "statueDetails": [
+            {
+              "id": 9,
+              "name": "จอห์น เอฟ. เคนเนดี",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 10,
+              "name": "นีกีตา ขรุชชอฟ",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 11,
+              "name": "ฟีเดล คาสโตร",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 12,
+              "name": "เช เกวารา",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 11,
+              "title": "วิกฤตการณ์ขีปนาวุธคิวบา (ตุลาคม 1962)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 12,
+              "title": "13 วันวิกฤตขีปนาวุธคิวบา จุดเดือดสงครามนิวเคลียร์",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 13,
+              "title": "เบื้องหลังวิกฤตการณ์ขีปนาวุธคิวบาและการเจรจาลับ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 14,
+              "title": "การวางหมากด้วยความกลัว: บทเรียนจิตวิทยาจากวิกฤตคิวบา",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "วิเคราะห์การทูตและบทเรียนวิกฤตคิวบาได้ลึกซึ้งมาก",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_4": {
+        "id": "team_308_4",
+        "name": "สิงโตทอง",
+        "code": "LION",
+        "roomId": "CAT-4",
+        "budget": 1100,
+        "members": [
+          {
+            "id": "mem_team_308_4_1",
+            "name": "ภานุวัฒน์",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_4_2",
+            "name": "สิรภพ",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_4_3",
+            "name": "อภิชญา",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_4_4",
+            "name": "ปิยพร",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_4_5",
+            "name": "กมลชนก",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "evidenceInventory": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "storyInventory": [
+          16
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130239,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 22,
+          "speedBonus": 0,
+          "totalScore": 822,
+          "statueDetails": [
+            {
+              "id": 13,
+              "name": "โรนัลด์ เรแกน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 14,
+              "name": "มีฮาอิล กอร์บาชอฟ",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 15,
+              "name": "เฮ็ลมุท โคล",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 16,
+              "name": "จอร์จ เอช. ดับเบิลยู. บุช",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 16,
+              "title": "กำแพงเบอร์ลิน สัญลักษณ์การแบ่งแยกแห่งสงครามเย็น",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 17,
+              "title": "การทลายกำแพงเบอร์ลิน 1989 และการปรับเปลี่ยนระเบียบโลก",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 18,
+              "title": "ประวัติศาสตร์กำแพงเบอร์ลินและการแบ่งแยกเยอรมนี (ตอนที่ 1)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 19,
+              "title": "การรวมชาติเยอรมนีและอวสานกำแพงเบอร์ลิน (ตอนที่ 2)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 19,
+          "notes": "จัดแสดงการสิ้นสุดสงครามเย็นและการรวมชาติเยอรมนีได้ยอดเยี่ยม",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_5": {
+        "id": "team_308_5",
+        "name": "ฟีนิกซ์",
+        "code": "PHOENIX",
+        "roomId": "CAT-5",
+        "budget": 1400,
+        "members": [
+          {
+            "id": "mem_team_308_5_1",
+            "name": "จิรภัทร",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_5_2",
+            "name": "ศุภวิชญ์",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_5_3",
+            "name": "พรปวีณ์",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_5_4",
+            "name": "ณิชารีย์",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_5_5",
+            "name": "เมธาสิทธิ์",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          17,
+          18,
+          19,
+          20
+        ],
+        "evidenceInventory": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "storyInventory": [
+          21
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130239,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 28,
+          "speedBonus": 0,
+          "totalScore": 828,
+          "statueDetails": [
+            {
+              "id": 17,
+              "name": "แฟรงคลิน ดี. รูสเวลต์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 18,
+              "name": "วินสตัน เชอร์ชิลล์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 19,
+              "name": "โจเซฟ สตาลิน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 20,
+              "name": "เอเลนอร์ รูสเวลต์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 21,
+              "title": "ประวัติการก่อตั้งองค์การสหประชาชาติ (1945)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 22,
+              "title": "โครงสร้างและพันธกิจขององค์การสหประชาชาติ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 23,
+              "title": "ประวัติองค์การสหประชาชาติและบทบาทประเทศไทย",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 24,
+              "title": "สหประชาชาติในวาระครบรอบ 80 ปี: ความท้าทายและการปฏิรูป",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "ความร่วมมือระดับโลกและบทบาทไทยในสหประชาชาติโดดเด่นมาก",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_6": {
+        "id": "team_308_6",
+        "name": "ยูนิคอร์น",
+        "code": "UNICORN",
+        "roomId": "CAT-6",
+        "budget": 900,
+        "members": [
+          {
+            "id": "mem_team_308_6_1",
+            "name": "ธนดล",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_6_2",
+            "name": "พิชามญชุ์",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_6_3",
+            "name": "ณัฐนันท์",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_6_4",
+            "name": "กฤษฎา",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_6_5",
+            "name": "พิมพ์ชนก",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "evidenceInventory": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "storyInventory": [
+          26
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130239,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 18,
+          "speedBonus": 0,
+          "totalScore": 818,
+          "statueDetails": [
+            {
+              "id": 21,
+              "name": "รอแบร์ ชูมาน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 22,
+              "name": "ฌอง มงเนต์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 23,
+              "name": "คอนราด อาเดอเนาเออร์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 24,
+              "name": "ฌัก เดอลอร์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 26,
+              "title": "สหภาพยุโรปและความสัมพันธ์กับประเทศไทย",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 27,
+              "title": "สารานุกรมสถาบันพระปกเกล้า: สหภาพยุโรป",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 28,
+              "title": "วิวัฒนาการและโครงสร้างเศรษฐกิจการเมืองสหภาพยุโรป",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 29,
+              "title": "ประวัติศาสตร์การรวมกลุ่มยุโรป ค.ศ. 1945–1959",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 18,
+          "notes": "การบูรณาการเศรษฐกิจและการรวมกลุ่มยุโรปถูกต้องครบถ้วน",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_7": {
+        "id": "team_308_7",
+        "name": "ช้างศึก",
+        "code": "ELEPHANT",
+        "roomId": "CAT-7",
+        "budget": 1350,
+        "members": [
+          {
+            "id": "mem_team_308_7_1",
+            "name": "เอกภพ",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_7_2",
+            "name": "สุทธิดา",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_7_3",
+            "name": "ปรมัตถ์",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_7_4",
+            "name": "กิตติศักดิ์",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_7_5",
+            "name": "นภัสสร",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          25,
+          26,
+          27,
+          28
+        ],
+        "evidenceInventory": [
+          31,
+          32,
+          33,
+          34
+        ],
+        "storyInventory": [
+          31
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130239,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 27,
+          "speedBonus": 0,
+          "totalScore": 827,
+          "statueDetails": [
+            {
+              "id": 25,
+              "name": "พ.อ. (พิเศษ) ดร. ถนัด คอมันตร์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 26,
+              "name": "อาดัม มาลิก",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 27,
+              "name": "นาร์ซิโซ รามอส",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 28,
+              "name": "เอส. ราชารัตนัม",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 31,
+              "title": "กำเนิดอาเซียนและปฏิญญากรุงเทพ (8 สิงหาคม 2510)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 32,
+              "title": "เอกสารรัฐสภาไทยว่าด้วยวิวัฒนาการและความร่วมมืออาเซียน",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 33,
+              "title": "ประชาคมเศรษฐกิจอาเซียนและความร่วมมือทางการเงิน",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 34,
+              "title": "ความคิดริเริ่มเพื่อการรวมตัวของอาเซียน (IAI)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "กำเนิดอาเซียนและบทบาทพระราชวังสราญรมย์โดดเด่นมาก ได้คะแนนอันดับ 1 ของห้อง",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_308_8": {
+        "id": "team_308_8",
+        "name": "เพกาซัส",
+        "code": "PEGASUS",
+        "roomId": "CAT-8",
+        "budget": 1050,
+        "members": [
+          {
+            "id": "mem_team_308_8_1",
+            "name": "กรวิชญ์",
+            "joinedAt": 1787736408964
+          },
+          {
+            "id": "mem_team_308_8_2",
+            "name": "ลลิตา",
+            "joinedAt": 1787736418964
+          },
+          {
+            "id": "mem_team_308_8_3",
+            "name": "วรภพ",
+            "joinedAt": 1787736428964
+          },
+          {
+            "id": "mem_team_308_8_4",
+            "name": "อชิรญา",
+            "joinedAt": 1787736438964
+          },
+          {
+            "id": "mem_team_308_8_5",
+            "name": "ภัทรดนัย",
+            "joinedAt": 1787736448964
+          }
+        ],
+        "statueInventory": [
+          29,
+          30,
+          31,
+          32
+        ],
+        "evidenceInventory": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "storyInventory": [
+          36
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787745130239,
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 21,
+          "speedBonus": 0,
+          "totalScore": 821,
+          "statueDetails": [
+            {
+              "id": 29,
+              "name": "อาร์เธอร์ ดังเคิล",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 30,
+              "name": "ปีเตอร์ ซัทเธอร์แลนด์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 31,
+              "name": "บิล คลินตัน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 32,
+              "name": "ดร. ศุภชัย พานิชภักดิ์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 36,
+              "title": "องค์การการค้าโลก (WTO) และระเบียบการค้าพหุภาคี",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 37,
+              "title": "สารานุกรมสถาบันพระปกเกล้า: องค์การการค้าโลก",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 38,
+              "title": "องค์การการค้าโลก: โอกาสและความท้าทายในศตวรรษที่ 21",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 39,
+              "title": "1 มกราคม 1995 กำเนิดองค์การการค้าโลก",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 19,
+          "notes": "เข้าใจบทบาท WTO และผู้อำนวยการชาวไทยอย่าง ดร.ศุภชัย ได้อย่างแม่นยำ",
+          "evaluatedAt": 1787737408964,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      }
+    },
+    "purchaseLogs": [],
+    "isPaused": false
+  },
+  {
+    "sessionId": "sess_301_perfect_full",
+    "sessionCode": "301",
+    "sessionName": "TEST คะแนนเต็ม",
+    "createdAt": 1787735599423,
+    "phase": "BRIEFING",
+    "startTime": 1787749458355,
+    "durationSeconds": 300,
+    "teams": {
+      "team_301_1": {
+        "id": "team_301_1",
+        "name": "เหยี่ยวราตรี",
+        "code": "HAWK1",
+        "roomId": "CAT-1",
+        "budget": 1200,
+        "members": [
+          {
+            "id": "mem_301_1",
+            "name": "กิตติพงษ์",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_2",
+            "name": "ปัณณธร",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_3",
+            "name": "ญาณิศา",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_4",
+            "name": "ธนกฤต",
+            "joinedAt": 1787735699423
+          }
+        ],
+        "statueInventory": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "evidenceInventory": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "storyInventory": [
+          1
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787736199423,
+        "submittedBy": "กิตติพงษ์",
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 24,
+          "speedBonus": 100,
+          "totalScore": 924,
+          "statueDetails": [
+            {
+              "id": 1,
+              "name": "พลเอก ดักลาส แมกอาร์เธอร์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 2,
+              "name": "คิม อิลซ็อง",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 3,
+              "name": "อี ซึง-มัน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 4,
+              "name": "พลเอก เผ่า ศรียานนท์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 1,
+              "title": "สนธิสัญญาสงบศึกปันมุนจอม 1953",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 2,
+              "title": "ภาพถ่ายทางอากาศเส้นขนานที่ 38",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 3,
+              "title": "เหรียญชัยสมรภูมิสงครามเกาหลี",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 4,
+              "title": "แถลงการณ์คณะมนตรีความมั่นคง UN",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "ยอดเยี่ยมมาก วิเคราะห์หลักฐานได้เฉียบคมและจัดห้องนิทรรศการตรงตามยุคสมัยครบถ้วน 100%",
+          "evaluatedAt": 1787736399423,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      },
+      "team_301_2": {
+        "id": "team_301_2",
+        "name": "เสือขาว",
+        "code": "TIGER1",
+        "roomId": "CAT-2",
+        "budget": 950,
+        "members": [
+          {
+            "id": "mem_301_6",
+            "name": "อิทธิพล",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_7",
+            "name": "ณภัทร",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_8",
+            "name": "ชนกนันท์",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_9",
+            "name": "ธีรภัทร",
+            "joinedAt": 1787735699423
+          },
+          {
+            "id": "mem_301_10",
+            "name": "รมิดา",
+            "joinedAt": 1787735699423
+          }
+        ],
+        "statueInventory": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "evidenceInventory": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "storyInventory": [
+          6
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787736299423,
+        "submittedBy": "อิทธิพล",
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 19,
+          "speedBonus": 100,
+          "totalScore": 919,
+          "statueDetails": [
+            {
+              "id": 5,
+              "name": "โฮจิมินห์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 6,
+              "name": "โง ดิญ เสี่ยม",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 7,
+              "name": "พลเอก วิลเลียม เวสต์มอร์แลนด์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 8,
+              "name": "พันเอก (พิเศษ) ถนัด คอมันตร์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 6,
+              "title": "ข้อตกลงสันติภาพปารีส 1973",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 7,
+              "title": "ภาพถ่ายการอพยพเฮลิคอปเตอร์ไซง่อน",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 8,
+              "title": "รองเท้ายางทหารเวียดกง",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 9,
+              "title": "ใบปลิวต่อต้านสงครามในสหรัฐฯ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 20,
+          "presentation": 10,
+          "total": 100
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 5,
+          "analysisLink": 5,
+          "presentationExplanation": 5,
+          "presentationSkill": 5,
+          "total": 20,
+          "notes": "สมบูรณ์แบบมาก คัดเลือกหลักฐานสมรภูมิเวียดนามได้ถูกต้องทั้งหมด",
+          "evaluatedAt": 1787736499423,
+          "creativity": 5,
+          "contentAccuracy": 5,
+          "evidenceSelection": 5,
+          "exhibitionLayout": 5,
+          "reasoning": 5,
+          "presentation": 5
+        }
+      }
+    },
+    "purchaseLogs": [],
+    "isPaused": false
+  },
+  {
+    "sessionId": "sess_302_almost_notfull",
+    "sessionCode": "302",
+    "sessionName": "TEST คะแนน 75%",
+    "createdAt": 1787735599423,
+    "phase": "SHOPPING",
+    "startTime": 1787749463360,
+    "durationSeconds": 1200,
+    "teams": {
+      "team_302_1": {
+        "id": "team_302_1",
+        "name": "ดิ อัลฟ่า",
+        "code": "ALPHA2",
+        "roomId": "CAT-3",
+        "budget": 600,
+        "members": [
+          {
+            "id": "mem_302_1",
+            "name": "นพดล",
+            "joinedAt": 1787735799423
+          },
+          {
+            "id": "mem_302_2",
+            "name": "ศศิชา",
+            "joinedAt": 1787735799423
+          },
+          {
+            "id": "mem_302_3",
+            "name": "วรินทร",
+            "joinedAt": 1787735799423
+          }
+        ],
+        "statueInventory": [
+          9,
+          10,
+          11,
+          1
+        ],
+        "evidenceInventory": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "storyInventory": [
+          11
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787736399423,
+        "submittedBy": "นพดล",
+        "score": {
+          "statuePoints": 320,
+          "evidencePoints": 400,
+          "trapPenalties": 0,
+          "budgetBonus": 12,
+          "speedBonus": 50,
+          "totalScore": 782,
+          "statueDetails": [
+            {
+              "id": 9,
+              "name": "จอห์น เอฟ. เคนเนดี",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 10,
+              "name": "นีกีตา ครุชชอฟ",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 11,
+              "name": "ฟิเดล กัสโตร",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 1,
+              "name": "พลเอก ดักลาส แมกอาร์เธอร์",
+              "isMatch": false,
+              "points": 20
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 11,
+              "title": "ภาพถ่ายสอดแนมฐานปล่อยขีปนาวุธคิวบา",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 12,
+              "title": "จดหมายลับระหว่างเคนเนดีและครุชชอฟ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 13,
+              "title": "คำสั่งปิดล้อมทางทะเลเกาะคิวบา",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 14,
+              "title": "บันทึกการประชุม EXCOMM",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 40,
+          "factVsOpinion": 20,
+          "reasoning": 20,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 100
+        },
+        "chapter2Score": {
+          "roomMatch": 23,
+          "budgetManagement": 15,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 18,
+          "presentation": 8,
+          "total": 84
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 4,
+          "analysisLink": 4,
+          "presentationExplanation": 4,
+          "presentationSkill": 4,
+          "total": 16,
+          "notes": "เกือบสมบูรณ์แบบมาก เลือกรูปปั้นคิวบาถูกต้อง 3 ตัว พลาดเลือกแมกอาร์เธอร์ของสงครามเกาหลีมา 1 ตัว",
+          "evaluatedAt": 1787736599423,
+          "creativity": 4,
+          "contentAccuracy": 4,
+          "evidenceSelection": 4,
+          "exhibitionLayout": 4,
+          "reasoning": 4,
+          "presentation": 4
+        }
+      },
+      "team_302_2": {
+        "id": "team_302_2",
+        "name": "ภัณฑารักษ์น้อย",
+        "code": "JUNIOR2",
+        "roomId": "CAT-4",
+        "budget": 300,
+        "members": [
+          {
+            "id": "mem_302_4",
+            "name": "พิชญะ",
+            "joinedAt": 1787735799423
+          },
+          {
+            "id": "mem_302_5",
+            "name": "กัญญาภัทร",
+            "joinedAt": 1787735799423
+          },
+          {
+            "id": "mem_302_6",
+            "name": "พชร",
+            "joinedAt": 1787735799423
+          },
+          {
+            "id": "mem_302_7",
+            "name": "สุภัสสร",
+            "joinedAt": 1787735799423
+          }
+        ],
+        "statueInventory": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "evidenceInventory": [
+          16,
+          17,
+          18,
+          20
+        ],
+        "storyInventory": [
+          16
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787736499423,
+        "submittedBy": "พิชญะ",
+        "score": {
+          "statuePoints": 400,
+          "evidencePoints": 300,
+          "trapPenalties": 200,
+          "budgetBonus": 6,
+          "speedBonus": 50,
+          "totalScore": 556,
+          "statueDetails": [
+            {
+              "id": 13,
+              "name": "มิฮาอิล กอร์บาชอฟ",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 14,
+              "name": "โรนัลด์ เรแกน",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 15,
+              "name": "เฮลมุต โคห์ล",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 16,
+              "name": "เอริช ฮ็อนเน็คเคอร์",
+              "isMatch": true,
+              "points": 100
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 16,
+              "title": "เศษซากคอนกรีตกำแพงเบอร์ลิน",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 17,
+              "title": "ภาพถ่ายสุนทรพจน์เรแกน 'Tear down this wall!'",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 18,
+              "title": "ค้อนและสิ่วที่ใช้ทลายกำแพง",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 20,
+              "title": "ภาพถ่ายจำลองกำแพงเบอร์ลินยุคใหม่ (ของปลอม)",
+              "isAuthentic": false,
+              "isMatch": false,
+              "points": -200
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 30,
+          "factVsOpinion": 15,
+          "reasoning": 15,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 80
+        },
+        "chapter2Score": {
+          "roomMatch": 30,
+          "budgetManagement": 10,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 15,
+          "presentation": 8,
+          "total": 83
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 3,
+          "analysisLink": 4,
+          "presentationExplanation": 4,
+          "presentationSkill": 4,
+          "total": 15,
+          "notes": "วิเคราะห์บุคคลสำคัญได้ดีมาก แต่หลงเชื่อหลักฐานปลอมไป 1 ชิ้น โดนหักคะแนนส่วนหลักฐาน",
+          "evaluatedAt": 1787736699423,
+          "creativity": 4,
+          "contentAccuracy": 3,
+          "evidenceSelection": 3,
+          "exhibitionLayout": 4,
+          "reasoning": 4,
+          "presentation": 4
+        }
+      }
+    },
+    "purchaseLogs": [],
+    "isPaused": false
+  },
+  {
+    "sessionId": "sess_303_half_wrong",
+    "sessionCode": "303",
+    "sessionName": "TEST คะแนน 55%",
+    "createdAt": 1787735599423,
+    "phase": "LEADERBOARD",
+    "startTime": 1787749465141,
+    "durationSeconds": 0,
+    "teams": {
+      "team_303_1": {
+        "id": "team_303_1",
+        "name": "ฟีนิกซ์",
+        "code": "PHOENIX3",
+        "roomId": "CAT-5",
+        "budget": 2100,
+        "members": [
+          {
+            "id": "mem_303_1",
+            "name": "ชยพล",
+            "joinedAt": 1787735899423
+          },
+          {
+            "id": "mem_303_2",
+            "name": "ณัฐวุฒิ",
+            "joinedAt": 1787735899423
+          },
+          {
+            "id": "mem_303_3",
+            "name": "สุพรรณิการ์",
+            "joinedAt": 1787735899423
+          }
+        ],
+        "statueInventory": [
+          17,
+          18,
+          5,
+          6
+        ],
+        "evidenceInventory": [
+          21,
+          22,
+          6,
+          7
+        ],
+        "storyInventory": [
+          21
+        ],
+        "isSubmitted": true,
+        "submittedAt": 1787736599423,
+        "submittedBy": "ชยพล",
+        "score": {
+          "statuePoints": 240,
+          "evidencePoints": 240,
+          "trapPenalties": 0,
+          "budgetBonus": 42,
+          "speedBonus": 100,
+          "totalScore": 622,
+          "statueDetails": [
+            {
+              "id": 17,
+              "name": "แฟรงคลิน ดี. รูสเวลต์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 18,
+              "name": "วินสตัน เชอร์ชิลล์",
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 5,
+              "name": "โฮจิมินห์",
+              "isMatch": false,
+              "points": 20
+            },
+            {
+              "id": 6,
+              "name": "โง ดินห์ เดียม",
+              "isMatch": false,
+              "points": 20
+            }
+          ],
+          "evidenceDetails": [
+            {
+              "id": 21,
+              "title": "ประวัติการก่อตั้งองค์การสหประชาชาติ (1945)",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 22,
+              "title": "โครงสร้างและพันธกิจขององค์การสหประชาชาติ",
+              "isAuthentic": true,
+              "isMatch": true,
+              "points": 100
+            },
+            {
+              "id": 6,
+              "title": "สงครามเวียดนาม (1955–1975)",
+              "isAuthentic": true,
+              "isMatch": false,
+              "points": 20
+            },
+            {
+              "id": 7,
+              "title": "บทเรียนและมุมมองประวัติศาสตร์สงครามเวียดนาม",
+              "isAuthentic": true,
+              "isMatch": false,
+              "points": 20
+            }
+          ]
+        },
+        "chapter1Score": {
+          "evidenceAnalysis": 20,
+          "factVsOpinion": 20,
+          "reasoning": 13,
+          "historicalLink": 10,
+          "collaboration": 10,
+          "total": 73
+        },
+        "chapter2Score": {
+          "roomMatch": 15,
+          "budgetManagement": 20,
+          "exhibitionLayout": 20,
+          "contentAccuracy": 10,
+          "presentation": 6,
+          "total": 71
+        },
+        "teacherRubric": {
+          "evidenceAccuracy": 2,
+          "analysisLink": 3,
+          "presentationExplanation": 3,
+          "presentationSkill": 3,
+          "total": 11,
+          "notes": "สับสนระหว่างห้องสหประชาชาติกับสงครามเวียดนาม นำหลักฐานและบุคคลสำคัญของเวียดนามมาจัดแสดงในห้อง UN ถึง 50%",
+          "evaluatedAt": 1787736799423,
+          "creativity": 3,
+          "contentAccuracy": 2,
+          "evidenceSelection": 2,
+          "exhibitionLayout": 3,
+          "reasoning": 3,
+          "presentation": 3
+        }
+      }
+    },
+    "purchaseLogs": [],
+    "isPaused": false
+  }
+]

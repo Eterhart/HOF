@@ -172,6 +172,44 @@ export const CardDetailModal: React.FC<CardDetailModalProps> = ({
             {isStatue ? (item as StatueItem).role : (item as any).summary || (item as any).role || ''}
           </p>
 
+          {/* QR Code Section for Evidence Cards */}
+          {!isStatue && !isStory && (item as any).qrUrl && (
+            <div className="py-2.5 flex flex-col items-center justify-center border-t border-rose-900/40">
+              <div className="p-2 bg-white rounded-[8px] shadow-[0_0_20px_rgba(225,29,72,0.3)] border border-rose-500/60 relative transition-transform hover:scale-105">
+                <a
+                  href={(item as any).qrUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block cursor-pointer"
+                  title="คลิกหรือสแกนเพื่อเปิดลิงก์หลักฐาน"
+                >
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(
+                      (item as any).qrUrl
+                    )}`}
+                    alt={`QR Code for ${itemName}`}
+                    className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
+                    loading="eager"
+                  />
+                </a>
+              </div>
+              <div className="text-[11px] font-mono text-rose-300/85 pt-2 flex flex-wrap items-center justify-center gap-1 text-center select-none">
+                <span>✦</span>
+                <span>สแกน QR CODE หรือ</span>
+                <a
+                  href={(item as any).qrUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-rose-200 underline decoration-rose-400/80 font-bold transition-colors cursor-pointer"
+                >
+                  คลิกที่นี่
+                </a>
+                <span>เพื่อเข้าสู่แหล่งข้อมูล</span>
+                <span>✦</span>
+              </div>
+            </div>
+          )}
+
           {/* Vitrine Footer Marks */}
           <div className={`pt-2 flex items-center justify-between text-[9px] uppercase tracking-widest select-none font-mono ${
             isCyan ? 'text-cyan-400/70' : 'text-rose-400/70'

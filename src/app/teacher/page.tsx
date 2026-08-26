@@ -51,6 +51,7 @@ import {
   Lock,
   LogOut,
   Loader2,
+  Pencil,
 } from 'lucide-react';
 
 const PHASE_LABEL: Record<GamePhase, string> = {
@@ -253,6 +254,58 @@ export default function TeacherPage() {
   const [phaseStartTimes, setPhaseStartTimes] = useState<Record<string, number>>({});
   const [dismissedPrompts, setDismissedPrompts] = useState<Record<string, boolean>>({});
   const [addedExtraTime, setAddedExtraTime] = useState<Record<string, number>>({});
+  const [editingSessionId, setEditingSessionId] = useState<string | null>(null);
+  const [editSessionNameInput, setEditSessionNameInput] = useState<string>('');
+
+  async function handleSaveSessionName(sessionId: string, newName: string) {
+    const trimmed = newName.trim();
+    if (!trimmed) {
+      setEditingSessionId(null);
+      return;
+    }
+    try {
+      const res = await fetch('/api/game', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'update_session_name',
+          sessionId,
+          newName: trimmed,
+        }),
+      });
+      if (res.ok) {
+        setEditingSessionId(null);
+        await fetchSessions();
+        if (selectedSessionId === sessionId) {
+          await fetchDetail(sessionId);
+        }
+      }
+    } catch (err) {
+      console.error('Failed to update session name:', err);
+    }
+  }
+
+  async function handleQuickChangePhase(sessionId: string, newPhase: GamePhase) {
+    try {
+      const res = await fetch('/api/game', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'set_phase',
+          sessionId,
+          phase: newPhase,
+        }),
+      });
+      if (res.ok) {
+        await fetchSessions();
+        if (selectedSessionId === sessionId) {
+          await fetchDetail(sessionId);
+        }
+      }
+    } catch (err) {
+      console.error('Failed to change phase from list:', err);
+    }
+  }
 
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 1000);
@@ -532,6 +585,32 @@ export default function TeacherPage() {
           await fetchSessions();
         } catch (err) {
           console.error('Error unlocking submission:', err);
+        }
+      },
+    });
+  }
+
+  async function handleUnlockAllSubmissions() {
+    if (!selectedSessionId) return;
+    setConfirmModal({
+      title: 'อนุมัติให้ส่งใหม่ทุกกลุ่ม',
+      message: 'ต้องการปลดล็อกให้ทุกกลุ่มที่ส่งผลงานแล้ว สามารถแก้ไขและส่งนิทรรศการใหม่อีกครั้งใช่หรือไม่?',
+      confirmText: 'อนุมัติให้ส่งใหม่ทุกกลุ่ม',
+      cancelText: 'ยกเลิก',
+      onConfirm: async () => {
+        try {
+          await fetch('/api/game', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              action: 'unlock_all_teams_submission',
+              sessionId: selectedSessionId,
+            }),
+          });
+          await fetchDetail(selectedSessionId);
+          await fetchSessions();
+        } catch (err) {
+          console.error('Error unlocking all submissions:', err);
         }
       },
     });
@@ -992,7 +1071,44 @@ export default function TeacherPage() {
             </button>
             <span className="text-[#e0e0e0] text-lg font-light">|</span>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-base sm:text-lg text-[#1d1d1f]">{detail.sessionName}</span>
+              {editingSessionId === detail.sessionId ? (
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="text"
+                    value={editSessionNameInput}
+                    onChange={(e) => setEditSessionNameInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') handleSaveSessionName(detail.sessionId, editSessionNameInput);
+                      if (e.key === 'Escape') setEditingSessionId(null);
+                    }}
+                    autoFocus
+                    className="px-2 py-0.5 border-b-2 border-[#0066cc] bg-transparent text-base sm:text-lg font-bold text-[#1d1d1f] focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleSaveSessionName(detail.sessionId, editSessionNameInput)}
+                    className="p-1 text-[#0066cc] hover:text-blue-700 transition cursor-pointer bg-transparent border-0 shadow-none"
+                    title="บันทึกชื่อห้อง"
+                  >
+                    <Check className="w-4 h-4 stroke-[2.5]" />
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center gap-1.5 group">
+                  <span className="font-bold text-base sm:text-lg text-[#1d1d1f]">{detail.sessionName}</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditSessionNameInput(detail.sessionName);
+                      setEditingSessionId(detail.sessionId);
+                    }}
+                    className="p-1 text-[#7a7a7a] hover:text-[#0066cc] transition-colors cursor-pointer bg-transparent border-0 shadow-none"
+                    title="เปลี่ยนชื่อห้อง"
+                  >
+                    <Pencil className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              )}
               <span className="px-2.5 py-1 rounded-full font-mono font-black text-xs sm:text-sm bg-blue-50 text-[#0066cc] border border-blue-200">
                 {detail.sessionCode}
               </span>
@@ -1048,9 +1164,46 @@ export default function TeacherPage() {
                     <QrCode className="w-3.5 h-3.5" />
                     <span>สแกนเข้าร่วมห้องเรียนและสร้างทีม</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-[#1d1d1f] tracking-tight">
-                    {detail.sessionName}
-                  </h3>
+                  {editingSessionId === detail.sessionId ? (
+                    <div className="flex items-center justify-center gap-2 py-1">
+                      <input
+                        type="text"
+                        value={editSessionNameInput}
+                        onChange={(e) => setEditSessionNameInput(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') handleSaveSessionName(detail.sessionId, editSessionNameInput);
+                          if (e.key === 'Escape') setEditingSessionId(null);
+                        }}
+                        autoFocus
+                        className="px-3 py-1 border-b-2 border-[#0066cc] bg-transparent text-xl sm:text-2xl font-black text-[#1d1d1f] text-center focus:outline-none"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => handleSaveSessionName(detail.sessionId, editSessionNameInput)}
+                        className="p-1.5 text-[#0066cc] hover:text-blue-700 transition cursor-pointer bg-transparent border-0 shadow-none"
+                        title="บันทึกชื่อห้อง"
+                      >
+                        <Check className="w-5 h-5 stroke-[2.5]" />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center gap-2 group">
+                      <h3 className="text-xl sm:text-2xl font-black text-[#1d1d1f] tracking-tight">
+                        {detail.sessionName}
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setEditSessionNameInput(detail.sessionName);
+                          setEditingSessionId(detail.sessionId);
+                        }}
+                        className="p-1 text-[#7a7a7a] hover:text-[#0066cc] transition-colors cursor-pointer bg-transparent border-0 shadow-none"
+                        title="เปลี่ยนชื่อห้อง"
+                      >
+                        <Pencil className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
                   <p className="text-xs text-[#7a7a7a]">
                     ให้นักเรียนสแกน QR Code หรือเข้าเว็บแล้วพิมพ์รหัสห้อง (PIN)
                   </p>
@@ -1116,7 +1269,27 @@ export default function TeacherPage() {
               </div>
 
               {/* ─── ตารางแสดง 8 กลุ่ม (แบ่งด้วยเส้น ไร้กรอบการ์ด, สมาชิก List 1. 2. 3., ไร้พื้นหลังขาว) ─── */}
-              <div className="w-full border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-2xs bg-transparent">
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between gap-3 px-1 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#7a7a7a]">
+                      /// สถานะกลุ่ม ({teams.filter((t) => t?.isSubmitted).length}/{teams.filter((t) => t).length} ส่งแล้ว)
+                    </span>
+                  </div>
+                  {teams.some((t) => t?.isSubmitted) && (
+                    <button
+                      type="button"
+                      onClick={handleUnlockAllSubmissions}
+                      className="px-3.5 py-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 rounded-lg text-xs font-bold inline-flex items-center gap-1.5 transition active:scale-95 cursor-pointer shadow-2xs"
+                      title="อนุมัติให้ทุกกลุ่มที่ส่งแล้ว สามารถแก้ไขและส่งนิทรรศการใหม่ได้"
+                    >
+                      <Unlock className="w-3.5 h-3.5 text-amber-700" />
+                      <span>อนุมัติให้ส่งใหม่ทุกกลุ่ม</span>
+                    </button>
+                  )}
+                </div>
+
+                <div className="w-full border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-2xs bg-transparent">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-y-0 divide-[#e0e0e0]">
                   {Array.from({ length: 8 }, (_, idx) => {
                     const team = teams[idx];
@@ -1217,6 +1390,7 @@ export default function TeacherPage() {
                   })}
                 </div>
               </div>
+            </div>
 
               {/* ─── 2-Column Responsive Layout: Controls on Left, Student View on Right ─── */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
@@ -1773,10 +1947,48 @@ export default function TeacherPage() {
                     onClick={() => setSelectedSessionId(s.sessionId)}
                   >
                     <div className="flex items-center gap-2.5 flex-wrap">
-                      <h4 className="text-lg font-black text-[#1d1d1f] tracking-tight">{s.sessionName}</h4>
-                      <span className={`text-xs px-3 py-0.5 rounded-full border font-bold ${PHASE_COLOR[s.phase]}`}>
-                        {PHASE_LABEL[s.phase]}
-                      </span>
+                      {editingSessionId === s.sessionId ? (
+                        <div
+                          className="flex items-center gap-1.5"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <input
+                            type="text"
+                            value={editSessionNameInput}
+                            onChange={(e) => setEditSessionNameInput(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') handleSaveSessionName(s.sessionId, editSessionNameInput);
+                              if (e.key === 'Escape') setEditingSessionId(null);
+                            }}
+                            autoFocus
+                            className="px-2 py-0.5 border-b-2 border-[#0066cc] bg-transparent text-lg font-black text-[#1d1d1f] focus:outline-none"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => handleSaveSessionName(s.sessionId, editSessionNameInput)}
+                            className="p-1 text-[#0066cc] hover:text-blue-700 transition cursor-pointer bg-transparent border-0 shadow-none"
+                            title="บันทึกชื่อห้อง"
+                          >
+                            <Check className="w-4 h-4 stroke-[2.5]" />
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-1.5 group">
+                          <h4 className="text-lg font-black text-[#1d1d1f] tracking-tight">{s.sessionName}</h4>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setEditSessionNameInput(s.sessionName);
+                              setEditingSessionId(s.sessionId);
+                            }}
+                            className="p-1 text-[#7a7a7a] hover:text-[#0066cc] transition-colors cursor-pointer bg-transparent border-0 shadow-none"
+                            title="เปลี่ยนชื่อห้อง"
+                          >
+                            <Pencil className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      )}
                     </div>
                     <div className="flex items-center gap-2 sm:gap-3 text-xs text-[#7a7a7a] flex-wrap">
                       <span className="font-mono font-bold bg-[#f5f5f7] px-2 py-0.5 rounded-md border border-[#e0e0e0] text-[#1d1d1f]">
@@ -1800,8 +2012,24 @@ export default function TeacherPage() {
                     </div>
                   </div>
 
-                  {/* Right Actions */}
-                  <div className="flex items-center gap-1.5 flex-shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e0e0e0]/70 justify-end">
+                  {/* Right Actions: Aligned Interactive Phase Tag & Delete Button */}
+                  <div className="flex items-center gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e0e0e0]/70 justify-between sm:justify-end">
+                    {/* Interactive Aligned Phase Switcher */}
+                    <div className="relative shrink-0" onClick={(e) => e.stopPropagation()}>
+                      <select
+                        value={s.phase}
+                        onChange={(e) => handleQuickChangePhase(s.sessionId, e.target.value as GamePhase)}
+                        className={`appearance-none text-xs pl-3.5 pr-7 py-1.5 rounded-full border font-bold cursor-pointer transition shadow-xs focus:outline-none focus:ring-2 focus:ring-[#0066cc]/40 ${PHASE_COLOR[s.phase]}`}
+                        title="คลิกเพื่อสลับสถานะเกม (Phase)"
+                      >
+                        <option value="LOBBY">1. รอเริ่ม</option>
+                        <option value="BRIEFING">2. อ่านบรีฟ</option>
+                        <option value="SHOPPING">3. กำลังเล่น (ซื้อของ)</option>
+                        <option value="LEADERBOARD">4. จบเกม</option>
+                      </select>
+                      <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                    </div>
+
                     <button
                       onClick={(e) => {
                         e.stopPropagation();

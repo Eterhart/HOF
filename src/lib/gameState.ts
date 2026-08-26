@@ -49,28 +49,41 @@ function loadSessionsFromFile(): Map<string, GameSessionState> | null {
   return null;
 }
 
+let lastFileMtime = 0;
+
 export function saveSessionsToFile() {
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
-    const store = getStore();
-    const list = Array.from(store.values());
-    fs.writeFileSync(SESSIONS_FILE, JSON.stringify(list, null, 2), 'utf-8');
+    if (global.__GAME_SESSIONS__) {
+      const list = Array.from(global.__GAME_SESSIONS__.values());
+      fs.writeFileSync(SESSIONS_FILE, JSON.stringify(list, null, 2), 'utf-8');
+      try {
+        lastFileMtime = fs.statSync(SESSIONS_FILE).mtimeMs;
+      } catch (_) {}
+    }
   } catch (e) {
     console.error('Failed to save sessions to file:', e);
   }
 }
 
-
 function getStore(): Map<string, GameSessionState> {
-  if (!global.__GAME_SESSIONS__) {
+  let fileMtime = 0;
+  try {
+    if (fs.existsSync(SESSIONS_FILE)) {
+      fileMtime = fs.statSync(SESSIONS_FILE).mtimeMs;
+    }
+  } catch (_) {}
+
+  if (!global.__GAME_SESSIONS__ || fileMtime > lastFileMtime) {
     const fromFile = loadSessionsFromFile();
-    if (fromFile !== null) {
+    if (fromFile !== null && fromFile.size > 0) {
       global.__GAME_SESSIONS__ = fromFile;
       global.__SESSION_COUNTER__ = fromFile.size + 10;
       global.__SESSIONS_INITIALIZED__ = true;
-    } else {
+      lastFileMtime = fileMtime;
+    } else if (!global.__GAME_SESSIONS__) {
       global.__GAME_SESSIONS__ = new Map();
       global.__SESSION_COUNTER__ = 100;
       global.__SESSIONS_INITIALIZED__ = true;
@@ -198,6 +211,21 @@ export function deleteSession(sessionId: string): boolean {
   return result;
 }
 
+export function updateSessionName(
+  sessionId: string,
+  newName: string
+): { success: boolean; session?: GameSessionState; error?: string } {
+  const session = getSessionById(sessionId);
+  if (!session) return { success: false, error: 'ไม่พบห้องนี้ในระบบ' };
+
+  const trimmed = newName.trim();
+  if (!trimmed) return { success: false, error: 'กรุณากรอกชื่อห้องเรียน' };
+
+  session.sessionName = trimmed;
+  saveSessionsToFile();
+  return { success: true, session };
+}
+
 // ─── Session-scoped Helpers ──────────────────────────────────────────────────
 
 export function getGameSession(sessionId: string): GameSessionState | null {
@@ -278,9 +306,19 @@ export function applyGamePhase(session: GameSessionState, phase: GamePhase, cust
 
   session.phase = phase;
   session.startTime = Date.now();
+  session.isPaused = false;
+  session.pausedAt = undefined;
+
   if (customDurationSeconds !== undefined) {
     session.durationSeconds = customDurationSeconds;
+  } else if (phase === 'LOBBY' || phase === 'LEADERBOARD') {
+    session.durationSeconds = 0;
+  } else if (phase === 'BRIEFING') {
+    session.durationSeconds = 300;
+  } else if (phase === 'SHOPPING') {
+    session.durationSeconds = SHOPPING_DURATION_SECONDS;
   }
+
   if (phase === 'LEADERBOARD' || phase === 'EVALUATION') {
     Object.values(session.teams).forEach(team => {
       team.isSubmitted = true;
@@ -603,6 +641,25 @@ export function unlockTeamSubmission(
   team.submittedBy = undefined;
   saveSessionsToFile();
   return { success: true, team };
+}
+
+export function unlockAllTeamsSubmission(
+  sessionId: string
+): { success: boolean; count?: number; error?: string } {
+  const session = getSessionById(sessionId);
+  if (!session) return { success: false, error: 'ไม่พบ Session' };
+
+  let count = 0;
+  for (const team of Object.values(session.teams || {})) {
+    if (team.isSubmitted) {
+      team.isSubmitted = false;
+      team.submittedAt = undefined;
+      team.submittedBy = undefined;
+      count++;
+    }
+  }
+  saveSessionsToFile();
+  return { success: true, count };
 }
 
 export function updateTeacherRubric(
