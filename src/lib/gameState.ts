@@ -178,8 +178,14 @@ export function getAllFullSessions(): GameSessionState[] {
 }
 
 function checkAutoPhaseTransitions(session: GameSessionState) {
-  if (!session.isPaused && session.durationSeconds > 0) {
+  if (!session.isPaused && session.durationSeconds > 0 && session.startTime > 0) {
     const elapsed = Math.floor((Date.now() - session.startTime) / 1000);
+    // If the elapsed time is older than 2x duration (e.g. stale static build timestamps on Vercel cold starts),
+    // refresh startTime instead of forcing LEADERBOARD so mock rooms stay in their set phase
+    if (elapsed > session.durationSeconds * 2) {
+      session.startTime = Date.now();
+      return;
+    }
     if (elapsed >= session.durationSeconds) {
       if (session.phase === 'BRIEFING') {
         // Phase 2 (Briefing) -> Auto transition to Phase 3 (Shopping) with 20 minutes default

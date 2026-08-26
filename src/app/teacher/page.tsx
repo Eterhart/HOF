@@ -2022,12 +2022,14 @@ export default function TeacherPage() {
                         className={`appearance-none text-xs pl-3.5 pr-7 py-1.5 rounded-full border font-bold cursor-pointer transition shadow-xs focus:outline-none focus:ring-2 focus:ring-[#0066cc]/40 ${PHASE_COLOR[s.phase]}`}
                         title="คลิกเพื่อสลับสถานะเกม (Phase)"
                       >
-                        <option value="LOBBY">1. รอเริ่ม</option>
-                        <option value="BRIEFING">2. อ่านบรีฟ</option>
-                        <option value="SHOPPING">3. กำลังเล่น (ซื้อของ)</option>
-                        <option value="LEADERBOARD">4. จบเกม</option>
+                        <option value="LOBBY" className="bg-white text-[#1d1d1f]">1. รอเริ่ม</option>
+                        <option value="BRIEFING" className="bg-white text-[#1d1d1f]">2. อ่านบรีฟ</option>
+                        <option value="SHOPPING" className="bg-white text-[#1d1d1f]">3. กำลังเล่น (ซื้อของ)</option>
+                        <option value="LEADERBOARD" className="bg-white text-[#1d1d1f]">4. จบเกม</option>
                       </select>
-                      <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                      <ChevronDown className={`w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none ${
+                        s.phase === 'LEADERBOARD' ? 'text-white/80' : 'text-zinc-500'
+                      }`} />
                     </div>
 
                     <button
